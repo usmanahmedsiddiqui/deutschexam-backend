@@ -16,7 +16,7 @@ class UserRepository(private val db: Database) {
             ?.toUserRecord()
     }
 
-    fun findOrCreate(googleId: String, email: String, name: String, profilePicture: String?, phoneNumber: String?): UserRecord = transaction(db) {
+    fun findOrCreate(googleId: String, email: String, name: String, profilePicture: String?): UserRecord = transaction(db) {
         val existing = UsersTable.selectAll()
             .where { UsersTable.googleId eq googleId }
             .firstOrNull()
@@ -25,7 +25,6 @@ class UserRepository(private val db: Database) {
             UsersTable.update({ UsersTable.id eq existing[UsersTable.id] }) {
                 it[UsersTable.name] = name
                 it[UsersTable.profilePicture] = profilePicture
-                if (phoneNumber != null) it[UsersTable.phoneNumber] = phoneNumber
             }
             existing[UsersTable.id]
         } else {
@@ -34,7 +33,6 @@ class UserRepository(private val db: Database) {
                 it[UsersTable.name] = name
                 it[UsersTable.email] = email
                 it[UsersTable.profilePicture] = profilePicture
-                it[UsersTable.phoneNumber] = phoneNumber
             }[UsersTable.id]
         }
 
@@ -70,7 +68,6 @@ class UserRepository(private val db: Database) {
             name = this[UsersTable.name],
             email = this[UsersTable.email],
             profilePicture = this[UsersTable.profilePicture],
-            phoneNumber = this[UsersTable.phoneNumber],
             ownedProductIds = ownedIds,
         )
     }

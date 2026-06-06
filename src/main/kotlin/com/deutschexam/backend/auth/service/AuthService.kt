@@ -25,17 +25,16 @@ class AuthService(
         val googleId = payload.subject
         val email = payload.email ?: throw AuthException("Google account has no email.")
         val name = payload["name"] as? String ?: email
-        val profilePicture = req.profilePicture ?: payload["picture"] as? String
-        val phoneNumber = req.phoneNumber
+        val profilePicture = payload["picture"] as? String
 
-        val user = userRepo.findOrCreate(googleId, email, name, profilePicture, phoneNumber)
+        val user = userRepo.findOrCreate(googleId, email, name, profilePicture)
         val token = JwtConfig.generateToken(user.id, user.email)
 
         return LoginResponseDto(
             token = token,
             name = user.name,
             email = user.email,
-            phoneNumber = user.phoneNumber,
+            phoneNumber = null,
             profilePicture = user.profilePicture,
             ownedProductIds = user.ownedProductIds,
         )

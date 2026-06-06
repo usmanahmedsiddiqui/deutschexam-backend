@@ -3,11 +3,7 @@ package com.deutschexam.backend.auth.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class GoogleAuthRequest(
-    val idToken: String,
-    val phoneNumber: String? = null,
-    val profilePicture: String? = null,
-)
+data class GoogleAuthRequest(val idToken: String)
 
 @Serializable
 data class LoginResponseDto(
@@ -24,6 +20,5 @@ data class UserRecord(
     val name: String,
     val email: String,
     val profilePicture: String?,
-    val phoneNumber: String?,
     val ownedProductIds: List<String>,
 )
