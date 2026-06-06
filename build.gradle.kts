@@ -9,7 +9,7 @@ version = "1.0.0"
 
 application {
     mainClass.set("com.deutschexam.backend.ApplicationKt")
-    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${extra["development"] ?: "false"}")
+    applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${findProperty("development") ?: "false"}")
 }
 
 val ktorVersion = "3.0.3"
