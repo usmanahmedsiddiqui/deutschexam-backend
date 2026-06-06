@@ -11,27 +11,10 @@ import kotlinx.serialization.Serializable
 data class ApiErrorResponse(
     val code: String,
     val message: String,
-    val details: List<FieldError>? = null,
-)
-
-@Serializable
-data class FieldError(
-    val field: String,
-    val message: String,
 )
 
 fun Application.configureStatusPages() {
     install(StatusPages) {
-        exception<ValidationException> { call, cause ->
-            call.respond(
-                cause.statusCode,
-                ApiErrorResponse(
-                    code = cause.code,
-                    message = cause.message ?: "Validation failed.",
-                    details = listOf(FieldError(cause.field, cause.message ?: "")),
-                )
-            )
-        }
         exception<ApiException> { call, cause ->
             call.respond(
                 cause.statusCode,

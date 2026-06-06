@@ -20,5 +20,5 @@ class NotFoundException(message: String = "Not found") :
 class ConflictException(message: String) :
     ApiException("CONFLICT", message, HttpStatusCode.Conflict)
 
-class ValidationException(val field: String, message: String) :
+class ValidationException(message: String) :
     ApiException("VALIDATION_ERROR", message, HttpStatusCode.UnprocessableEntity)
