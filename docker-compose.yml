@@ -17,12 +17,6 @@ services:
       timeout: 5s
       retries: 5
 
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "1025:1025"   # SMTP — server sends emails here
-      - "8025:8025"   # Web UI — open http://localhost:8025 to read OTP emails
-
   backend:
     build: .
     ports:
@@ -32,9 +26,7 @@ services:
       DATABASE_USER: deutschexam
       DATABASE_PASSWORD: deutschexam
       JWT_SECRET: dev-secret-change-in-production-min-32-chars
-      SMTP_HOST: mailhog
-      SMTP_PORT: 1025
-      SMTP_FROM: noreply@deutschexam.com
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
     depends_on:
       postgres:
         condition: service_healthy
