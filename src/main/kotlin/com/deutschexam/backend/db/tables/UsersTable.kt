@@ -9,7 +9,8 @@ object UsersTable : Table("users") {
     val googleId = varchar("google_id", 255).uniqueIndex()
     val name = varchar("name", 100)
     val email = varchar("email", 255).uniqueIndex()
-    val pictureUrl = varchar("picture_url", 500).nullable()
+    val profilePicture = varchar("profile_picture", 500).nullable()
+    val phoneNumber = varchar("phone_number", 30).nullable()
     val createdAt = timestamp("created_at").defaultExpression(CurrentTimestamp)
 
     override val primaryKey = PrimaryKey(id)

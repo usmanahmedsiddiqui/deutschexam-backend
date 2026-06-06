@@ -1,7 +1,7 @@
 package com.deutschexam.backend.auth.service
 
-import com.deutschexam.backend.auth.model.AuthResponseDto
 import com.deutschexam.backend.auth.model.GoogleAuthRequest
+import com.deutschexam.backend.auth.model.LoginResponseDto
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.JwtConfig
@@ -17,7 +17,7 @@ class AuthService(
         .setAudience(listOf(googleClientId))
         .build()
 
-    fun googleSignIn(req: GoogleAuthRequest): AuthResponseDto {
+    fun googleSignIn(req: GoogleAuthRequest): LoginResponseDto {
         val idToken = verifier.verify(req.idToken)
             ?: throw AuthException("Invalid Google ID token.")
 
@@ -25,16 +25,17 @@ class AuthService(
         val googleId = payload.subject
         val email = payload.email ?: throw AuthException("Google account has no email.")
         val name = payload["name"] as? String ?: email
-        val pictureUrl = payload["picture"] as? String
+        val profilePicture = payload["picture"] as? String
 
-        val user = userRepo.findOrCreate(googleId, email, name, pictureUrl)
+        val user = userRepo.findOrCreate(googleId, email, name, profilePicture)
         val token = JwtConfig.generateToken(user.id, user.email)
 
-        return AuthResponseDto(
+        return LoginResponseDto(
             token = token,
             name = user.name,
             email = user.email,
-            pictureUrl = user.pictureUrl,
+            phoneNumber = null,
+            profilePicture = user.profilePicture,
             ownedProductIds = user.ownedProductIds,
         )
     }
