@@ -19,7 +19,7 @@ fun Application.configureAuth() {
                 UserPrincipal(userId, email)
             }
             challenge { _, _ ->
-                call.respond(HttpStatusCode.Unauthorized, ErrorResponse("Token invalid or expired."))
+                call.respond(HttpStatusCode.Unauthorized, ApiErrorResponse(code = "UNAUTHORIZED", message = "Token invalid or expired."))
             }
         }
     }

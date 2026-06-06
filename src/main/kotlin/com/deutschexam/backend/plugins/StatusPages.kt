@@ -8,22 +8,48 @@ import io.ktor.server.response.*
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ErrorResponse(val error: String)
+data class ApiErrorResponse(
+    val code: String,
+    val message: String,
+    val details: List<FieldError>? = null,
+)
+
+@Serializable
+data class FieldError(
+    val field: String,
+    val message: String,
+)
 
 fun Application.configureStatusPages() {
     install(StatusPages) {
-        exception<ApiException> { call, cause ->
-            call.respond(cause.statusCode, ErrorResponse(cause.message ?: "Error"))
+        exception<ValidationException> { call, cause ->
+            call.respond(
+                cause.statusCode,
+                ApiErrorResponse(
+                    code = cause.code,
+                    message = cause.message ?: "Validation failed.",
+                    details = listOf(FieldError(cause.field, cause.message ?: "")),
+                )
+            )
         }
-        exception<ConflictException> { call, cause ->
-            call.respond(HttpStatusCode.Conflict, ErrorResponse(cause.message ?: "Conflict"))
+        exception<ApiException> { call, cause ->
+            call.respond(
+                cause.statusCode,
+                ApiErrorResponse(code = cause.code, message = cause.message ?: "An error occurred.")
+            )
         }
         exception<IllegalArgumentException> { call, cause ->
-            call.respond(HttpStatusCode.BadRequest, ErrorResponse(cause.message ?: "Bad request"))
+            call.respond(
+                HttpStatusCode.BadRequest,
+                ApiErrorResponse(code = "BAD_REQUEST", message = cause.message ?: "Bad request.")
+            )
         }
         exception<Throwable> { call, cause ->
             call.application.log.error("Unhandled exception", cause)
-            call.respond(HttpStatusCode.InternalServerError, ErrorResponse("Internal server error"))
+            call.respond(
+                HttpStatusCode.InternalServerError,
+                ApiErrorResponse(code = "INTERNAL_ERROR", message = "An unexpected error occurred.")
+            )
         }
     }
 }
