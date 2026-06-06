@@ -40,12 +40,9 @@ dependencies {
     implementation("org.postgresql:postgresql:42.7.4")
     implementation("com.zaxxer:HikariCP:5.1.0")
 
-    // Auth / Crypto
+    // Auth
     implementation("com.auth0:java-jwt:4.4.0")
-    implementation("org.mindrot:jbcrypt:0.4")
-
-    // Email
-    implementation("com.sun.mail:jakarta.mail:2.0.1")
+    implementation("com.google.api-client:google-api-client:2.2.0")
 
     // Serialization + DateTime
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")

@@ -6,11 +6,10 @@ import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
 
 object UsersTable : Table("users") {
     val id = uuid("id").autoGenerate()
+    val googleId = varchar("google_id", 255).uniqueIndex()
     val name = varchar("name", 100)
     val email = varchar("email", 255).uniqueIndex()
-    val gender = varchar("gender", 20)
-    val passwordHash = varchar("password_hash", 255)
-    val emailConfirmed = bool("email_confirmed").default(false)
+    val pictureUrl = varchar("picture_url", 500).nullable()
     val createdAt = timestamp("created_at").defaultExpression(CurrentTimestamp)
 
     override val primaryKey = PrimaryKey(id)

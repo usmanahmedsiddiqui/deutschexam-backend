@@ -1,6 +1,5 @@
 package com.deutschexam.backend.db
 
-import com.deutschexam.backend.db.tables.OtpTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
 import com.zaxxer.hikari.HikariConfig
@@ -32,7 +31,6 @@ object DatabaseFactory {
         transaction(database) {
             SchemaUtils.createMissingTablesAndColumns(
                 UsersTable,
-                OtpTable,
                 UserProductsTable,
             )
         }

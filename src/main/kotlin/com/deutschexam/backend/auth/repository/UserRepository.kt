@@ -4,18 +4,10 @@ import com.deutschexam.backend.auth.model.UserRecord
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
 import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
 
 class UserRepository(private val db: Database) {
-
-    fun findByEmail(email: String): UserRecord? = transaction(db) {
-        UsersTable.selectAll()
-            .where { UsersTable.email eq email }
-            .firstOrNull()
-            ?.toUserRecord()
-    }
 
     fun findById(id: String): UserRecord? = transaction(db) {
         UsersTable.selectAll()
@@ -24,40 +16,30 @@ class UserRepository(private val db: Database) {
             ?.toUserRecord()
     }
 
-    fun existsByEmail(email: String): Boolean = transaction(db) {
-        UsersTable.selectAll().where { UsersTable.email eq email }.count() > 0
-    }
+    fun findOrCreate(googleId: String, email: String, name: String, pictureUrl: String?): UserRecord = transaction(db) {
+        val existing = UsersTable.selectAll()
+            .where { UsersTable.googleId eq googleId }
+            .firstOrNull()
 
-    fun create(name: String, gender: String, email: String, passwordHash: String): UserRecord = transaction(db) {
-        val id = UsersTable.insert {
-            it[UsersTable.name] = name
-            it[UsersTable.email] = email
-            it[UsersTable.gender] = gender
-            it[UsersTable.passwordHash] = passwordHash
-            it[UsersTable.emailConfirmed] = false
-        }[UsersTable.id]
-
-        UserRecord(
-            id = id.toString(),
-            name = name,
-            email = email,
-            gender = gender,
-            passwordHash = passwordHash,
-            emailConfirmed = false,
-            ownedProductIds = emptyList(),
-        )
-    }
-
-    fun setEmailConfirmed(email: String) = transaction(db) {
-        UsersTable.update({ UsersTable.email eq email }) {
-            it[emailConfirmed] = true
+        val userId = if (existing != null) {
+            UsersTable.update({ UsersTable.id eq existing[UsersTable.id] }) {
+                it[UsersTable.name] = name
+                it[UsersTable.pictureUrl] = pictureUrl
+            }
+            existing[UsersTable.id]
+        } else {
+            UsersTable.insert {
+                it[UsersTable.googleId] = googleId
+                it[UsersTable.name] = name
+                it[UsersTable.email] = email
+                it[UsersTable.pictureUrl] = pictureUrl
+            }[UsersTable.id]
         }
-    }
 
-    fun updatePassword(email: String, newHash: String) = transaction(db) {
-        UsersTable.update({ UsersTable.email eq email }) {
-            it[passwordHash] = newHash
-        }
+        UsersTable.selectAll()
+            .where { UsersTable.id eq userId }
+            .first()
+            .toUserRecord()
     }
 
     fun getOwnedProductIds(userId: String): List<String> = transaction(db) {
@@ -85,9 +67,7 @@ class UserRepository(private val db: Database) {
             id = userId,
             name = this[UsersTable.name],
             email = this[UsersTable.email],
-            gender = this[UsersTable.gender],
-            passwordHash = this[UsersTable.passwordHash],
-            emailConfirmed = this[UsersTable.emailConfirmed],
+            pictureUrl = this[UsersTable.pictureUrl],
             ownedProductIds = ownedIds,
         )
     }
