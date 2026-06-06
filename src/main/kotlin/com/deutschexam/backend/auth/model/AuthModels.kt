@@ -10,7 +10,6 @@ data class LoginResponseDto(
     val token: String?,
     val name: String?,
     val email: String?,
-    val phoneNumber: String?,
     val profilePicture: String?,
     val ownedProductIds: List<String> = emptyList(),
 )

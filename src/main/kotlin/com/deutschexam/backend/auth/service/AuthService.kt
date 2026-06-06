@@ -34,7 +34,6 @@ class AuthService(
             token = token,
             name = user.name,
             email = user.email,
-            phoneNumber = null,
             profilePicture = user.profilePicture,
             ownedProductIds = user.ownedProductIds,
         )
