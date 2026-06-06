@@ -12,6 +12,10 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${findProperty("development") ?: "false"}")
 }
 
+repositories {
+    mavenCentral()
+}
+
 val ktorVersion = "3.0.3"
 val exposedVersion = "0.57.0"
 
