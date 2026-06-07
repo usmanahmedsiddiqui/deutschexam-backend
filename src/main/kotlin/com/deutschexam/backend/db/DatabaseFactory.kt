@@ -4,6 +4,7 @@ import com.deutschexam.backend.db.tables.LevelCatalogTable
 import com.deutschexam.backend.db.tables.LevelsTable
 import com.deutschexam.backend.db.tables.ProviderLevelsTable
 import com.deutschexam.backend.db.tables.ProvidersTable
+import com.deutschexam.backend.db.tables.ProductsTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
 import com.zaxxer.hikari.HikariConfig
@@ -42,9 +43,11 @@ object DatabaseFactory {
                 LevelCatalogTable,
                 ProvidersTable,
                 ProviderLevelsTable,
+                ProductsTable,
             )
             seedLevels()
             seedProviders()
+            seedProducts()
         }
 
         return database
@@ -148,6 +151,37 @@ object DatabaseFactory {
                     it[providerId] = provider.id
                     it[ProviderLevelsTable.levelId] = levelId
                 }
+            }
+        }
+    }
+
+    // ── Products seed ────────────────────────────────────────────────────────
+
+    private data class ProductSeed(
+        val id: String,
+        val levelId: String,
+        val priceCents: Int,
+        val discountedPriceCents: Int?,
+        val currency: String
+    )
+
+    private val productsToSeed = listOf(
+        ProductSeed("p_a1", "a1", 1999, null, "EUR"),
+        ProductSeed("p_a2", "a2", 1999, 1499, "EUR"),
+        ProductSeed("p_b1", "b1", 1999, null, "EUR"),
+    )
+
+    private fun seedProducts() {
+        val existing = ProductsTable.selectAll().map { it[ProductsTable.id] }.toSet()
+        if (existing.isNotEmpty()) return
+
+        for (product in productsToSeed) {
+            ProductsTable.insert {
+                it[id] = product.id
+                it[levelId] = product.levelId
+                it[priceCents] = product.priceCents
+                it[discountedPriceCents] = product.discountedPriceCents
+                it[currency] = product.currency
             }
         }
     }
