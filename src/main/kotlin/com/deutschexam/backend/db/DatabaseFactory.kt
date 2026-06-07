@@ -2,6 +2,8 @@ package com.deutschexam.backend.db
 
 import com.deutschexam.backend.db.tables.LevelCatalogTable
 import com.deutschexam.backend.db.tables.LevelsTable
+import com.deutschexam.backend.db.tables.ProviderLevelsTable
+import com.deutschexam.backend.db.tables.ProvidersTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
 import com.zaxxer.hikari.HikariConfig
@@ -38,12 +40,17 @@ object DatabaseFactory {
                 UserProductsTable,
                 LevelsTable,
                 LevelCatalogTable,
+                ProvidersTable,
+                ProviderLevelsTable,
             )
             seedLevels()
+            seedProviders()
         }
 
         return database
     }
+
+    // ── Levels seed ──────────────────────────────────────────────────────────
 
     private data class CatalogEntry(val type: String, val isFree: Boolean)
     private data class LevelSeed(
@@ -85,6 +92,61 @@ object DatabaseFactory {
                     it[levelId] = level.id
                     it[type] = entry.type
                     it[isFree] = entry.isFree
+                }
+            }
+        }
+    }
+
+    // ── Providers seed ───────────────────────────────────────────────────────
+
+    private data class ProviderSeed(
+        val id: String,
+        val name: String,
+        val fullName: String,
+        val description: String,
+        val logo: String,
+        val website: String,
+        val levelIds: List<String>
+    )
+
+    private val providersToSeed = listOf(
+        ProviderSeed(
+            id = "telc",
+            name = "Telc",
+            fullName = "Telc GmbH (The European Language Certificates)",
+            description = "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+            logo = "assets/logos/telc.png",
+            website = "https://www.telc.net",
+            levelIds = listOf("a1", "a2", "b1")
+        ),
+        ProviderSeed(
+            id = "goethe",
+            name = "Goethe-Institut",
+            fullName = "Goethe-Institut e.V.",
+            description = "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+            logo = "assets/logos/goethe.png",
+            website = "https://www.goethe.de",
+            levelIds = listOf("a1", "a2", "b1")
+        ),
+    )
+
+    private fun seedProviders() {
+        val existing = ProvidersTable.selectAll().map { it[ProvidersTable.id] }.toSet()
+        if (existing.isNotEmpty()) return
+
+        for (provider in providersToSeed) {
+            ProvidersTable.insert {
+                it[id] = provider.id
+                it[name] = provider.name
+                it[fullName] = provider.fullName
+                it[description] = provider.description
+                it[logo] = provider.logo
+                it[website] = provider.website
+            }
+            for (levelId in provider.levelIds) {
+                ProviderLevelsTable.insert {
+                    it[providerId] = provider.id
+                    it[ProviderLevelsTable.levelId] = levelId
                 }
             }
         }
