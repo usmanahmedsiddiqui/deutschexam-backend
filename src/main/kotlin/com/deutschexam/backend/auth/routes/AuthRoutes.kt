@@ -1,6 +1,7 @@
 package com.deutschexam.backend.auth.routes
 
 import com.deutschexam.backend.auth.model.GoogleAuthRequest
+import com.deutschexam.backend.auth.model.RefreshTokenRequest
 import com.deutschexam.backend.auth.service.AuthService
 import io.ktor.http.*
 import io.ktor.server.request.*
@@ -12,6 +13,12 @@ fun Route.authRoutes(authService: AuthService) {
         post("/google") {
             val req = call.receive<GoogleAuthRequest>()
             val response = authService.googleSignIn(req)
+            call.respond(HttpStatusCode.OK, response)
+        }
+
+        post("/refresh") {
+            val req = call.receive<RefreshTokenRequest>()
+            val response = authService.refresh(req)
             call.respond(HttpStatusCode.OK, response)
         }
     }

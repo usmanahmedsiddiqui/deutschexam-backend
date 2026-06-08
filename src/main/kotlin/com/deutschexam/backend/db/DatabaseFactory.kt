@@ -5,6 +5,7 @@ import com.deutschexam.backend.db.tables.LevelsTable
 import com.deutschexam.backend.db.tables.ProviderLevelsTable
 import com.deutschexam.backend.db.tables.ProvidersTable
 import com.deutschexam.backend.db.tables.ProductsTable
+import com.deutschexam.backend.db.tables.RefreshTokensTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
 import com.zaxxer.hikari.HikariConfig
@@ -44,6 +45,7 @@ object DatabaseFactory {
                 ProvidersTable,
                 ProviderLevelsTable,
                 ProductsTable,
+                RefreshTokensTable,
             )
             seedLevels()
             seedProviders()

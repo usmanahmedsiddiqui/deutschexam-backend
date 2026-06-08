@@ -2,6 +2,7 @@ package com.deutschexam.backend.auth.service
 
 import com.deutschexam.backend.auth.model.GoogleAuthRequest
 import com.deutschexam.backend.auth.model.LoginResponseDto
+import com.deutschexam.backend.auth.model.RefreshTokenRequest
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.JwtConfig
@@ -28,14 +29,38 @@ class AuthService(
         val profilePicture = payload["picture"] as? String
 
         val user = userRepo.findOrCreate(googleId, email, name, profilePicture)
-        val token = JwtConfig.generateToken(user.id, user.email)
+        return buildLoginResponse(user.id, user.email, user.name, user.profilePicture, user.ownedProductIds)
+    }
+
+    fun refresh(req: RefreshTokenRequest): LoginResponseDto {
+        val user = userRepo.findUserByRefreshToken(req.refreshToken)
+            ?: throw AuthException("Refresh token is invalid or expired.")
+
+        userRepo.deleteRefreshToken(req.refreshToken)
+
+        return buildLoginResponse(user.id, user.email, user.name, user.profilePicture, user.ownedProductIds)
+    }
+
+    private fun buildLoginResponse(
+        userId: String,
+        email: String,
+        name: String,
+        profilePicture: String?,
+        ownedProductIds: List<String>
+    ): LoginResponseDto {
+        val token = JwtConfig.generateToken(userId, email)
+        val tokenExpiresAt = JwtConfig.tokenExpiresAt()
+        val (refreshToken, refreshTokenExpiresAt) = userRepo.createRefreshToken(userId)
 
         return LoginResponseDto(
             token = token,
-            name = user.name,
-            email = user.email,
-            profilePicture = user.profilePicture,
-            ownedProductIds = user.ownedProductIds,
+            tokenExpiresAt = tokenExpiresAt,
+            refreshToken = refreshToken,
+            refreshTokenExpiresAt = refreshTokenExpiresAt,
+            name = name,
+            email = email,
+            profilePicture = profilePicture,
+            ownedProductIds = ownedProductIds,
         )
     }
 }

@@ -1,11 +1,16 @@
 package com.deutschexam.backend.auth.repository
 
 import com.deutschexam.backend.auth.model.UserRecord
+import com.deutschexam.backend.db.tables.RefreshTokensTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
+import kotlinx.datetime.Clock
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.util.*
+import kotlin.time.Duration.Companion.days
+
+private const val REFRESH_TOKEN_EXPIRY_DAYS = 30
 
 class UserRepository(private val db: Database) {
 
@@ -54,6 +59,38 @@ class UserRepository(private val db: Database) {
             it[UserProductsTable.userId] = UUID.fromString(userId)
             it[UserProductsTable.productId] = productId
         }
+    }
+
+    // ── Refresh tokens ───────────────────────────────────────────────────────
+
+    fun createRefreshToken(userId: String): Pair<String, Long> = transaction(db) {
+        val token = UUID.randomUUID().toString()
+        val expiresAt = Clock.System.now().plus(REFRESH_TOKEN_EXPIRY_DAYS.days)
+
+        RefreshTokensTable.insert {
+            it[RefreshTokensTable.userId] = UUID.fromString(userId)
+            it[RefreshTokensTable.token] = token
+            it[RefreshTokensTable.expiresAt] = expiresAt
+        }
+
+        Pair(token, expiresAt.epochSeconds)
+    }
+
+    fun findUserByRefreshToken(token: String): UserRecord? = transaction(db) {
+        val now = Clock.System.now()
+        val row = RefreshTokensTable
+            .selectAll()
+            .where { (RefreshTokensTable.token eq token) and (RefreshTokensTable.expiresAt greater now) }
+            .firstOrNull() ?: return@transaction null
+
+        UsersTable.selectAll()
+            .where { UsersTable.id eq row[RefreshTokensTable.userId] }
+            .firstOrNull()
+            ?.toUserRecord()
+    }
+
+    fun deleteRefreshToken(token: String) = transaction(db) {
+        RefreshTokensTable.deleteWhere { RefreshTokensTable.token eq token }
     }
 
     private fun ResultRow.toUserRecord(): UserRecord {

@@ -35,4 +35,6 @@ object JwtConfig {
             .withIssuedAt(Date())
             .withExpiresAt(Date(System.currentTimeMillis() + expiryMs))
             .sign(algorithm)
+
+    fun tokenExpiresAt(): Long = (System.currentTimeMillis() + expiryMs) / 1000
 }
