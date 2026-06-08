@@ -2,6 +2,8 @@ package com.deutschexam.backend.products.routes
 
 import com.deutschexam.backend.plugins.UserPrincipal
 import com.deutschexam.backend.products.repository.ProductRepository
+import com.deutschexam.backend.util.AuthException
+import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
 import io.ktor.server.auth.*
 import io.ktor.server.response.*
@@ -15,8 +17,10 @@ fun Route.productRoutes(productRepo: ProductRepository) {
 
         authenticate("jwt-auth") {
             post("/{id}/buy") {
-                val principal = call.principal<UserPrincipal>()!!
-                val productId = call.parameters["id"]!!
+                val principal = call.principal<UserPrincipal>()
+                    ?: throw AuthException()
+                val productId = call.parameters["id"]
+                    ?: throw ValidationException("Product id is required.")
                 val result = productRepo.buyProduct(productId, principal.userId)
                 call.respond(HttpStatusCode.OK, result)
             }
