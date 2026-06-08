@@ -90,7 +90,10 @@ class UserRepository(private val db: Database) {
     }
 
     fun deleteRefreshToken(token: String) = transaction(db) {
-        RefreshTokensTable.deleteWhere { RefreshTokensTable.token eq token }
+        val tokenValue = token
+        RefreshTokensTable.deleteWhere {
+            with(SqlExpressionBuilder) { RefreshTokensTable.token eq tokenValue }
+        }
     }
 
     private fun ResultRow.toUserRecord(): UserRecord {
