@@ -1,0 +1,971 @@
+{
+  "id": "telc_a2_01",
+  "name": "Telc Deutsch A2",
+  "is_free": false,
+  "provider": {
+    "id": "telc",
+    "name": "Telc",
+    "full_name": "Telc GmbH (The European Language Certificates)",
+    "description": "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+    "logo": "assets/logos/telc.png",
+    "website": "https://www.telc.net",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a1z",
+        "name": "A1Z",
+        "description": "A1 exam specifically designed for immigrants to Germany, with additional listening and response components."
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "a2",
+    "name": "A2",
+    "description": "Elementary German language certificate for everyday communication.",
+    "short_description": "Everyday communication",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 45.0,
+  "total_minutes": 70,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 45.0,
+        "passing_points": 27.0,
+        "passing_percentage": 60,
+        "sections": [
+          "hoeren",
+          "lesen",
+          "schreiben"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 40.5,
+      "max": 45,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 36,
+      "max": 40.125,
+      "grade": "gut"
+    },
+    {
+      "min": 31.5,
+      "max": 35.625,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 27,
+      "max": 31.125,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 26.625,
+      "grade": "teilgenommen"
+    }
+  ],
+  "sections": [
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "instruction": "Dieser Test hat drei Teile. Lesen Sie zuerst die Aufgaben, hören Sie dann den Text dazu.",
+      "section_minutes": 20,
+      "section_points": 15.0,
+      "audio": "audios/telc_deutsch_a1.mp3",
+      "tasks": [
+        {
+          "id": "telc_a2_h_t1",
+          "part_label": "Hören, Teil 1",
+          "task_points": 5.0,
+          "type": "LISTEN_FILL",
+          "instruction": "Sie hören fünf Ansagen am Telefon. Zu jedem Text gibt es eine Aufgabe. Ergänzen Sie die Telefonnotizen. Sie hören jeden Text zweimal.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_h_t1_q1",
+              "number": "1",
+              "type": "LISTEN_FILL",
+              "points": 1,
+              "stem": "Telefonauskunft – Vorwahl: 069 – Rufnummer:",
+              "correct_answer": "168 85 38",
+              "options": [],
+              "accepted_variants": [
+                "16885 38",
+                "168-85-38",
+                "168 8538"
+              ]
+            },
+            {
+              "id": "telc_a2_01_a2_h_t1_q2",
+              "number": "2",
+              "type": "LISTEN_FILL",
+              "points": 1,
+              "stem": "Dimitri zurückrufen – Treffen: wann? – nicht:",
+              "correct_answer": "heute",
+              "options": [],
+              "accepted_variants": [
+                "heute Abend",
+                "heute abend"
+              ]
+            },
+            {
+              "id": "telc_a2_01_a2_h_t1_q3",
+              "number": "3",
+              "type": "LISTEN_FILL",
+              "points": 1,
+              "stem": "Treffpunkt mit Sascha – Wo?",
+              "correct_answer": "am Eingang",
+              "options": [],
+              "accepted_variants": [
+                "Eingang",
+                "(am) Eingang"
+              ]
+            },
+            {
+              "id": "telc_a2_01_a2_h_t1_q4",
+              "number": "4",
+              "type": "LISTEN_FILL",
+              "points": 1,
+              "stem": "Frankfurt → Köln – Abfahrt: 11.45 Uhr – Preis:",
+              "correct_answer": "45 Euro",
+              "options": [],
+              "accepted_variants": [
+                "45€",
+                "45 €",
+                "€ 45",
+                "45"
+              ]
+            },
+            {
+              "id": "telc_a2_01_a2_h_t1_q5",
+              "number": "5",
+              "type": "LISTEN_FILL",
+              "points": 1,
+              "stem": "Firma Keller – Arbeit: wann? – Dienstagvormittag +",
+              "correct_answer": "Donnerstagnachmittag",
+              "options": [],
+              "accepted_variants": [
+                "donnerstagnachmittag",
+                "Donnerstag Nachmittag"
+              ]
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a2_h_t2",
+          "part_label": "Hören, Teil 2",
+          "task_points": 5.0,
+          "type": "LISTEN_MC3",
+          "instruction": "Sie hören fünf Informationen aus dem Radio. Zu jedem Text gibt es eine Aufgabe. Kreuzen Sie an: a, b oder c. Sie hören jeden Text einmal.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_h_t2_q6",
+              "number": "6",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was kommt nachmittags um drei Uhr?",
+              "correct_answer": "telc_a2_01_a2_h_t2_q6_opt_b",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_h_t2_q6_opt_a",
+                  "label": "a",
+                  "text": "das Mittagsprogramm"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q6_opt_b",
+                  "label": "b",
+                  "text": "eine Sendung für Kinder"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q6_opt_c",
+                  "label": "c",
+                  "text": "Nachrichten"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t2_q7",
+              "number": "7",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was soll man vor dem Essen machen?",
+              "correct_answer": "telc_a2_01_a2_h_t2_q7_opt_a",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_h_t2_q7_opt_a",
+                  "label": "a",
+                  "text": "Die Tabletten mit Wasser einnehmen"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q7_opt_b",
+                  "label": "b",
+                  "text": "Nicht zu viel essen"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q7_opt_c",
+                  "label": "c",
+                  "text": "Viel trinken"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t2_q8",
+              "number": "8",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was läuft heute Abend im Lichtburg-Kino?",
+              "correct_answer": "telc_a2_01_a2_h_t2_q8_opt_b",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_h_t2_q8_opt_a",
+                  "label": "a",
+                  "text": "Ein Kinderfilm"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q8_opt_b",
+                  "label": "b",
+                  "text": "Ein Krimi"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q8_opt_c",
+                  "label": "c",
+                  "text": "Eine Komödie"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t2_q9",
+              "number": "9",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was kann man bei diesem Konzert hören?",
+              "correct_answer": "telc_a2_01_a2_h_t2_q9_opt_c",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_h_t2_q9_opt_a",
+                  "label": "a",
+                  "text": "Moderne Musik"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q9_opt_b",
+                  "label": "b",
+                  "text": "Popmusik"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q9_opt_c",
+                  "label": "c",
+                  "text": "Klassische Musik"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t2_q10",
+              "number": "10",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wann fährt der Zug nach Würzburg?",
+              "correct_answer": "telc_a2_01_a2_h_t2_q10_opt_a",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_h_t2_q10_opt_a",
+                  "label": "a",
+                  "text": "Um 9.58 Uhr"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q10_opt_b",
+                  "label": "b",
+                  "text": "Um 10.02 Uhr"
+                },
+                {
+                  "id": "telc_a2_01_a2_h_t2_q10_opt_c",
+                  "label": "c",
+                  "text": "Um 10.10 Uhr"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a2_h_t3",
+          "part_label": "Hören, Teil 3",
+          "task_points": 5.0,
+          "type": "LISTEN_MATCH",
+          "instruction": "Sie hören ein Gespräch. Zu diesem Gespräch gibt es fünf Aufgaben. Ordnen Sie zu und notieren Sie den Buchstaben. Sie hören jeden Text einmal.",
+          "stimulus": {
+            "kind": "audio",
+            "items": [
+              {
+                "id": "telc_a2_01_a2_h_t3_item_a",
+                "label": "a",
+                "title": "im Restaurant"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_b",
+                "label": "b",
+                "title": "im Supermarkt"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_c",
+                "label": "c",
+                "title": "am Bahnhof"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_d",
+                "label": "d",
+                "title": "in der Apotheke"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_e",
+                "label": "e",
+                "title": "im Büro"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_f",
+                "label": "f",
+                "title": "beim Arzt"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_g",
+                "label": "g",
+                "title": "im Hotel"
+              },
+              {
+                "id": "telc_a2_01_a2_h_t3_item_h",
+                "label": "h",
+                "title": "zu Hause"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_h_t3_q11",
+              "number": "11",
+              "type": "LISTEN_MATCH",
+              "points": 1,
+              "stem": "Leiterin Export",
+              "correct_answer": "telc_a2_01_a2_h_t3_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t3_q12",
+              "number": "12",
+              "type": "LISTEN_MATCH",
+              "points": 1,
+              "stem": "Sohn vom Chef",
+              "correct_answer": "telc_a2_01_a2_h_t3_item_d",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t3_q13",
+              "number": "13",
+              "type": "LISTEN_MATCH",
+              "points": 1,
+              "stem": "Hausarbeiter",
+              "correct_answer": "telc_a2_01_a2_h_t3_item_e",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t3_q14",
+              "number": "14",
+              "type": "LISTEN_MATCH",
+              "points": 1,
+              "stem": "Praktikantin",
+              "correct_answer": "telc_a2_01_a2_h_t3_item_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_h_t3_q15",
+              "number": "15",
+              "type": "LISTEN_MATCH",
+              "points": 1,
+              "stem": "Sekretärin",
+              "correct_answer": "telc_a2_01_a2_h_t3_item_c",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "instruction": "Der Test Lesen hat drei Teile. Sie lesen kurze Briefe, Anzeigen und Hinweise. In jedem Teil gibt es fünf Aufgaben. Kreuzen Sie die richtige Lösung an. Schreiben Sie zum Schluss Ihre Lösungen auf den Antwortbogen.",
+      "section_minutes": 25,
+      "section_points": 15.0,
+      "tasks": [
+        {
+          "id": "telc_a2_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_MC3",
+          "task_points": 5.0,
+          "instruction": "Lesen Sie den Text und die Aufgaben 1-5. Kreuzen Sie an: a, b oder c.",
+          "stimulus": {
+            "kind": "text",
+            "title": "Kaufhaus Waldheim - Stockwerksübersicht",
+            "text": "Erdgeschoss (EG): Lebensmittel, Getränke, Obst und Gemüse\n1. Stock: Damenmode, Schuhe, Taschen\n2. Stock: Herrenmode, Sportartikel, Spielwaren\n3. Stock: Elektrogeräte, Computer, Bücher\n4. Stock: Restaurant, Café"
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_l_t1_q1",
+              "number": "1",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Wo finden Sie Schuhe?",
+              "correct_answer": "telc_a2_01_a2_l_t1_q1_opt_b",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_l_t1_q1_opt_a",
+                  "label": "a",
+                  "text": "im Erdgeschoss"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q1_opt_b",
+                  "label": "b",
+                  "text": "im ersten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q1_opt_c",
+                  "label": "c",
+                  "text": "im zweiten Stock"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t1_q2",
+              "number": "2",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Wo können Sie Bücher kaufen?",
+              "correct_answer": "telc_a2_01_a2_l_t1_q2_opt_c",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_l_t1_q2_opt_a",
+                  "label": "a",
+                  "text": "im ersten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q2_opt_b",
+                  "label": "b",
+                  "text": "im zweiten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q2_opt_c",
+                  "label": "c",
+                  "text": "im dritten Stock"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t1_q3",
+              "number": "3",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Wo können Sie etwas essen?",
+              "correct_answer": "telc_a2_01_a2_l_t1_q3_opt_c",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_l_t1_q3_opt_a",
+                  "label": "a",
+                  "text": "im zweiten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q3_opt_b",
+                  "label": "b",
+                  "text": "im dritten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q3_opt_c",
+                  "label": "c",
+                  "text": "im vierten Stock"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t1_q4",
+              "number": "4",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Wo finden Sie Spielwaren?",
+              "correct_answer": "telc_a2_01_a2_l_t1_q4_opt_b",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_l_t1_q4_opt_a",
+                  "label": "a",
+                  "text": "im ersten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q4_opt_b",
+                  "label": "b",
+                  "text": "im zweiten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q4_opt_c",
+                  "label": "c",
+                  "text": "im dritten Stock"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t1_q5",
+              "number": "5",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Wo gibt es Obst und Gemüse?",
+              "correct_answer": "telc_a2_01_a2_l_t1_q5_opt_a",
+              "options": [
+                {
+                  "id": "telc_a2_01_a2_l_t1_q5_opt_a",
+                  "label": "a",
+                  "text": "im Erdgeschoss"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q5_opt_b",
+                  "label": "b",
+                  "text": "im ersten Stock"
+                },
+                {
+                  "id": "telc_a2_01_a2_l_t1_q5_opt_c",
+                  "label": "c",
+                  "text": "im vierten Stock"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a2_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_TF",
+          "task_points": 5.0,
+          "instruction": "Lesen Sie den Text und die Aufgaben 6-10. Sind die Aussagen richtig (+) oder falsch (–)?. Kreuzen Sie an.",
+          "stimulus": {
+            "kind": "text",
+            "title": "E-Mail von Katrin",
+            "text": "Liebe Anna,\n\nvielen Dank für deine Einladung. Ich komme gerne zu deiner Party am Samstag. Ich kann um 19 Uhr da sein. Soll ich etwas mitbringen? Ich kann einen Salat machen oder einen Kuchen backen. Was brauchst du?\n\nDie Party ist bei dir zu Hause, oder? Schick mir bitte noch deine Adresse.\n\nBis Samstag!\nKatrin"
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_l_t2_q6",
+              "number": "6",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Katrin kann zur Party kommen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t2_q7",
+              "number": "7",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Die Party ist am Sonntag.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t2_q8",
+              "number": "8",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Katrin kommt um 18 Uhr.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t2_q9",
+              "number": "9",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Katrin möchte etwas mitbringen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t2_q10",
+              "number": "10",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Katrin kennt Annas Adresse.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a2_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MATCH",
+          "task_points": 5.0,
+          "instruction": "Lesen Sie die Anzeigen a–h und die Aufgaben 11–15. Welche Anzeige passt zu welcher Situation? Für eine Aufgabe gibt es keine Lösung. Schreiben Sie hier den Buchstaben X.",
+          "stimulus": {
+            "kind": "multi_text",
+            "allows_no_match": true,
+            "no_match_label": "X",
+            "items": [
+              {
+                "id": "telc_a2_01_a2_l_t3_item_a",
+                "label": "a",
+                "title": "Anzeige A",
+                "text": "Suche Wohnung, 2-3 Zimmer, bis 700 Euro warm, in München oder Umgebung."
+              },
+              {
+                "id": "telc_a2_01_a2_l_t3_item_b",
+                "label": "b",
+                "title": "Anzeige B",
+                "text": "Biete Nachhilfe in Mathematik für Schüler Klasse 5-10. 15 Euro pro Stunde."
+              },
+              {
+                "id": "telc_a2_01_a2_l_t3_item_c",
+                "label": "c",
+                "title": "Anzeige C",
+                "text": "Verkaufe Fahrrad, 3 Jahre alt, sehr guter Zustand, 150 Euro VB."
+              },
+              {
+                "id": "telc_a2_01_a2_l_t3_item_d",
+                "label": "d",
+                "title": "Anzeige D",
+                "text": "Deutschkurs A2, Montag und Mittwoch 18-20 Uhr, Anmeldung ab sofort."
+              },
+              {
+                "id": "telc_a2_01_a2_l_t3_item_e",
+                "label": "e",
+                "title": "Anzeige E",
+                "text": "Suche Arbeit als Kellner/in, Erfahrung vorhanden, flexibel. Tel: 0172-555666."
+              },
+              {
+                "id": "telc_a2_01_a2_l_t3_item_f",
+                "label": "f",
+                "title": "Anzeige F",
+                "text": "2-Zimmer-Wohnung zu vermieten, 65 qm, 800 Euro kalt, ab 1. Juni."
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_a2_01_a2_l_t3_q11",
+              "number": "11",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Sie möchten Deutsch lernen.",
+              "correct_answer": "telc_a2_01_a2_l_t3_item_d",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t3_q12",
+              "number": "12",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Sie brauchen Hilfe in Mathematik.",
+              "correct_answer": "telc_a2_01_a2_l_t3_item_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t3_q13",
+              "number": "13",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Sie möchten ein Auto kaufen.",
+              "correct_answer": "X",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t3_q14",
+              "number": "14",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Sie suchen eine günstige Wohnung in München.",
+              "correct_answer": "telc_a2_01_a2_l_t3_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a2_01_a2_l_t3_q15",
+              "number": "15",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Sie möchten ein Fahrrad kaufen.",
+              "correct_answer": "telc_a2_01_a2_l_t3_item_c",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "instruction": "Der Test Schreiben hat zwei Teile. Sie füllen ein Formular aus und schreiben einen kurzen Brief. Hilfsmittel wie Wörterbücher sind nicht erlaubt.",
+      "section_minutes": 25,
+      "section_points": 15.0,
+      "tasks": [
+        {
+          "id": "telc_a2_s_t1",
+          "part_label": "Schreiben, Teil 1",
+          "type": "WRITE_FORM",
+          "task_points": 5,
+          "instruction": "",
+          "questions": [],
+          "stimulus": {
+            "kind": "form",
+            "title": "Anmeldeformular Fitnessstudio",
+            "text": "Ihr Freund, Jonas Weber, möchte Mitglied in einem Fitnessstudio werden. Er hat Sie gebeten, das Anmeldeformular auszufüllen. Schreiben Sie die fünf fehlenden Informationen in das Formular.",
+            "fields": [
+              {
+                "id": "telc_a2_s_t1_p_fn",
+                "label": "Familienname, Vorname",
+                "prefilled": true,
+                "prefilled_value": "Weber, Jonas",
+                "answer": null,
+                "accepted_variants": []
+              },
+              {
+                "id": "telc_a2_s_t1_1",
+                "label": "Geburtsdatum",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "15.03.1990",
+                "accepted_variants": [
+                  "15. März 1990",
+                  "15/03/1990"
+                ]
+              },
+              {
+                "id": "telc_a2_s_t1_p_str",
+                "label": "Straße, Hausnummer",
+                "prefilled": true,
+                "prefilled_value": "Gartenweg 7",
+                "answer": null,
+                "accepted_variants": []
+              },
+              {
+                "id": "telc_a2_s_t1_2",
+                "label": "PLZ, Wohnort",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "60311 Frankfurt",
+                "accepted_variants": [
+                  "60311",
+                  "Frankfurt"
+                ]
+              },
+              {
+                "id": "telc_a2_s_t1_3",
+                "label": "Telefon",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "069 98765432",
+                "accepted_variants": [
+                  "06998765432"
+                ]
+              },
+              {
+                "id": "telc_a2_s_t1_4",
+                "label": "Mitgliedschaft ab",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "1. April",
+                "accepted_variants": [
+                  "April",
+                  "01.04.",
+                  "1. April 2024"
+                ]
+              },
+              {
+                "id": "telc_a2_s_t1_5",
+                "label": "Zahlungsweise",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "Überweisung",
+                "accepted_variants": [
+                  "überweisung",
+                  "Bank transfer"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "telc_a2_s_t2",
+          "part_label": "Schreiben, Teil 2",
+          "type": "WRITE_FREE",
+          "task_points": 10,
+          "instruction": "",
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Ihre Bekannte Paola heiratet nächsten Monat Stefan. Die Hochzeit ist in Berlin. Paola hat Sie eingeladen. Antworten Sie mit einem Brief.",
+            "bullet_points": [
+              "jemanden mitbringen",
+              "Geschenk",
+              "Stefan",
+              "Übernachtung in Berlin"
+            ],
+            "text": "Hier finden Sie vier Punkte. Wählen Sie drei aus. Schreiben Sie zu jedem dieser drei Punkte ein bis zwei Sätze auf den Antwortbogen S30. Vergessen Sie nicht den passenden Anfang und den Gruß am Schluss. Schreiben Sie circa 40 Wörter."
+          }
+        }
+      ]
+    }
+  ]
+}

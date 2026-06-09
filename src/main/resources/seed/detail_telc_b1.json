@@ -1,0 +1,338 @@
+{
+  "id": "telc_b1",
+  "name": "Telc Deutsch B1",
+  "provider": {
+    "id": "telc",
+    "name": "Telc",
+    "full_name": "Telc GmbH (The European Language Certificates)",
+    "description": "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+    "logo": "assets/logos/telc.png",
+    "website": "https://www.telc.net",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a1z",
+        "name": "A1Z",
+        "description": "A1 exam specifically designed for immigrants to Germany, with additional listening and response components."
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "b1",
+    "name": "B1",
+    "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+    "short_description": "Independent language use",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 300.0,
+  "total_minutes": 165,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 225.0,
+        "passing_points": 135.0,
+        "passing_percentage": 60,
+        "sections": [
+          "lesen",
+          "sprachbausteine",
+          "hoeren",
+          "schreiben"
+        ]
+      },
+      {
+        "id": "muendliche_pruefung",
+        "name": "Mündliche Prüfung",
+        "total_points": 75.0,
+        "passing_points": 45.0,
+        "passing_percentage": 60,
+        "sections": [
+          "sprechen"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 270,
+      "max": 300,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 240,
+      "max": 269.5,
+      "grade": "gut"
+    },
+    {
+      "min": 210,
+      "max": 239.5,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 180,
+      "max": 209.5,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 179.5,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Leseverstehen",
+      "section_points": 75.0,
+      "section_minutes": 60,
+      "tasks": [
+        {
+          "id": "telc_b1_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_MATCH",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Globalverstehen (Zuordnungsaufgaben)"
+        },
+        {
+          "id": "telc_b1_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC3",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Detailverstehen (Multiple-Choice-Aufgaben)"
+        },
+        {
+          "id": "telc_b1_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MATCH",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Selektives Verstehen (Zuordnungsaufgaben)"
+        }
+      ]
+    },
+    {
+      "id": "sprachbausteine",
+      "name": "Sprachbausteine",
+      "section_points": 30.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "telc_b1_sb_t1",
+          "part_label": "Sprachbausteine, Teil 1",
+          "type": "LANG_GAP_MC",
+          "task_points": 15.0,
+          "question_count": 15,
+          "instruction": "Grammatik (Multiple-Choice-Aufgaben)"
+        },
+        {
+          "id": "telc_b1_x_t2",
+          "part_label": "Sprachbausteine, Teil 2",
+          "type": "LANG_GAP_WORD",
+          "task_points": 15.0,
+          "question_count": 15,
+          "instruction": "Lexik (Zuordnungsaufgaben)"
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hörverstehen",
+      "section_points": 75.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "telc_b1_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Globalverstehen (Richtig-Falsch-Aufgaben)"
+        },
+        {
+          "id": "telc_b1_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Detailverstehen (Richtig-Falsch-Aufgaben)"
+        },
+        {
+          "id": "telc_b1_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "question_count": 5,
+          "instruction": "Selektives Verstehen (Richtig-Falsch-Aufgaben)"
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schriftlicher Ausdruck",
+      "section_points": 45.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "telc_b1_s_t1",
+          "part_label": "Schreiben",
+          "type": "WRITE_FREE",
+          "task_points": 45,
+          "instruction": "Schreiben einer informellen oder halbformellen E-Mail (Schreibaufgabe mit\n4 Leitpunkten)"
+        }
+      ]
+    },
+    {
+      "id": "sprechen",
+      "name": "Mündlicher Ausdruck",
+      "section_points": 75,
+      "section_minutes": 15,
+      "tasks": [
+        {
+          "id": "telc_b1_sp_t1",
+          "part_label": "Teil 1",
+          "type": "SPEAK",
+          "task_points": 15.0,
+          "instruction": "Einander kennenlernen"
+        },
+        {
+          "id": "telc_b1_sp_t2",
+          "part_label": "Teil 2",
+          "type": "SPEAK",
+          "task_points": 30.0,
+          "instruction": "Über ein Thema sprechen"
+        },
+        {
+          "id": "telc_b1_sp_t3",
+          "part_label": "Teil 3",
+          "type": "SPEAK",
+          "task_points": 30.0,
+          "instruction": "Gemeinsam etwas planen"
+        }
+      ]
+    }
+  ]
+}

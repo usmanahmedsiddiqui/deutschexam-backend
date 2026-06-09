@@ -1,0 +1,1186 @@
+{
+  "id": "goethe_b1",
+  "name": "Goethe-Zertifikat B1",
+  "provider": {
+    "id": "goethe",
+    "name": "Goethe-Institut",
+    "full_name": "Goethe-Institut e.V.",
+    "description": "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+    "logo": "assets/logos/goethe.png",
+    "website": "https://www.goethe.de",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "b1",
+    "name": "B1",
+    "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+    "short_description": "Independent language use",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 400,
+  "total_minutes": 180,
+  "passing_criteria": {
+    "type": "per_module",
+    "modules": [
+      {
+        "id": "lesen",
+        "name": "Lesen",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60,
+        "raw_total": 30.0,
+        "scaling": [
+          [
+            30,
+            100
+          ],
+          [
+            29,
+            97
+          ],
+          [
+            28,
+            93
+          ],
+          [
+            27,
+            90
+          ],
+          [
+            26,
+            87
+          ],
+          [
+            25,
+            83
+          ],
+          [
+            24,
+            80
+          ],
+          [
+            23,
+            77
+          ],
+          [
+            22,
+            73
+          ],
+          [
+            21,
+            70
+          ],
+          [
+            20,
+            67
+          ],
+          [
+            19,
+            63
+          ],
+          [
+            18,
+            60
+          ],
+          [
+            17,
+            57
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            15,
+            50
+          ],
+          [
+            14,
+            47
+          ],
+          [
+            13,
+            43
+          ],
+          [
+            12,
+            40
+          ],
+          [
+            11,
+            37
+          ],
+          [
+            10,
+            33
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "hoeren",
+        "name": "Hören",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60,
+        "raw_total": 30.0,
+        "scaling": [
+          [
+            30,
+            100
+          ],
+          [
+            29,
+            97
+          ],
+          [
+            28,
+            93
+          ],
+          [
+            27,
+            90
+          ],
+          [
+            26,
+            87
+          ],
+          [
+            25,
+            83
+          ],
+          [
+            24,
+            80
+          ],
+          [
+            23,
+            77
+          ],
+          [
+            22,
+            73
+          ],
+          [
+            21,
+            70
+          ],
+          [
+            20,
+            67
+          ],
+          [
+            19,
+            63
+          ],
+          [
+            18,
+            60
+          ],
+          [
+            17,
+            57
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            15,
+            50
+          ],
+          [
+            14,
+            47
+          ],
+          [
+            13,
+            43
+          ],
+          [
+            12,
+            40
+          ],
+          [
+            11,
+            37
+          ],
+          [
+            10,
+            33
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "schreiben",
+        "name": "Schreiben",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60
+      },
+      {
+        "id": "sprechen",
+        "name": "Sprechen",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 90,
+      "max": 100,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 80,
+      "max": 89,
+      "grade": "gut"
+    },
+    {
+      "min": 70,
+      "max": 79,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 60,
+      "max": 69,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 59,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "section_points": 100,
+      "section_minutes": 65,
+      "tasks": [
+        {
+          "id": "goethe_b1_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_TF",
+          "task_points": 6.0,
+          "question_count": 6,
+          "instruction": "Korrespondenz lesen (Richtig/Falsch)"
+        },
+        {
+          "id": "goethe_b1_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC3",
+          "task_points": 6.0,
+          "question_count": 6,
+          "instruction": "Information und Argumentation verstehen (Mehrfachauswahl (3-gliedrig))"
+        },
+        {
+          "id": "goethe_b1_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MATCH",
+          "task_points": 7.0,
+          "question_count": 7,
+          "instruction": "Zur Orientierung lesen (Zuordnung)"
+        },
+        {
+          "id": "goethe_b1_l_t4",
+          "part_label": "Lesen, Teil 4",
+          "type": "READ_MC2",
+          "task_points": 7.0,
+          "question_count": 7,
+          "instruction": "Information und Argumentation verstehen (Ja/Nein)"
+        },
+        {
+          "id": "goethe_b1_l_t5",
+          "part_label": "Lesen, Teil 5",
+          "type": "READ_MC3",
+          "task_points": 4.0,
+          "question_count": 4,
+          "instruction": "Schriftliche Anweisung verstehen (Mehrfachauswahl (3-gliedrig))"
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "section_points": 100,
+      "section_minutes": 40,
+      "tasks": [
+        {
+          "id": "goethe_b1_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_TF_MC3",
+          "task_points": 10.0,
+          "question_count": 10,
+          "instruction": "Ankündigungen, Durchsagen und Anweisungen verstehen (Richtig/Falsch und Mehrfachauswahl)"
+        },
+        {
+          "id": "goethe_b1_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_MC3",
+          "task_points": 5.0,
+          "question_count": 5,
+          "instruction": "Als Zuschauer/Zuhörer im Publikum verstehen (Mehrfachauswahl)"
+        },
+        {
+          "id": "goethe_b1_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_TF",
+          "task_points": 7.0,
+          "question_count": 7,
+          "instruction": "Gespräche zwischen Muttersprachlern verstehen (Richtig/Falsch)"
+        },
+        {
+          "id": "goethe_b1_h_t4",
+          "part_label": "Hören, Teil 4",
+          "type": "LISTEN_MC3",
+          "task_points": 8.0,
+          "question_count": 8,
+          "instruction": "Radiosendungen und Tonaufnahmen verstehen (Zuordnung)"
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_points": 100.0,
+      "section_minutes": 60,
+      "tasks": [
+        {
+          "id": "goethe_b1_s_t1",
+          "part_label": "Schreiben, Aufgabe 1",
+          "type": "WRITE_FREE",
+          "task_points": 40.0,
+          "instruction": "Interaktion: Persönliche Mitteilung zur Kontaktpflege (beschreiben, begründen, Vorschlag machen)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_s_t2",
+          "part_label": "Schreiben, Aufgabe 2",
+          "type": "WRITE_FREE",
+          "task_points": 40.0,
+          "instruction": "Produktion: Persönliche Meinung zu einem Thema äußern (beschreiben, begründen, erläutern, vergleichen)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_s_t3",
+          "part_label": "Schreiben, Aufgabe 3",
+          "type": "WRITE_FREE",
+          "task_points": 20.0,
+          "instruction": "Interaktion: Persönliche Mitteilung zur Handlungsregulierung (sich entschuldigen, um etwas bitten, o. Ä.)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sprechen",
+      "name": "Sprechen",
+      "section_points": 100.0,
+      "section_minutes": 15,
+      "extra_marks_label": "Aussprache (aufgabenübergreifend)",
+      "extra_marks_points": 16.0,
+      "extra_marks_rubric": {
+        "criteria": [
+          {
+            "name": "Aussprache",
+            "grades": [
+              {
+                "label": "A",
+                "points": 16.0
+              },
+              {
+                "label": "B",
+                "points": 12.0
+              },
+              {
+                "label": "C",
+                "points": 8.0
+              },
+              {
+                "label": "D",
+                "points": 4.0
+              },
+              {
+                "label": "E",
+                "points": 0
+              }
+            ]
+          }
+        ]
+      },
+      "tasks": [
+        {
+          "id": "goethe_b1_sp_t1",
+          "part_label": "Sprechen Teil 1",
+          "type": "SPEAK",
+          "task_points": 28.0,
+          "instruction": "Interaktion: Gemeinsam etwas planen und aushandeln (4 Leitpunkte)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 8.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Interaktion",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 8.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 8.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_sp_t2",
+          "part_label": "Sprechen Teil 2",
+          "type": "SPEAK",
+          "task_points": 40.0,
+          "instruction": "Produktion: In einem Monolog ein Thema präsentieren",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 12.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 9.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Interaktion",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 12.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 9.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 12.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 9.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_sp_t3",
+          "part_label": "Sprechen Teil 3",
+          "type": "SPEAK",
+          "task_points": 16.0,
+          "instruction": "Interaktion: Situationsadäquat reagieren (Feedback geben, Fragen stellen und beantworten)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 16.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 12.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 8.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

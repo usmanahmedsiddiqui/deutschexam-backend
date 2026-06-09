@@ -1,0 +1,632 @@
+{
+  "id": "goethe_a2",
+  "name": "Goethe-Zertifikat A2",
+  "provider": {
+    "id": "goethe",
+    "name": "Goethe-Institut",
+    "full_name": "Goethe-Institut e.V.",
+    "description": "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+    "logo": "assets/logos/goethe.png",
+    "website": "https://www.goethe.de",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "a2",
+    "name": "A2",
+    "description": "Elementary German language certificate for everyday communication.",
+    "short_description": "Everyday communication",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 100.0,
+  "total_minutes": 105,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 75.0,
+        "passing_points": 45.0,
+        "passing_percentage": 60,
+        "sections": [
+          "lesen",
+          "hoeren",
+          "schreiben"
+        ]
+      },
+      {
+        "id": "muendliche_pruefung",
+        "name": "Mündliche Prüfung",
+        "total_points": 25.0,
+        "passing_points": 15.0,
+        "passing_percentage": 60,
+        "sections": [
+          "sprechen"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 90,
+      "max": 100,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 80,
+      "max": 89,
+      "grade": "gut"
+    },
+    {
+      "min": 70,
+      "max": 79,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 60,
+      "max": 69,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 59,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "section_points": 25.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "goethe_a2_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Informationen und Argumentationen in Medientexten verstehen (Mehrfachauswahl, 3-gliedrig)"
+        },
+        {
+          "id": "goethe_a2_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Informationstafeln, Veranstaltungs-programme etc. verstehen (Mehrfachauswahl, 3-gliedrig)"
+        },
+        {
+          "id": "goethe_a2_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Korrespondenz verstehen (Mehrfachauswahl, 3-gliedrig)"
+        },
+        {
+          "id": "goethe_a2_l_t4",
+          "part_label": "Lesen, Teil 4",
+          "type": "READ_MATCH",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Anzeigen verstehen (Zuordnen)"
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "section_points": 25.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "goethe_a2_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_MC3",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Informationen im Radio, auf dem Anrufbeantworter, bei Durchsagen verstehen (Mehrfachauswahl, 3-gliedrig)"
+        },
+        {
+          "id": "goethe_a2_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_MATCH",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Ein zusammenhängendes Gespräch verstehen (Zuordnen Text)"
+        },
+        {
+          "id": "goethe_a2_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_MC3",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Einzelgespräche verstehen (Mehrfachauswahl, 3-gliedrig)"
+        },
+        {
+          "id": "goethe_a2_h_t4",
+          "part_label": "Hören, Teil 4",
+          "type": "LISTEN_TF",
+          "task_points": 6.25,
+          "question_count": 5,
+          "instruction": "Ein Radiointerview verstehen (Richtig/Falsch)"
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_points": 25.0,
+      "section_minutes": 30,
+      "tasks": [
+        {
+          "id": "goethe_a2_s_t1",
+          "part_label": "Schreiben, Teil 1",
+          "type": "WRITE_FREE",
+          "task_points": 12.5,
+          "instruction": "Interaktion: persönliche Mitteilung zur Kontaktpflege schreiben (20–30 Wörter)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_a2_s_t2",
+          "part_label": "Schreiben, Teil 2",
+          "type": "WRITE_FREE",
+          "task_points": 12.5,
+          "instruction": "Interaktion: halb offizielle Mitteilung zur Handlungsregulierung schreiben (30–40 Wörter)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sprechen",
+      "name": "Sprechen",
+      "section_points": 25,
+      "section_minutes": 15,
+      "extra_marks_label": "Aussprache (aufgabenübergreifend)",
+      "extra_marks_points": 5.0,
+      "extra_marks_rubric": {
+        "criteria": [
+          {
+            "name": "Aussprache",
+            "grades": [
+              {
+                "label": "A",
+                "points": 5.0
+              },
+              {
+                "label": "B",
+                "points": 3.5
+              },
+              {
+                "label": "C",
+                "points": 2.0
+              },
+              {
+                "label": "D",
+                "points": 0.5
+              },
+              {
+                "label": "E",
+                "points": 0
+              }
+            ]
+          }
+        ]
+      },
+      "tasks": [
+        {
+          "id": "goethe_a2_sp_t1",
+          "part_label": "Sprechen Teil 1",
+          "type": "SPEAK",
+          "task_points": 4,
+          "instruction": "Interaktion: Informationen zur Person mit einem Partner/einer Partnerin austauschen (Freies Sprechen)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_a2_sp_t2",
+          "part_label": "Sprechen Teil 2",
+          "type": "SPEAK",
+          "task_points": 8,
+          "instruction": "Produktion: dem/der Prüfenden ausführlich nähere Informationen zum eigenen Leben geben (Freies Sprechen)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_a2_sp_t3",
+          "part_label": "Sprechen Teil 3",
+          "type": "SPEAK",
+          "task_points": 8,
+          "instruction": "Interaktion: mit einem Partner/einer Partnerin eine Unternehmung planen und aushandeln (Freies Sprechen)",
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

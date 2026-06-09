@@ -1,0 +1,2219 @@
+{
+  "id": "goethe_b1_01",
+  "name": "Goethe-Zertifikat B1",
+  "is_free": false,
+  "provider": {
+    "id": "goethe",
+    "name": "Goethe-Institut",
+    "full_name": "Goethe-Institut e.V.",
+    "description": "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+    "logo": "assets/logos/goethe.png",
+    "website": "https://www.goethe.de",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "b1",
+    "name": "B1",
+    "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+    "short_description": "Independent language use",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 300,
+  "total_minutes": 165,
+  "passing_criteria": {
+    "type": "per_module",
+    "modules": [
+      {
+        "id": "lesen",
+        "name": "Lesen",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60,
+        "raw_total": 30.0,
+        "scaling": [
+          [
+            30,
+            100
+          ],
+          [
+            29,
+            97
+          ],
+          [
+            28,
+            93
+          ],
+          [
+            27,
+            90
+          ],
+          [
+            26,
+            87
+          ],
+          [
+            25,
+            83
+          ],
+          [
+            24,
+            80
+          ],
+          [
+            23,
+            77
+          ],
+          [
+            22,
+            73
+          ],
+          [
+            21,
+            70
+          ],
+          [
+            20,
+            67
+          ],
+          [
+            19,
+            63
+          ],
+          [
+            18,
+            60
+          ],
+          [
+            17,
+            57
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            15,
+            50
+          ],
+          [
+            14,
+            47
+          ],
+          [
+            13,
+            43
+          ],
+          [
+            12,
+            40
+          ],
+          [
+            11,
+            37
+          ],
+          [
+            10,
+            33
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "hoeren",
+        "name": "Hören",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60,
+        "raw_total": 30.0,
+        "scaling": [
+          [
+            30,
+            100
+          ],
+          [
+            29,
+            97
+          ],
+          [
+            28,
+            93
+          ],
+          [
+            27,
+            90
+          ],
+          [
+            26,
+            87
+          ],
+          [
+            25,
+            83
+          ],
+          [
+            24,
+            80
+          ],
+          [
+            23,
+            77
+          ],
+          [
+            22,
+            73
+          ],
+          [
+            21,
+            70
+          ],
+          [
+            20,
+            67
+          ],
+          [
+            19,
+            63
+          ],
+          [
+            18,
+            60
+          ],
+          [
+            17,
+            57
+          ],
+          [
+            16,
+            53
+          ],
+          [
+            15,
+            50
+          ],
+          [
+            14,
+            47
+          ],
+          [
+            13,
+            43
+          ],
+          [
+            12,
+            40
+          ],
+          [
+            11,
+            37
+          ],
+          [
+            10,
+            33
+          ],
+          [
+            9,
+            30
+          ],
+          [
+            8,
+            27
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            6,
+            20
+          ],
+          [
+            5,
+            17
+          ],
+          [
+            4,
+            13
+          ],
+          [
+            3,
+            10
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "id": "schreiben",
+        "name": "Schreiben",
+        "total_points": 100.0,
+        "passing_points": 60.0,
+        "passing_percentage": 60
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 90,
+      "max": 100,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 80,
+      "max": 89,
+      "grade": "gut"
+    },
+    {
+      "min": 70,
+      "max": 79,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 60,
+      "max": 69,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 59,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "instruction": "Das Modul Lesen hat fünf Teile. Sie lesen mehrere Texte und lösen Aufgaben dazu. Sie können mit jeder Aufgabe beginnen. Für jede Aufgabe gibt es nur eine richtige Lösung. Vergessen Sie bitte nicht, Ihre Lösungen innerhalb der Prüfungszeit auf den Antwortbogen zu schreiben. Bitte schreiben Sie deutlich und verwenden Sie keinen Bleistift. Hilfsmittel wie z. B. Wörterbücher oder Mobiltelefone sind nicht erlaubt.",
+      "section_minutes": 65,
+      "section_points": 100,
+      "tasks": [
+        {
+          "id": "goethe_b1_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_TF",
+          "task_points": 6.0,
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 6 dazu. Wählen Sie: Sind die Aussagen Richtig oder Falsch?",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q1",
+              "number": "1",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Markus macht eine Lehre.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q2",
+              "number": "2",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Markus ist seit Kurzem Nichtraucher.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q3",
+              "number": "3",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Sitzen ist ähnlich gesundheitsschädlich wie Rauchen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q4",
+              "number": "4",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Caroline lebt vollkommen ungesund.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q5",
+              "number": "5",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Menschen brauchen Unterstützung, um sportlicher zu werden.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t1_q6",
+              "number": "6",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Vor dem Bewerbungsgespräch ist Caroline die Treppe hinaufgegangen.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "text",
+            "title": "Lange nichts gehört ...",
+            "text": "Hallo Markus,\n\nlange nichts von dir gehört, eigentlich seit dem Sommerfest im letzten Juni. Sicher hast du dich in deiner Studenten-WG gut eingelebt und schon viele neue Freunde an der Uni gefunden, oder?\n\nGestern musste ich an dich denken – erinnerst du dich noch an unser Gespräch über das viele Sitzen und wie wichtig es ist, sich zu bewegen? Also, ich habe gestern eine spannende Radiosendung gehört, das Thema war \"Sitzen ist das neue Rauchen\". Klingt komisch, oder? Es ging zum Glück nicht ums Rauchen, denn ich habe es vor zwei Monaten endlich geschafft, damit aufzuhören. Falls du ein paar Tipps von mir brauchst, dann melde dich ...\n\nIn der Sendung ging es um das Sitzen und jetzt fällt mir selbst auf, wie wenig man sich tatsächlich so bewegt, meist nur vom Frühstückstisch an den Computer, dann aufs Sofa und zwischendurch vielleicht kurz einkaufen … Und das ist höchst ungesund, eben vergleichbar mit Rauchen. Auch beim Lernen ist Sitzen ja der Normalzustand und Bewegung die Ausnahme. Bei mir wäre es genauso, wenn ich nicht einmal pro Woche mit meinen Neffen Ausflüge mit dem Rad machen würde. Das hält mich fit. Dagegen führen gute Ratschläge wie \"Geh doch joggen\" bei mir meist zu nichts … Ich glaube, wenn man bei den Menschen etwas ändern will, dann muss man es ihnen leichter machen, an ihren Gewohnheiten etwas zu ändern. In der Sendung haben sie deshalb vorgeschlagen, dass Bürogebäude anders geplant werden sollten. Spannende Idee! Das hat mich sofort an ein Bewerbungsgespräch erinnert. Damals war mir gar nicht bewusst, wie modern das Gebäude war. Ich habe nämlich zuerst den Aufzug nicht gefunden. Eigentlich hätte mir da schon im Eingangsbereich die große, schöne, breite Stiege* auffallen müssen. Im Aufzug war es dagegen eng und ungemütlich, außerdem war er sehr langsam. Auf der Stiege wäre ich natürlich viel schneller oben gewesen. Erst fand ich das eigenartig, aber eigentlich ist es eine gute Methode, damit sich die Mitarbeiter mehr bewegen.\n\nLiebe Grüße aus Wien\nCaroline\n\n*Stiege = österreichischer Standard für \"Treppe\" "
+          },
+          "question_count": 6
+        },
+        {
+          "id": "goethe_b1_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC3",
+          "task_points": 6.0,
+          "instruction": "Lesen Sie den Text aus der Presse und die Aufgaben 7 bis 12 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q7",
+              "number": "7",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_1",
+              "stem": "In diesem Text geht es darum, dass das Wohnungsamt Hamburg …",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q7_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q7_opt_a",
+                  "label": "a",
+                  "text": "billige Wohnungen für Wohngemeinschaften sucht."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q7_opt_b",
+                  "label": "b",
+                  "text": "einen neuen Service für Wohnungssuchende anbietet."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q7_opt_c",
+                  "label": "c",
+                  "text": "gegen zu hohe Wohnungsmieten in der Stadt kämpft."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q8",
+              "number": "8",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_1",
+              "stem": "Vermieter interessieren sich für die Wohngemeinschaften, weil sie ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q8_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q8_opt_a",
+                  "label": "a",
+                  "text": "die Vorteile des Zusammenwohnens nutzen wollen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q8_opt_b",
+                  "label": "b",
+                  "text": "jungen Studierenden gerne helfen möchten."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q8_opt_c",
+                  "label": "c",
+                  "text": "sich ihre Wohnung nicht mehr leisten können."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q9",
+              "number": "9",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_1",
+              "stem": "Thomas Schmidt sagt, dass …",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q9_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q9_opt_a",
+                  "label": "a",
+                  "text": "die Studierenden nach einem Semester ausziehen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q9_opt_b",
+                  "label": "b",
+                  "text": "er die Wohngemeinschaften bei Problemen unterstützt."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q9_opt_c",
+                  "label": "c",
+                  "text": "überall in Deutschland ähnliche Projekte geplant sind."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q10",
+              "number": "10",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_2",
+              "stem": "Im Text geht es darum, ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q10_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q10_opt_a",
+                  "label": "a",
+                  "text": "was die Lebensqualität verbessert."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q10_opt_b",
+                  "label": "b",
+                  "text": "wie Junge und Alte miteinander umgehen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q10_opt_c",
+                  "label": "c",
+                  "text": "wann man im Leben am zufriedensten ist."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q11",
+              "number": "11",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_2",
+              "stem": "Im mittleren Lebensalter ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q11_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q11_opt_a",
+                  "label": "a",
+                  "text": "sind Menschen mit Familie weniger gestresst."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q11_opt_b",
+                  "label": "b",
+                  "text": "spielt beruflicher Erfolg eine wichtige Rolle."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q11_opt_c",
+                  "label": "c",
+                  "text": "ist die Partnerschaft am wichtigsten."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t2_q12",
+              "number": "12",
+              "type": "READ_MC3",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t2_item_text_2",
+              "stem": "Ältere Menschen sind glücklicher, weil sie ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t2_q12_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q12_opt_a",
+                  "label": "a",
+                  "text": "schon beruflichen Erfolg hatten."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q12_opt_b",
+                  "label": "b",
+                  "text": "mehr Raum für ihre Hobbys haben."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t2_q12_opt_c",
+                  "label": "c",
+                  "text": "sich noch jugendlich und fit fühlen."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "goethe_b1_01_gb1_l_t2_item_text_1",
+                "title": "Wohnen in Hamburg",
+                "text": "Die Stadt Hamburg vermittelt seit diesem Herbst Zimmer an Studierende, die eine Wohnung suchen. Statt mit Geld bezahlen die jungen Leute für ihr neues Zuhause mit Hilfsarbeiten. Für jeden Quadratmeter des Zimmers arbeiten sie eine Stunde monatlich für ihren Vermieter oder ihre Vermieterin. Welche Arbeiten sie übernehmen, wird vorher genau festgelegt: Sie gießen z.B. die Blumen vor dem Haus oder lesen aus der Zeitung vor. Krankenpflege gehört ausdrücklich nicht zu ihren Pflichten.\n\n\"In Hamburg gibt es wenige günstige Wohnungen. Die Mieten steigen jährlich. Und jeden Herbst suchen Tausende neuer Studierender ein bezahlbares Zimmer. Auf der anderen Seite gibt es Menschen, die allein in einer großen Wohnung wohnen und sich über Gesellschaft freuen,\" erklärt Thomas Schmidt, ein Mitarbeiter des Hamburger Wohnungsamtes. Meist bieten ältere Menschen ein Zimmer gegen Hilfe an. Doch auch Alleinerziehende oder Berufstätige, die viel auf Reisen sind, rufen bei Thomas Schmidt an.\n\nDer Erfolg zeigt, dass die Stadt Hamburg auf dem richtigen Weg ist. Oft bleiben die Studierenden bis zum Ende ihres Studiums in der Wohngemeinschaft. \"Und wenn es zwischendurch einmal Streit gibt,\" meint Thomas Schmidt, \"dann helfe ich. Aber das ist nur selten nötig. Es funktioniert gut! Deshalb bieten inzwischen auch viele andere Städte in ganz Deutschland erfolgreich 'Wohnen gegen Hilfe' an.\" "
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t2_item_text_2",
+                "title": "Je älter, desto glücklicher",
+                "text": "In einer Studie wurden Schweizerinnen und Schweizer gefragt, wie sie ihre Lebensqualität einschätzen. Das Ergebnis überrascht: Am glücklichsten sind ältere Menschen, die in einer Partnerschaft leben und keine Kinder haben.\n\nDer Psychologe Peter Lorenz bestätigt: \"Menschen fühlen sich mit zunehmendem Alter wohler. Zufrieden sind Menschen auch in jungen Jahren. In der Mitte des Lebens gibt es allerdings ein Tief: Den 30- bis 40-Jährigen sind die Karriere und die Gründung einer Familie sehr wichtig. Doch plötzlich stehen die Kinder im Vordergrund und Zeit für den Partner und persönliche Interessen wie Reisen, Theater, Sport und Lesen fehlt. Deshalb sind die Leute in diesem Alter oft unzufrieden. Mit steigendem Alter haben die Menschen dann wieder Zeit für ihre Interessen und realisieren, dass nicht nur ewige Jugend mit Fitness und glatter Haut glücklich macht\".\n\nLaut Psychologe Lorenz erhöhen Kinder die Zufriedenheit kaum. Das Alltagsleben mit Kindern ist oft stressig. Häufig arbeiten beide Elternteile und die Tagesplanung ist schwierig. Sich um die Kinder kümmern, einkaufen, den Haushalt machen – immer hat man zu wenig Zeit. Nachwuchs bedeutet aber auch Glück, trotz all dem Stress, den er produziert. Der wichtigste Faktor für ein glückliches Leben ist ein Sozialleben, das funktioniert: Kommunikation, gemeinsame Zeit und Unterstützung im Freundes- und Familienkreis."
+              }
+            ]
+          },
+          "question_count": 6
+        },
+        {
+          "id": "goethe_b1_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MATCH",
+          "task_points": 7.0,
+          "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen A bis J aus verschiedenen deutschsprachigen Medien. Wählen Sie: Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Die Anzeige aus dem Beispiel können Sie nicht mehr verwenden. Für eine Situation gibt es keine passende Anzeige. In diesem Fall schreiben Sie 0.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q13",
+              "number": "13",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Johannes repariert gerne Fahrzeuge und möchte das später zu seinem Beruf machen.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q14",
+              "number": "14",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Riccardo ist Literaturstudent. Im Sommer besucht er vormittags einen Sprachkurs.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_i",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q15",
+              "number": "15",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Miro ist sehr sportlich und es macht ihm nichts aus früh aufzustehen.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_c",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q16",
+              "number": "16",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Anne studiert Sport und möchte in den Ferien auf kleine Kinder aufpassen.",
+              "correct_answer": "X",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q17",
+              "number": "17",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Florian möchte nachmittags arbeiten. Körperliche Arbeit ist für ihn kein Problem.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q18",
+              "number": "18",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Yvonne liebt Bücher über alles und sucht einen 8-Stunden-Job für die Ferien.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_f",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t3_q19",
+              "number": "19",
+              "type": "READ_MATCH",
+              "points": 1,
+              "stem": "Stella möchte im Sommer Erfahrungen für ihre Ausbildung zur Köchin sammeln.",
+              "correct_answer": "goethe_b1_01_gb1_l_t3_item_d",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "multi_text",
+            "allows_no_match": true,
+            "no_match_label": "X",
+            "items": [
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_a",
+                "label": "a",
+                "title": "Heckener Racing Motorradzubehör",
+                "text": "Heckener Racing Motorradzubehör bietet technisch interessierten Jugendlichen gut bezahlte Ferienarbeit für Verkauf und Werkstatt.\n\nSchicke deine Bewerbung bis 31. Mai per E-Mail an: ch.rothenspieler@heckener.net\nBetreff: Ferienjob"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_b",
+                "label": "b",
+                "title": "EFH Fahrradfachmarkt",
+                "text": "EFH Fahrradfachmarkt braucht Lagermitarbeiter /-in für Transportarbeiten\n\nTeilzeitarbeit im Juli/August, täglich 14 -18 Uhr.\nBeste Bezahlung!\n\nBewerbungen richten Sie bitte an Frau Allegro oder rufen Sie uns an: 08456 – 123 987"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_c",
+                "label": "c",
+                "title": "Xpress Kurierdienst",
+                "text": "Du brauchst einen rasanten Job? Wir haben ihn!\n\nXpress Kurierdienst möchte sein junges und dynamisches Team verstärken und sucht für Juli und August Fahrradkuriere mit Freude an der Geschwindigkeit.\n\nFahrräder und Ausrüstung werden von uns gestellt.\nArbeitsbeginn: morgens ab 5 Uhr.\nE-Mail bitte an: xpress-kd@hotmail.com"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_d",
+                "label": "d",
+                "title": "Hotel Bergblick",
+                "text": "Aushilfe gesucht!\n\nHotel Bergblick sucht für die kommende Sommersaison noch dringend eine Aushilfe (m/w) für die Küche.\n\nTel.: 0049 786 – 800321\nFragen Sie nach Frau Conrad."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_e",
+                "label": "e",
+                "title": "Kinderkrippe MAX&MORITZ",
+                "text": "Kinderkrippe MAX&MORITZ sucht Vertretung wegen Mutterschaft (12 Monate ab August)\n\nSie sind ausgebildete/-r Erzieher/-in und haben ein Herz für kleine Kinder?\nWir bieten ein Arbeitsumfeld, in dem Sie Erfahrung und Persönlichkeit einbringen können. Bewerbungen unter: 089 3344 oder bewerbung@mm.de"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_f",
+                "label": "f",
+                "title": "Buchhandlung am Alten Markt",
+                "text": "Sommerzeit – Urlaubszeit – Lesezeit\n\nDu kannst gut mit Menschen umgehen, bist belesen und möchtest in den Ferien ganztags arbeiten?\n\nDann bist du die perfekte Urlaubsvertretung in unserer Buchhandlung am Alten Markt in Salzburg!\n\nInfo unter: heyd@buchhandlung.at"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_g",
+                "label": "g",
+                "title": "Teddy-Sport-Mode",
+                "text": "Teddy-Sport-Mode sucht Aushilfe fürs Büro (m/w)\nZeitraum: Juli - August, jeweils von 10-13 Uhr\nAufgabenbereiche: Abrechnung und Ablage\nVoraussetzungen: Eigeninitiative und Flexibilität\n\nSie sind interessiert?\nDann schicken Sie eine E-Mail an: info@teddy-sport.at"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_h",
+                "label": "h",
+                "title": "Hamburger Grill Eddie und Sam",
+                "text": "Hamburger Grill \"Eddie und Sam\" sucht für Jahresstelle ehestmöglich Koch/Köchin.\nVoraussetzung: Berufserfahrung und Englischkenntnisse\nGuter Verdienst!\n\nBewerben Sie sich bei Eddie Muhr: 05643-6745"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_i",
+                "label": "i",
+                "title": "Stadtbibliothek",
+                "text": "Wir bieten die ideale Beschäftigung für die Ferien!\n\nUnsere Stadtbibliothek sucht Aushilfe(n) zur Neugestaltung der Lese-Ecke \"Kinder- und Jugendbücher\".\n\nCa. vier Stunden/Tag, freie Zeiteinteilung.\nFremdsprachen von Vorteil!\nDie Bezahlung erfolgt nach Stunden.\n\nBewerbungen: m.techner@biblio.net."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t3_item_j",
+                "label": "j",
+                "title": "Stadtverwaltung",
+                "text": "\"Junge Leute entdecken die Stadt!\"\n\nDu bist kontaktfreudig, ein Sprachentalent und kennst unsere Stadt?\n\nDann bewirb dich bei der Stadtverwaltung als Jugend-Fremdenführer/-in!\n\nE-Mail an: stadtverwaltung@klu.at"
+              }
+            ]
+          },
+          "question_count": 7
+        },
+        {
+          "id": "goethe_b1_l_t4",
+          "part_label": "Lesen, Teil 4",
+          "type": "READ_MC2",
+          "task_points": 7.0,
+          "instruction": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ja oder Nein?",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q20",
+              "number": "20",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_20",
+              "stem": "Fabian",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q20_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q20_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q20_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q21",
+              "number": "21",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_21",
+              "stem": "Christian",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q21_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q21_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q21_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q22",
+              "number": "22",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_22",
+              "stem": "Sophie",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q22_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q22_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q22_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q23",
+              "number": "23",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_23",
+              "stem": "Patrick",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q23_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q23_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q23_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q24",
+              "number": "24",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_24",
+              "stem": "Stefan",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q24_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q24_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q24_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q25",
+              "number": "25",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_25",
+              "stem": "Carola",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q25_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q25_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q25_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t4_q26",
+              "number": "26",
+              "type": "READ_MC2",
+              "points": 1,
+              "stimulus_ref": "goethe_b1_01_gb1_l_t4_item_text_26",
+              "stem": "Severin",
+              "correct_answer": "goethe_b1_01_gb1_l_t4_q26_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q26_opt_a",
+                  "label": "a",
+                  "text": "Ja"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t4_q26_opt_b",
+                  "label": "b",
+                  "text": "Nein"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_20",
+                "label": "20",
+                "title": "Fabian, 22, Freiberg",
+                "text": "Geschwindigkeitsbeschränkungen in Städten und auf Landstraßen sind wichtig und gut, aber auf Autobahnen wären sie meiner Meinung nach eine echte verkehrspolitische Fehlentscheidung. Viele Unfälle passieren doch, weil die Leute auf der rechten Spur viel zu langsam fahren. Ich lasse mich jedenfalls auf vierspurigen Straßen nicht beschränken."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_21",
+                "label": "21",
+                "title": "Christian, 31, Salzburg",
+                "text": "Ich fahre jährlich 30.000 km Auto, vor allem nachts. Die Strecke Salzburg – Köln schaffe ich deutlich unter sechs Stunden. Mit Tempolimit wäre es sicher eine Stunde mehr. Klar ist es gefährlicher, mit 180 km/h zu fahren, aber wer aufmerksam Auto fährt, minimiert das Risiko und spart Zeit."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_22",
+                "label": "22",
+                "title": "Sophie, 46, Hannover",
+                "text": "Wer gegen das Tempolimit ist, spricht oft von der deutschen Regulierungswut. Vielleicht stimmt es ja, dass die Deutschen normalerweise viel regeln wollen. Doch schauen wir uns mal um: Kaum ein anderes Land hat kein Tempolimit. \"Persönliche Freiheit zu entscheiden\" ist ein ziemlich schwaches Argument, denn bei Tempo 200 gefährdet man nicht nur sich selbst, sondern alle anderen mit!"
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_23",
+                "label": "23",
+                "title": "Patrick, 52, Zürich",
+                "text": "In der Schweiz gilt das maximale Tempo von 120 km/h auf Autobahnen, so habe ich das Autofahren gelernt. Wenn ich dann nach Deutschland komme, bin ich überrascht, dass es eigentlich mehr Staus gibt als bei uns und nicht schneller geht. Außerdem stresst es mich ziemlich, wenn die ganze Zeit jemand überholt."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_24",
+                "label": "24",
+                "title": "Stefan, 37, Koblenz",
+                "text": "Bei Tempo 120 kann man mit Tempomat gelassen fahren. Einen deutlichen Zeitverlust kann ich persönlich nicht feststellen. Ich bin selbst im Außendienst und fahre circa 50.000 km pro Jahr. Mir würde jedenfalls keine Freiheit genommen. Wenn ich mal schnell fahren will, dann geht's auf eine spezielle Trainingsstrecke, wo ich mich mit einem Rennwagen austoben kann, ohne andere zu gefährden."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_25",
+                "label": "25",
+                "title": "Carola, 28, Pforzheim",
+                "text": "Ein Tempolimit ist ideologischer Unsinn, der immer wieder einmal aufgewärmt wird. Wer will, kann ja langsamer fahren. Ich habe kein Problem damit, wenn wir das einzige Land ohne Beschränkungen auf Autobahnen bleiben. Die meisten Unfälle passieren sowieso dort, wo es Tempolimits gibt."
+              },
+              {
+                "id": "goethe_b1_01_gb1_l_t4_item_text_26",
+                "label": "26",
+                "title": "Severin, 48, Bern",
+                "text": "Seien wir mal ehrlich: Wer schnell fahren will, tut das auch, egal ob es eine Beschränkung gibt oder nicht. So viel Polizei kann man gar nicht bezahlen! In Deutschland wissen wenigstens alle, dass jeden Moment einer mit 200 km/h von hinten angerast kommen kann. Immerhin führt das doch dazu, dass die Leute ordentlich Auto fahren können."
+              }
+            ]
+          },
+          "question_count": 7
+        },
+        {
+          "id": "goethe_b1_l_t5",
+          "part_label": "Lesen, Teil 5",
+          "type": "READ_MC3",
+          "task_points": 4.0,
+          "instruction": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_l_t5_q27",
+              "number": "27",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Ein Handtuch …",
+              "correct_answer": "goethe_b1_01_gb1_l_t5_q27_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q27_opt_a",
+                  "label": "a",
+                  "text": "kann man an der Rezeption für sieben Euro kaufen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q27_opt_b",
+                  "label": "b",
+                  "text": "soll man für das Training dabei haben."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q27_opt_c",
+                  "label": "c",
+                  "text": "ist in der Sauna nicht unbedingt notwendig."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t5_q28",
+              "number": "28",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Das Fitness-Studio ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t5_q28_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q28_opt_a",
+                  "label": "a",
+                  "text": "schließt an Wochenenden eine halbe Stunde früher als in der Woche."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q28_opt_b",
+                  "label": "b",
+                  "text": "verlangt fünf Euro, wenn man seinen Ausweis nicht dabei hat."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q28_opt_c",
+                  "label": "c",
+                  "text": "kann bei Verlust einen neuen Ausweis ausstellen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t5_q29",
+              "number": "29",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Die Kunden sollen ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t5_q29_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q29_opt_a",
+                  "label": "a",
+                  "text": "die Duschen ohne Schuhe betreten."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q29_opt_b",
+                  "label": "b",
+                  "text": "die Schuhe wechseln, wenn sie von draußen kommen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q29_opt_c",
+                  "label": "c",
+                  "text": "zum Training keine persönlichen Gegenstände mitbringen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_l_t5_q30",
+              "number": "30",
+              "type": "READ_MC3",
+              "points": 1,
+              "stem": "Laut Hausordnung darf man ...",
+              "correct_answer": "goethe_b1_01_gb1_l_t5_q30_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q30_opt_a",
+                  "label": "a",
+                  "text": "Essen von zu Hause mitbringen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q30_opt_b",
+                  "label": "b",
+                  "text": "im Studio sein Mobiltelefon benutzen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_l_t5_q30_opt_c",
+                  "label": "c",
+                  "text": "auf den Terrassen rauchen."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "text",
+            "title": "FITNESS-STUDIO HAUSORDNUNG",
+            "text": "FITNESS-STUDIO HAUSORDNUNG\n\nAllgemein:\nDie Hausordnung ist für alle Mitglieder und Besucher des Fitness-Studios verbindlich. Beim Betreten des Studios ist der Nutzer verpflichtet, seinen Ausweis an der Rezeption abzugeben. Im Verlustfall kostet der Ersatzausweis € 5,-, es sei denn, der Verlust ist vom Studio zu vertreten.\n\nNutzung:\nDas Studio ist montags bis samstags von 6.00 Uhr bis 24.00 Uhr, sonn- und feiertags von 9.00 Uhr bis 22.00 Uhr geöffnet. Wir bitten Sie, mit dem Training nicht später als eine halbe Stunde vor Schließen des Studios zu beginnen. Im gesamten Gebäude und auf den Terrassen besteht Rauchverbot. Bitte schalten Sie Ihr Handy aus. Mitgebrachte Speisen und Getränke dürfen nur im Lounge- und Thekenbereich eingenommen werden.\n\nSauberkeit und Hygiene:\nWir bitten Sie, während des Trainings immer ein Handtuch mit sich zu führen und damit die Auflageflächen an den Geräten abzudecken. Sollten Sie keins dabeihaben, stellen wir Ihnen für € 7,- ein Handtuch zur Verfügung, das nach Gebrauch an der Rezeption abzugeben ist. Benutzen Sie die Sauna bitte nicht, ohne ein Handtuch unterzulegen, um so jegliche Berührung mit den Holzteilen auszuschließen.\nEs wird empfohlen, mit festen Schuhen zu trainieren. Bitte tragen Sie in den Trainingsräumen nur Schuhe, die Sie vorher nicht im Freien benutzt haben. Tragen Sie in den Duschen und in der Sauna immer Badeschuhe.\n\nHaftung:\nBeim Verlassen des Studios achten Sie bitte darauf, dass Sie keine persönlichen Gegenstände in den Räumen vergessen. Für den Verlust von Gegenständen, die nicht für das Training benötigt werden, übernimmt das Studio keine Haftung."
+          },
+          "question_count": 4
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "instruction": "Das Modul Hören besteht aus vier Teilen. Sie hören mehrere Texte und lösen Aufgaben dazu. Lesen Sie jeweils zuerst die Aufgaben und hören Sie dann den Text dazu. Für jede Aufgabe gibt es nur eine richtige Lösung. Vergessen Sie bitte nicht, Ihre Lösungen auf den Antwortbogen zu übertragen. Dazu haben Sie nach dem Hörverstehen fünf Minuten Zeit. Hilfsmittel wie z. B. Wörterbücher oder Mobiltelefone sind nicht erlaubt.",
+      "audio": "audios/telc_deutsch_a1.mp3",
+      "section_minutes": 40,
+      "section_points": 100,
+      "tasks": [
+        {
+          "id": "goethe_b1_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_TF_MC3",
+          "task_points": 10.0,
+          "instruction": "Sie hören nun fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung. Lesen Sie zuerst das Beispiel. Dazu haben Sie 10 Sekunden Zeit.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q1",
+              "number": "1",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Der Fernseher von Frau Hüttner wurde repariert.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q2",
+              "number": "2",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Sie soll ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t1_q2_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q2_opt_a",
+                  "label": "a",
+                  "text": "den Fernseher abholen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q2_opt_b",
+                  "label": "b",
+                  "text": "mit dem Geschäft telefonieren."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q2_opt_c",
+                  "label": "c",
+                  "text": "noch 150 Euro bezahlen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q3",
+              "number": "3",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Die Fahrradtour fällt wegen schlechtem Wetter aus.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q4",
+              "number": "4",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Nina ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t1_q4_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q4_opt_a",
+                  "label": "a",
+                  "text": "bittet Eva, Getränke einzukaufen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q4_opt_b",
+                  "label": "b",
+                  "text": "möchte lieber essen gehen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q4_opt_c",
+                  "label": "c",
+                  "text": "holt Eva zu Hause ab."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q5",
+              "number": "5",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Bei 'Zahltag' kann man etwas gewinnen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q6",
+              "number": "6",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Die Rechnung ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t1_q6_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q6_opt_a",
+                  "label": "a",
+                  "text": "muss einen bestimmten Betrag haben."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q6_opt_b",
+                  "label": "b",
+                  "text": "soll per Post gesendet werden."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q6_opt_c",
+                  "label": "c",
+                  "text": "wird in der Sendung genannt."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q7",
+              "number": "7",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Der Termin muss verschoben werden.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q8",
+              "number": "8",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Herr Reitmann ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t1_q8_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q8_opt_a",
+                  "label": "a",
+                  "text": "bekommt Geld zurück."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q8_opt_b",
+                  "label": "b",
+                  "text": "muss ab sofort mehr Miete zahlen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q8_opt_c",
+                  "label": "c",
+                  "text": "soll Frau Steger zurückrufen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q9",
+              "number": "9",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Sie hören eine Werbung für Sehenswürdigkeiten.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t1_q10",
+              "number": "10",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Mit dem Citypass kann man …",
+              "correct_answer": "goethe_b1_01_gb1_h_t1_q10_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q10_opt_a",
+                  "label": "a",
+                  "text": "Busse und Bahnen in und um München nutzen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q10_opt_b",
+                  "label": "b",
+                  "text": "Sehenswürdigkeiten gratis besuchen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t1_q10_opt_c",
+                  "label": "c",
+                  "text": "günstig in der Stadt einkaufen."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "audio"
+          },
+          "question_count": 10
+        },
+        {
+          "id": "goethe_b1_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_MC3",
+          "task_points": 5.0,
+          "instruction": "Sie hören nun einen Text. Sie hören den Text einmal. Dazu lösen Sie fünf Aufgaben. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c. Lesen Sie jetzt die Aufgaben 11 bis 15. Dazu haben Sie 60 Sekunden Zeit.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_h_t2_q11",
+              "number": "11",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Die Teilnehmer ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t2_q11_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q11_opt_a",
+                  "label": "a",
+                  "text": "bekommen täglich Tipps für das Frühstück."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q11_opt_b",
+                  "label": "b",
+                  "text": "kochen das Mittag- und Abendessen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q11_opt_c",
+                  "label": "c",
+                  "text": "sind selbst für das Frühstück zuständig."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t2_q12",
+              "number": "12",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Das Frühsportprogramm ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t2_q12_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q12_opt_a",
+                  "label": "a",
+                  "text": "beginnt um 7:30 Uhr."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q12_opt_b",
+                  "label": "b",
+                  "text": "ist freiwillig."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q12_opt_c",
+                  "label": "c",
+                  "text": "ist in der Sporthalle."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t2_q13",
+              "number": "13",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Die Teilnehmer müssen sich einen Tag früher anmelden für ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t2_q13_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q13_opt_a",
+                  "label": "a",
+                  "text": "die Ballsportarten."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q13_opt_b",
+                  "label": "b",
+                  "text": "die Radtour."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q13_opt_c",
+                  "label": "c",
+                  "text": "die Tennisstunden."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t2_q14",
+              "number": "14",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Abends können die Teilnehmer ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t2_q14_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q14_opt_a",
+                  "label": "a",
+                  "text": "eine Trainingsstunde halten."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q14_opt_b",
+                  "label": "b",
+                  "text": "ein Sportgeschäft besuchen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q14_opt_c",
+                  "label": "c",
+                  "text": "im Hallenbad trainieren."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t2_q15",
+              "number": "15",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Bei der Abschlussfeier gibt es ...",
+              "correct_answer": "goethe_b1_01_gb1_h_t2_q15_opt_a",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q15_opt_a",
+                  "label": "a",
+                  "text": "etwas zu essen."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q15_opt_b",
+                  "label": "b",
+                  "text": "eine Tanzparty."
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t2_q15_opt_c",
+                  "label": "c",
+                  "text": "Zertifikate für alle Teilnehmer."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "audio"
+          },
+          "question_count": 5
+        },
+        {
+          "id": "goethe_b1_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_TF",
+          "task_points": 7.0,
+          "instruction": "Sie hören nun ein Gespräch. Sie hören das Gespräch einmal. Dazu lösen Sie sieben Aufgaben. Wählen Sie: Sind die Aussagen Richtig oder Falsch? Lesen Sie jetzt die Aufgaben 16 bis 22. Dazu haben Sie 60 Sekunden Zeit.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q16",
+              "number": "16",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Fabian musste am Wochenende arbeiten.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q17",
+              "number": "17",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Elenas Wandertour war anstrengend.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q18",
+              "number": "18",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Elena hat in einer Pension übernachtet.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q19",
+              "number": "19",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Elena hat sich neue Wanderschuhe gekauft.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q20",
+              "number": "20",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Das Wetter in den Bergen war schlecht.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q21",
+              "number": "21",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Elena und ihre Schwester haben sich auf der Wanderung verlaufen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t3_q22",
+              "number": "22",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Elenas Cousine hat die nächste Wandertour vorbereitet.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "audio"
+          },
+          "question_count": 7
+        },
+        {
+          "id": "goethe_b1_h_t4",
+          "part_label": "Hören, Teil 4",
+          "type": "LISTEN_MC3",
+          "task_points": 8.0,
+          "instruction": "Sie hören nun eine Diskussion. Sie hören die Diskussion zweimal. Dazu lösen Sie acht Aufgaben. Ordnen Sie die Aussagen zu: Wer sagt was? Lesen Sie jetzt die Aussagen 23 bis 30. Dazu haben Sie 60 Sekunden Zeit.",
+          "questions": [
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q23",
+              "number": "23",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Fremdsprachen sind wichtig für den Beruf.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q23_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q23_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q23_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q23_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q24",
+              "number": "24",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Die Muttersprache ist für das Erlernen einer Fremdsprache wichtig.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q24_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q24_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q24_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q24_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q25",
+              "number": "25",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Im Erwachsenenalter ist Fremdsprachenlernen nicht mehr leicht.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q25_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q25_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q25_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q25_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q26",
+              "number": "26",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Eine zweite Sprache zu lernen, bedeutet für Schüler viel zusätzliche Arbeit.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q26_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q26_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q26_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q26_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q27",
+              "number": "27",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Fremdsprachen lernen die Kinder am leichtesten, die zweisprachig aufwachsen.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q27_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q27_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q27_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q27_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q28",
+              "number": "28",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Zweisprachige Kinder vermischen die Sprachen nur in bestimmten Situationen.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q28_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q28_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q28_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q28_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q29",
+              "number": "29",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Kinder aus verschiedenen Kulturen können auch ohne Sprache kommunizieren.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q29_opt_c",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q29_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q29_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q29_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_b1_01_gb1_h_t4_q30",
+              "number": "30",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Auch mit Musik können Kinder Sprachen lernen.",
+              "correct_answer": "goethe_b1_01_gb1_h_t4_q30_opt_b",
+              "options": [
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q30_opt_a",
+                  "label": "a",
+                  "text": "Moderator"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q30_opt_b",
+                  "label": "b",
+                  "text": "Wolfgang Meyer"
+                },
+                {
+                  "id": "goethe_b1_01_gb1_h_t4_q30_opt_c",
+                  "label": "c",
+                  "text": "Angelika Steffens"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "stimulus": {
+            "kind": "audio"
+          },
+          "question_count": 8
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_minutes": 60,
+      "section_points": 100.0,
+      "instruction": "Das Modul Schreiben besteht aus drei Teilen. In den Aufgaben 1 und 3 schreiben Sie E-Mails. In Aufgabe 2 schreiben Sie einen Diskussionsbeitrag. Sie können mit jeder Aufgabe beginnen. Schreiben Sie Ihre Texte auf die Antwortbogen. Bitte schreiben Sie deutlich und verwenden Sie keinen Bleistift. Hilfsmittel wie z. B. Wörterbücher oder Mobiltelefone sind nicht erlaubt.",
+      "tasks": [
+        {
+          "id": "goethe_b1_s_t1",
+          "part_label": "Schreiben, Aufgabe 1",
+          "type": "WRITE_FREE",
+          "instruction": "Arbeitszeit: 20 Minuten",
+          "task_points": 40,
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie haben online Deutsch gelernt und berichten Ihrer Freundin / Ihrem Freund darüber. Schreiben Sie eine E-Mail (circa 80 Wörter).",
+            "bullet_points": [
+              "Beschreiben Sie: Wie haben Sie gelernt?",
+              "Begründen Sie: Welche Vorteile hat das Lernen mit dem Computer?",
+              "Machen Sie einen Vorschlag für ein Treffen."
+            ],
+            "text": "Schreiben Sie etwas zu allen drei Punkten. Achten Sie auf den Textaufbau (Anrede, Einleitung, Reihenfolge der Inhaltspunkte, Schluss)."
+          },
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_s_t2",
+          "part_label": "Schreiben, Aufgabe 2",
+          "type": "WRITE_FREE",
+          "instruction": "Arbeitszeit: 25 Minuten",
+          "task_points": 40,
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie haben im Fernsehen eine Diskussionssendung zum Thema „Feste Arbeitszeiten gesehen. Im Online-Gästebuch der Sendung finden Sie folgende Meinung. Schreiben Sie einen Beitrag für das Online-Gästebuch (circa 100 Wörter).",
+            "bullet_points": [],
+            "text": "Ich arbeite von 9.00 bis 17.30 Uhr. Die festen Arbeitszeiten sind schon praktisch: Ich habe einen geregelten Tagesablauf, kann pünktlich das Büro verlassen und bin für Kunden immer zu erreichen. Seitdem ich zwei kleine Kinder habe, wäre ich jedoch gerne flexibler.\n05.01. 17:23 Uhr\n\nReagieren Sie auf den Beitrag im Gästebuch:\n– Stimmen Sie zu oder widersprechen Sie und begründen Sie Ihre Meinung.\n– Schreiben Sie auch über Ihre eigene Erfahrung mit Arbeitszeiten."
+          },
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 10.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 7.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 5.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_b1_s_t3",
+          "part_label": "Schreiben, Aufgabe 3",
+          "type": "WRITE_FREE",
+          "task_points": 20,
+          "instruction": "Arbeitszeit: 15 Minuten",
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie haben sich für den Kurs „Erfolgreich präsentieren angemeldet. Zu dem ersten Termin können Sie aber nicht kommen. Schreiben Sie an Ihren Kursleiter, Herrn Weber. Schreiben Sie eine E-Mail (circa 40 Wörter).",
+            "bullet_points": [],
+            "text": "Entschuldigen Sie sich höflich und berichten Sie, warum Sie nicht kommen können. Vergessen Sie nicht die Anrede und den Gruß am Schluss."
+          },
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Erfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Kohärenz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 4.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.0
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Wortschatz",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Strukturen",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.0
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.5
+                  },
+                  {
+                    "label": "C",
+                    "points": 3.0
+                  },
+                  {
+                    "label": "D",
+                    "points": 1.5
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

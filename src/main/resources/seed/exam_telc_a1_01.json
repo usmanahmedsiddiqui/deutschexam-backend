@@ -1,0 +1,1074 @@
+{
+  "id": "telc_a1_01",
+  "name": "Telc Deutsch A1 - Modeltest 1",
+  "is_free": true,
+  "provider": {
+    "id": "telc",
+    "name": "Telc",
+    "full_name": "Telc GmbH (The European Language Certificates)",
+    "description": "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+    "logo": "assets/logos/telc.png",
+    "website": "https://www.telc.net",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a1z",
+        "name": "A1Z",
+        "description": "A1 exam specifically designed for immigrants to Germany, with additional listening and response components."
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "a1",
+    "name": "A1",
+    "description": "Basic German language certificate covering elementary language use.",
+    "short_description": "Elementary language use",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 45.0,
+  "total_minutes": 65,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 45.0,
+        "passing_points": 27.0,
+        "passing_percentage": 60,
+        "sections": [
+          "hoeren",
+          "lesen",
+          "schreiben"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 40.5,
+      "max": 45,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 36,
+      "max": 40.125,
+      "grade": "gut"
+    },
+    {
+      "min": 31.5,
+      "max": 35.625,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 27,
+      "max": 31.125,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 26.625,
+      "grade": "teilgenommen"
+    }
+  ],
+  "sections": [
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "instruction": "Dieser Test hat drei Teile. Sie hören kurze Gespräche und Ansagen. Zu jedem Text gibt es eine Aufgabe. Lesen Sie zuerst die Aufgabe, hören Sie dann den Text dazu. Kreuzen Sie die richtige Lösung an.",
+      "audio": "audios/telc_deutsch_a1.mp3",
+      "section_minutes": 20,
+      "section_points": 15.0,
+      "tasks": [
+        {
+          "id": "telc_a1_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_MC3",
+          "task_points": 6.0,
+          "instruction": "Kreuzen Sie an: a, b oder c. Sie hören jeden Text zweimal.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_h_t1_q1",
+              "number": "1",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was kostet der Pullover?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q1_opt_c",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q1_opt_a",
+                  "label": "a",
+                  "text": "30,00 €"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q1_opt_b",
+                  "label": "b",
+                  "text": "95,00 €"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q1_opt_c",
+                  "label": "c",
+                  "text": "19,95 €"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t1_q2",
+              "number": "2",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wie spät ist es?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q2_opt_b",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q2_opt_a",
+                  "label": "a",
+                  "text": "15.00 Uhr"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q2_opt_b",
+                  "label": "b",
+                  "text": "Gleich 17.00 Uhr"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q2_opt_c",
+                  "label": "c",
+                  "text": "16.30 Uhr"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t1_q3",
+              "number": "3",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was isst die Frau im Restaurant?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q3_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q3_opt_a",
+                  "label": "a",
+                  "text": "Pommes"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q3_opt_b",
+                  "label": "b",
+                  "text": "Fisch"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q3_opt_c",
+                  "label": "c",
+                  "text": "Wurst"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t1_q4",
+              "number": "4",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "In welche Klasse geht Frau Hegers Sohn?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q4_opt_b",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q4_opt_a",
+                  "label": "a",
+                  "text": "In die neunte Klasse"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q4_opt_b",
+                  "label": "b",
+                  "text": "In die dritte Klasse"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q4_opt_c",
+                  "label": "c",
+                  "text": "In die vierte Klasse"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t1_q5",
+              "number": "5",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wie kommt die Frau in den 2. Stock?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q5_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q5_opt_a",
+                  "label": "a",
+                  "text": "Mit dem Aufzug"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q5_opt_b",
+                  "label": "b",
+                  "text": "Auf der Treppe um die Ecke"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q5_opt_c",
+                  "label": "c",
+                  "text": "Mit der Rolltreppe"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t1_q6",
+              "number": "6",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wohin fährt Herr Albers?",
+              "correct_answer": "telc_a1_01_a1_h_t1_q6_opt_c",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t1_q6_opt_a",
+                  "label": "a",
+                  "text": "In Urlaub ans Meer"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q6_opt_b",
+                  "label": "b",
+                  "text": "Zur Arbeit"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t1_q6_opt_c",
+                  "label": "c",
+                  "text": "Zur Familie"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 6
+        },
+        {
+          "id": "telc_a1_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_TF",
+          "task_points": 4.0,
+          "instruction": "Kreuzen Sie an: Richtig (+) oder falsch (–)? Sie hören jeden Text einmal.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_h_t2_q7",
+              "number": "7",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Die Kunden sollen die Weihnachtsfeier besuchen.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t2_q8",
+              "number": "8",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Die Fahrgäste sollen sich im Restaurant treffen.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t2_q9",
+              "number": "9",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Die Fahrgäste sollen im Zug bleiben.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t2_q10",
+              "number": "10",
+              "type": "LISTEN_TF",
+              "points": 1,
+              "stem": "Der Herr soll sofort zum Schalter kommen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 4
+        },
+        {
+          "id": "telc_a1_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_MC3",
+          "task_points": 5.0,
+          "instruction": "Kreuzen Sie an: a, b oder c. Sie hören jeden Text zweimal.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_h_t3_q11",
+              "number": "11",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Die Nummer ist:",
+              "correct_answer": "telc_a1_01_a1_h_t3_q11_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t3_q11_opt_a",
+                  "label": "a",
+                  "text": "11833"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q11_opt_b",
+                  "label": "b",
+                  "text": "11883"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q11_opt_c",
+                  "label": "c",
+                  "text": "12833"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t3_q12",
+              "number": "12",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wo genau treffen sich die Männer?",
+              "correct_answer": "telc_a1_01_a1_h_t3_q12_opt_c",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t3_q12_opt_a",
+                  "label": "a",
+                  "text": "Am Zug"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q12_opt_b",
+                  "label": "b",
+                  "text": "Am Bahnhof"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q12_opt_c",
+                  "label": "c",
+                  "text": "An der Information"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t3_q13",
+              "number": "13",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Wie lange will der Mann noch warten?",
+              "correct_answer": "telc_a1_01_a1_h_t3_q13_opt_c",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t3_q13_opt_a",
+                  "label": "a",
+                  "text": "20 Minuten"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q13_opt_b",
+                  "label": "b",
+                  "text": "2 Minuten"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q13_opt_c",
+                  "label": "c",
+                  "text": "10 Minuten"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t3_q14",
+              "number": "14",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "An welchem Tag will die Frau kommen?",
+              "correct_answer": "telc_a1_01_a1_h_t3_q14_opt_b",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t3_q14_opt_a",
+                  "label": "a",
+                  "text": "Am Montag"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q14_opt_b",
+                  "label": "b",
+                  "text": "Am Sonntag"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q14_opt_c",
+                  "label": "c",
+                  "text": "Am Samstag"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_h_t3_q15",
+              "number": "15",
+              "type": "LISTEN_MC3",
+              "points": 1,
+              "stem": "Was ist kaputt?",
+              "correct_answer": "telc_a1_01_a1_h_t3_q15_opt_b",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_h_t3_q15_opt_a",
+                  "label": "a",
+                  "text": "Der Fernseher"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q15_opt_b",
+                  "label": "b",
+                  "text": "Der Computer"
+                },
+                {
+                  "id": "telc_a1_01_a1_h_t3_q15_opt_c",
+                  "label": "c",
+                  "text": "Das Handy"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "instruction": "Dieser Test hat drei Teile. Sie lesen kurze Briefe, Anzeigen etc. Zu jedem Text gibt es Aufgaben. Kreuzen Sie die richtige Lösung an.",
+      "section_points": 15.0,
+      "section_minutes": 25,
+      "tasks": [
+        {
+          "id": "telc_a1_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_TF",
+          "task_points": 5.0,
+          "instruction": "Sind die Aussagen 1–5 richtig (+) oder falsch (–)? Kreuzen Sie an.",
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "telc_a1_01_a1_l_t1_item_text_a",
+                "label": "a",
+                "title": "Brief von Karin",
+                "text": "Hallo Li,\n\ndanke für deine Mail. Dein Zug kommt hier in Hannover um 12.36 Uhr an. Ich bin ab 12.15 Uhr im Hauptbahnhof und warte auf dich vor der Auskunft.\n\nDu kannst mich den ganzen Vormittag auf meinem Handy (++49 173 62 205 59) erreichen.\n\nDeine\nKarin"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t1_item_text_b",
+                "label": "b",
+                "title": "Einladung von Ralf",
+                "text": "Liebe Carmen, lieber José,\n\nam kommenden Sonntag habe ich Geburtstag. Ich möchte gerne mit euch feiern und lade euch herzlich zu meiner Party am Samstagabend ein. Wir fangen um 21 Uhr an. Ist das okay für euch? Es werden eine ganze Menge Leute da sein, die ihr auch kennt. Könntet ihr vielleicht einen Salat mitbringen? Und vergesst bitte nicht einen Pullover oder eine Jacke! Wir wollen nämlich draußen im Garten feiern.\n\nBis zum Wochenende\nRalf"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_l_t1_q1",
+              "number": "1",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Lis Zug kommt nach halb eins an.",
+              "correct_answer": "richtig",
+              "stimulus_ref": "telc_a1_01_a1_l_t1_item_text_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t1_q2",
+              "number": "2",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Karin wartet den ganzen Vormittag vor der Auskunft.",
+              "correct_answer": "falsch",
+              "stimulus_ref": "telc_a1_01_a1_l_t1_item_text_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t1_q3",
+              "number": "3",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Ralf hatte am letzten Wochenende Geburtstag.",
+              "correct_answer": "falsch",
+              "stimulus_ref": "telc_a1_01_a1_l_t1_item_text_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t1_q4",
+              "number": "4",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Ralf hat nur zwei oder drei Leute eingeladen.",
+              "correct_answer": "falsch",
+              "stimulus_ref": "telc_a1_01_a1_l_t1_item_text_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t1_q5",
+              "number": "5",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Die Party findet draußen statt.",
+              "correct_answer": "richtig",
+              "stimulus_ref": "telc_a1_01_a1_l_t1_item_text_b",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a1_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC2",
+          "task_points": 5.0,
+          "instruction": "Lesen Sie die Texte und die Aufgaben 6–10. Welche Anzeige ist interessant für Sie? Kreuzen Sie an: a oder b?",
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q6_a",
+                "label": "a",
+                "title": "www.schiff-ruedesheim.de",
+                "text": "Hotel – Pension – Schiff\nEinzel- und Doppelzimmer mit Dusche/WC\nRestaurant mit Rhein-Terrasse\nPreise | Über uns | Buchung"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q6_b",
+                "label": "b",
+                "title": "www.bingen-ruedesheimer.de",
+                "text": "Bingen-Rüdesheimer Rheinschiffe\ntäglich von Rüdesheim nach Koblenz\nalle Abfahrtszeiten und Preise hier"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q7_a",
+                "label": "a",
+                "title": "www.sprachenfuchs.de",
+                "text": "Sprachinstitut Fuchs\nDresden, Prager Str. 4\n– Deutsch – Englisch\n– Französisch – Russisch\n> Die Schule | Die Preise | Die Kurse | Kontakt"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q7_b",
+                "label": "b",
+                "title": "www.eviva.com",
+                "text": "Eviva-Idiomas\nSprachkurse für Deutsche\nSpanisch auf Mallorca, Englisch auf Malta\n• Unsere Preise | Unser Unterricht | Buchungen"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q8_a",
+                "label": "a",
+                "title": "www.DER.com",
+                "text": "Deutsches Reisebüro\nTicketbestellungen und Reservierungen für Flüge weltweit, Deutsche Bahn, Eurobus, 24-Stunden-Service"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q8_b",
+                "label": "b",
+                "title": "www.RED.com",
+                "text": "Reisedienst GmbH\nTicketservice für Theater, Konzerte, Busreisen in Deutschland und nach Polen, Tschechien und Ungarn"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q9_a",
+                "label": "a",
+                "title": "www.bodensee.de",
+                "text": "Touristeninformation\nUrlaubsorte | Hotelservice | Ferienwohnungen | Rundreisen"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q9_b",
+                "label": "b",
+                "title": "www.rottenmeier.de",
+                "text": "Hans Rottenmeier\nFerienwohnungen am Bodensee\nHäuser | Preise | Kontakte"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q10_a",
+                "label": "a",
+                "title": "www.reiseauskunft.bahn.de",
+                "text": "ab Wiesbaden 17.02. 07:34\nan Hamburg 17.02. 12:05\nDauer: 4:31, 1 Umsteigen, ICE"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t2_item_q10_b",
+                "label": "b",
+                "title": "www.reiseauskunft.bahn.de",
+                "text": "ab Hamburg 17.02. 12:18\nan Wiesbaden 17.02. 16:52\nDauer: 4:34, 1 Umsteigen, ICE"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_l_t2_q6",
+              "number": "6",
+              "type": "READ_MC2",
+              "points": 1,
+              "stem": "Sie möchten mit dem Schiff auf dem Rhein fahren. Wo bekommen Sie Informationen?",
+              "correct_answer": "telc_a1_01_a1_l_t2_q6_opt_b",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_l_t2_q6_opt_a",
+                  "label": "a",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q6_a"
+                },
+                {
+                  "id": "telc_a1_01_a1_l_t2_q6_opt_b",
+                  "label": "b",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q6_b"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t2_q7",
+              "number": "7",
+              "type": "READ_MC2",
+              "points": 1,
+              "stem": "Sie möchten Deutsch in Deutschland lernen. Wo finden Sie Informationen?",
+              "correct_answer": "telc_a1_01_a1_l_t2_q7_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_l_t2_q7_opt_a",
+                  "label": "a",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q7_a"
+                },
+                {
+                  "id": "telc_a1_01_a1_l_t2_q7_opt_b",
+                  "label": "b",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q7_b"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t2_q8",
+              "number": "8",
+              "type": "READ_MC2",
+              "points": 1,
+              "stem": "Sie möchten ein Zugticket im Internet kaufen.",
+              "correct_answer": "telc_a1_01_a1_l_t2_q8_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_l_t2_q8_opt_a",
+                  "label": "a",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q8_a"
+                },
+                {
+                  "id": "telc_a1_01_a1_l_t2_q8_opt_b",
+                  "label": "b",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q8_b"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t2_q9",
+              "number": "9",
+              "type": "READ_MC2",
+              "points": 1,
+              "stem": "Sie möchten Informationen über den Bodensee. Wo finden Sie das?",
+              "correct_answer": "telc_a1_01_a1_l_t2_q9_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_l_t2_q9_opt_a",
+                  "label": "a",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q9_a"
+                },
+                {
+                  "id": "telc_a1_01_a1_l_t2_q9_opt_b",
+                  "label": "b",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q9_b"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t2_q10",
+              "number": "10",
+              "type": "READ_MC2",
+              "points": 1,
+              "stem": "Sie sind in Wiesbaden und möchten mit dem Zug am Mittag in Hamburg sein. Wo finden Sie den richtigen Zug?",
+              "correct_answer": "telc_a1_01_a1_l_t2_q10_opt_a",
+              "options": [
+                {
+                  "id": "telc_a1_01_a1_l_t2_q10_opt_a",
+                  "label": "a",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q10_a"
+                },
+                {
+                  "id": "telc_a1_01_a1_l_t2_q10_opt_b",
+                  "label": "b",
+                  "text": "",
+                  "stimulus_ref": "telc_a1_01_a1_l_t2_item_q10_b"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_a1_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_TF",
+          "task_points": 5.0,
+          "instruction": "Lesen Sie die Texte und die Aufgaben 11–15. Kreuzen Sie an: Richtig (+) oder falsch (–)?",
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "telc_a1_01_a1_l_t3_item_sign11",
+                "label": "11",
+                "title": "In der Sprachschule",
+                "text": "In der 10-Uhr-Pause bekommen Sie an der Rezeption ein Frühstückspaket: belegte Brötchen und Getränke für 2 Euro."
+              },
+              {
+                "id": "telc_a1_01_a1_l_t3_item_sign12",
+                "label": "12",
+                "title": "An der Post",
+                "text": "Öffnungszeiten:\nmontags–freitags 8.00–12.00 Uhr und 13.00–18.00 Uhr\nsamstags 8.00–12.00 Uhr"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t3_item_sign13",
+                "label": "13",
+                "title": "Am Bahnhof",
+                "text": "Auf dem gesamten Bahnhof ist das Rauchen verboten."
+              },
+              {
+                "id": "telc_a1_01_a1_l_t3_item_sign14",
+                "label": "14",
+                "title": "Am Eingang des Restaurants",
+                "text": "Heute im Bavaria:\nBayerischer Abend\nBrezeln, Weißwürste, Sauerkraut\nVolksmusik, ab 20 Uhr Tanz"
+              },
+              {
+                "id": "telc_a1_01_a1_l_t3_item_sign15",
+                "label": "15",
+                "title": "An der Haltestelle",
+                "text": "In der Neujahrsnacht\nBusverkehr bis 23.00 Uhr\nund\nvon 1.00 Uhr bis 5.00 Uhr\nalle 30 Minuten"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_a1_01_a1_l_t3_q11",
+              "number": "11",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "In der Sprachschule können Sie etwas zu essen kaufen.",
+              "correct_answer": "richtig",
+              "stimulus_ref": "telc_a1_01_a1_l_t3_item_sign11",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t3_q12",
+              "number": "12",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Es ist Samstagnachmittag. Sie können auf der Post Briefmarken kaufen.",
+              "correct_answer": "falsch",
+              "stimulus_ref": "telc_a1_01_a1_l_t3_item_sign12",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t3_q13",
+              "number": "13",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Sie können hier Zigaretten rauchen.",
+              "correct_answer": "falsch",
+              "stimulus_ref": "telc_a1_01_a1_l_t3_item_sign13",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t3_q14",
+              "number": "14",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Heute Abend können Sie in diesem Restaurant tanzen.",
+              "correct_answer": "richtig",
+              "stimulus_ref": "telc_a1_01_a1_l_t3_item_sign14",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_a1_01_a1_l_t3_q15",
+              "number": "15",
+              "type": "READ_TF",
+              "points": 1,
+              "stem": "Von 23 Uhr bis 1 Uhr fährt kein Bus.",
+              "correct_answer": "richtig",
+              "stimulus_ref": "telc_a1_01_a1_l_t3_item_sign15",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_points": 15.0,
+      "section_minutes": 20,
+      "instruction": "Dieser Test hat zwei Teile. Sie füllen ein Formular aus und schreiben eine kurze Mitteilung. Übertragen Sie zum Schluss Ihre Lösungen auf den Antwortbogen. Hilfsmittel wie Wörterbücher sind nicht erlaubt.",
+      "tasks": [
+        {
+          "id": "telc_a1_s_t1",
+          "part_label": "Schreiben, Teil 1",
+          "type": "WRITE_FORM",
+          "task_points": 5,
+          "instruction": "",
+          "questions": [],
+          "stimulus": {
+            "kind": "form",
+            "title": "BODENSEE-RUNDFAHRT Anmeldung",
+            "text": "Ihre Freundin, Eva Kadavy, macht mit ihrem Mann und ihren beiden Söhnen (8 und 11 Jahre alt) Urlaub in Seeheim. Im Reisebüro bucht sie für den nächsten Sonntag eine Busfahrt um den Bodensee. Frau Kadavy hat keine Kreditkarte. Schreiben Sie die fünf fehlenden Informationen in das Formular. Am Ende übertragen Sie Ihre Lösungen bitte auf den Antwortbogen.",
+            "fields": [
+              {
+                "id": "telc_a1_s_t1_p_fn",
+                "label": "Familienname, Vorname",
+                "prefilled": true,
+                "prefilled_value": "Kadavy, Eva",
+                "answer": null,
+                "accepted_variants": []
+              },
+              {
+                "id": "telc_a1_s_t1_1",
+                "label": "Anzahl der Personen",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "4",
+                "accepted_variants": [
+                  "vier",
+                  "4 Personen"
+                ]
+              },
+              {
+                "id": "telc_a1_s_t1_2",
+                "label": "Davon Kinder",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "2",
+                "accepted_variants": [
+                  "zwei",
+                  "2 Kinder"
+                ]
+              },
+              {
+                "id": "telc_a1_s_t1_p_ua",
+                "label": "Urlaubsadresse",
+                "prefilled": true,
+                "prefilled_value": "Hotel Schönblick",
+                "answer": null,
+                "accepted_variants": []
+              },
+              {
+                "id": "telc_a1_s_t1_3",
+                "label": "Straße, Hausnummer",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "Burgstraße 34",
+                "accepted_variants": [
+                  "Burgstrasse 34",
+                  "burgstraße 34"
+                ]
+              },
+              {
+                "id": "telc_a1_s_t1_4",
+                "label": "PLZ, Urlaubsort",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "78014 Seeheim",
+                "accepted_variants": [
+                  "78014",
+                  "Seeheim"
+                ]
+              },
+              {
+                "id": "telc_a1_s_t1_5",
+                "label": "Zahlungsweise",
+                "prefilled": false,
+                "prefilled_value": null,
+                "answer": "Bar",
+                "accepted_variants": [
+                  "bar",
+                  "Bargeld",
+                  "in bar"
+                ]
+              },
+              {
+                "id": "telc_a1_s_t1_p_rt",
+                "label": "Reisetermin",
+                "prefilled": true,
+                "prefilled_value": "Sonntag",
+                "answer": null,
+                "accepted_variants": []
+              }
+            ]
+          }
+        },
+        {
+          "id": "telc_a1_s_t2",
+          "part_label": "Schreiben, Teil 2",
+          "type": "WRITE_FREE",
+          "task_points": 10,
+          "instruction": "",
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Schreiben Sie an die Touristeninformation in Dresden:",
+            "bullet_points": [
+              "Sie kommen im August nach Dresden.",
+              "Bitten Sie um Informationen über Film, Theater, Museen usw. (Kulturprogramm).",
+              "Bitten Sie um Hoteladressen."
+            ],
+            "text": "Schreiben Sie zu jedem Punkt ein bis zwei Sätze (circa 30 Wörter) auf den Antwortbogen. Vergessen Sie nicht den passenden Anfang und Gruß am Schluss."
+          }
+        }
+      ]
+    }
+  ]
+}

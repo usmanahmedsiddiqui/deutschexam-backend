@@ -1,0 +1,1381 @@
+{
+  "id": "telc_b1_01",
+  "name": "Telc Deutsch B1",
+  "is_free": false,
+  "provider": {
+    "id": "telc",
+    "name": "Telc",
+    "full_name": "Telc GmbH (The European Language Certificates)",
+    "description": "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+    "logo": "assets/logos/telc.png",
+    "website": "https://www.telc.net",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a1z",
+        "name": "A1Z",
+        "description": "A1 exam specifically designed for immigrants to Germany, with additional listening and response components."
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "b1",
+    "name": "B1",
+    "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+    "short_description": "Independent language use",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 225.0,
+  "total_minutes": 150,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 225.0,
+        "passing_points": 135.0,
+        "passing_percentage": 60,
+        "sections": [
+          "lesen",
+          "sprachbausteine",
+          "hoeren",
+          "schreiben"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 202.5,
+      "max": 225,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 180,
+      "max": 202.125,
+      "grade": "gut"
+    },
+    {
+      "min": 157.5,
+      "max": 179.625,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 135,
+      "max": 157.125,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 134.625,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "instruction": "In diesem Prüfungsteil sollen Sie mehrere Texte lesen und Aufgaben dazu lösen. Sie können mit jeder Aufgabe beginnen. Markieren Sie bitte Ihre Lösungen auf dem Antwortbogen.",
+      "section_minutes": 60,
+      "section_points": 75.0,
+      "tasks": [
+        {
+          "id": "telc_b1_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "type": "READ_MATCH",
+          "task_points": 25.0,
+          "instruction": "Lesen Sie die Überschriften a-j und die Texte 1-5. Finden Sie für jeden Text die passende Überschrift. Sie können jede Überschrift nur einmal benutzen. Markieren Sie Ihre Lösungen für die Aufgaben 1–5 auf dem Antwortbogen.",
+          "stimulus": {
+            "kind": "multi_text",
+            "items": [
+              {
+                "id": "telc_b1_01_b1_l_t1_item_a",
+                "label": "a",
+                "title": "Gesund leben durch Sport"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_b",
+                "label": "b",
+                "title": "Richtig essen im Urlaub"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_c",
+                "label": "c",
+                "title": "Neue Trends in der Mode"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_d",
+                "label": "d",
+                "title": "Umweltschutz im Alltag"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_e",
+                "label": "e",
+                "title": "Sprachen lernen leicht gemacht"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_f",
+                "label": "f",
+                "title": "Stressfrei durch den Tag"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_g",
+                "label": "g",
+                "title": "Geld sparen beim Einkaufen"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_h",
+                "label": "h",
+                "title": "Karriere ohne Studium"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_i",
+                "label": "i",
+                "title": "Moderne Technik für Senioren"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t1_item_j",
+                "label": "j",
+                "title": "Urlaub mit Kindern planen"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_l_t1_q1",
+              "number": "1",
+              "type": "READ_MATCH",
+              "points": 5,
+              "stem": "Wer abnehmen möchte, sollte nicht nur auf die Ernährung achten. Sport ist genauso wichtig. Besonders gut geeignet sind Ausdauersportarten wie Schwimmen, Radfahren oder Joggen. Mindestens dreimal pro Woche sollte man trainieren.",
+              "correct_answer": "telc_b1_01_b1_l_t1_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t1_q2",
+              "number": "2",
+              "type": "READ_MATCH",
+              "points": 5,
+              "stem": "Viele ältere Menschen haben Angst vor Smartphones und Computern. Doch es gibt inzwischen spezielle Kurse, die genau auf ihre Bedürfnisse zugeschnitten sind. In kleinen Gruppen lernen die Teilnehmer, wie sie mit den neuen Geräten umgehen können.",
+              "correct_answer": "telc_b1_01_b1_l_t1_item_i",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t1_q3",
+              "number": "3",
+              "type": "READ_MATCH",
+              "points": 5,
+              "stem": "Ein Studium ist heute nicht mehr zwingend notwendig für eine erfolgreiche Karriere. Viele Unternehmen suchen Fachkräfte mit praktischer Erfahrung. Eine gute Ausbildung und Weiterbildungen können genauso zum Erfolg führen.",
+              "correct_answer": "telc_b1_01_b1_l_t1_item_h",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t1_q4",
+              "number": "4",
+              "type": "READ_MATCH",
+              "points": 5,
+              "stem": "Jeder kann im Alltag etwas für die Umwelt tun. Müll trennen, weniger Plastik benutzen und öfter mit dem Fahrrad fahren statt mit dem Auto - kleine Änderungen können viel bewirken. Wichtig ist, dass jeder mitmacht.",
+              "correct_answer": "telc_b1_01_b1_l_t1_item_d",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t1_q5",
+              "number": "5",
+              "type": "READ_MATCH",
+              "points": 5,
+              "stem": "Ferien mit der Familie müssen gut organisiert sein. Kinder brauchen viel Beschäftigung und Abwechslung. Hotels mit Kinderbetreuung und kindgerechten Aktivitäten sind ideal. Auch die Anreise sollte nicht zu lang sein.",
+              "correct_answer": "telc_b1_01_b1_l_t1_item_j",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_b1_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "type": "READ_MC3",
+          "task_points": 25.0,
+          "instruction": "Lesen Sie den Text und die Aufgaben 6-10. Welche Lösung (a, b oder c) ist jeweils richtig? Markieren Sie Ihre Lösungen für die Aufgaben 6–10 auf dem Antwortbogen.",
+          "stimulus": {
+            "kind": "text",
+            "title": "Arbeiten im Ausland",
+            "text": "Immer mehr junge Menschen möchten nach dem Studium oder der Ausbildung Erfahrungen im Ausland sammeln. Ein Auslandsaufenthalt bietet viele Vorteile: Man lernt eine neue Kultur kennen, verbessert seine Sprachkenntnisse und erweitert seinen Horizont. Außerdem schätzen viele Arbeitgeber internationale Erfahrung.\n\nDoch die Vorbereitung auf einen Auslandsaufenthalt erfordert Zeit und Organisation. Zunächst muss man sich über die rechtlichen Voraussetzungen informieren. Innerhalb der Europäischen Union können EU-Bürger ohne besondere Genehmigung arbeiten. Für Länder außerhalb der EU braucht man meist ein Arbeitsvisum. Die Beantragung kann mehrere Monate dauern.\n\nAuch die Wohnungssuche ist oft schwierig, besonders in Großstädten. Viele nutzen Online-Portale oder soziale Netzwerke, um eine Unterkunft zu finden. Manche Firmen helfen ihren internationalen Mitarbeitern bei der Suche. Eine weitere Möglichkeit ist, zunächst in einer möblierten Wohnung oder einem Zimmer zur Untermiete zu wohnen.\n\nFinanziell sollte man gut planen. Die Lebenshaltungskosten sind von Land zu Land sehr unterschiedlich. In Städten wie London oder Zürich braucht man deutlich mehr Geld als in Berlin oder Wien. Man sollte daher vorher genau recherchieren und ein finanzielles Polster haben. Viele Banken bieten spezielle Konten für Auslandsaufenthalte an.\n\nTrotz aller Herausforderungen berichten die meisten Menschen positiv über ihre Zeit im Ausland. Sie haben nicht nur beruflich dazugelernt, sondern auch viele persönliche Erfahrungen gesammelt und neue Freundschaften geschlossen."
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_l_t2_q6",
+              "number": "6",
+              "type": "READ_MC3",
+              "points": 5,
+              "stem": "Was ist ein Vorteil von Auslandserfahrung?",
+              "correct_answer": "telc_b1_01_b1_l_t2_q6_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_l_t2_q6_opt_a",
+                  "label": "a",
+                  "text": "Man verdient automatisch mehr Geld."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q6_opt_b",
+                  "label": "b",
+                  "text": "Arbeitgeber bewerten internationale Erfahrung positiv."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q6_opt_c",
+                  "label": "c",
+                  "text": "Man braucht keine Fremdsprachen zu lernen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t2_q7",
+              "number": "7",
+              "type": "READ_MC3",
+              "points": 5,
+              "stem": "Was brauchen EU-Bürger für die Arbeit in der EU?",
+              "correct_answer": "telc_b1_01_b1_l_t2_q7_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_l_t2_q7_opt_a",
+                  "label": "a",
+                  "text": "Ein Arbeitsvisum."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q7_opt_b",
+                  "label": "b",
+                  "text": "Keine besondere Genehmigung."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q7_opt_c",
+                  "label": "c",
+                  "text": "Eine Aufenthaltsgenehmigung vom Arbeitgeber."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t2_q8",
+              "number": "8",
+              "type": "READ_MC3",
+              "points": 5,
+              "stem": "Wie kann man im Ausland eine Wohnung finden?",
+              "correct_answer": "telc_b1_01_b1_l_t2_q8_opt_c",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_l_t2_q8_opt_a",
+                  "label": "a",
+                  "text": "Nur durch die Hilfe der Firma."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q8_opt_b",
+                  "label": "b",
+                  "text": "Ausschließlich über Immobilienmakler."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q8_opt_c",
+                  "label": "c",
+                  "text": "Über Online-Portale oder soziale Netzwerke."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t2_q9",
+              "number": "9",
+              "type": "READ_MC3",
+              "points": 5,
+              "stem": "Was wird über die Lebenshaltungskosten gesagt?",
+              "correct_answer": "telc_b1_01_b1_l_t2_q9_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_l_t2_q9_opt_a",
+                  "label": "a",
+                  "text": "Sie sind überall gleich hoch."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q9_opt_b",
+                  "label": "b",
+                  "text": "Sie unterscheiden sich je nach Land und Stadt."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q9_opt_c",
+                  "label": "c",
+                  "text": "Sie spielen keine wichtige Rolle."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t2_q10",
+              "number": "10",
+              "type": "READ_MC3",
+              "points": 5,
+              "stem": "Wie bewerten die meisten Menschen ihre Auslandserfahrung?",
+              "correct_answer": "telc_b1_01_b1_l_t2_q10_opt_c",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_l_t2_q10_opt_a",
+                  "label": "a",
+                  "text": "Negativ, weil es zu viele Probleme gab."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q10_opt_b",
+                  "label": "b",
+                  "text": "Neutral, es war weder gut noch schlecht."
+                },
+                {
+                  "id": "telc_b1_01_b1_l_t2_q10_opt_c",
+                  "label": "c",
+                  "text": "Positiv, sie haben viel gelernt und neue Freunde gefunden."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_b1_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "type": "READ_MATCH",
+          "task_points": 25.0,
+          "instruction": "Lesen Sie die Situationen 11-20 und die Anzeigen a-l. Finden Sie für jede Situation die passende Anzeige. Sie können jede Anzeige nur einmal benutzen. Markieren Sie Ihre Lösungen für die Aufgaben 11–20 auf dem Antwortbogen. Wenn Sie zu einer Situation keine Anzeige finden, markieren Sie ein x.",
+          "stimulus": {
+            "kind": "multi_text",
+            "allows_no_match": true,
+            "no_match_label": "X",
+            "items": [
+              {
+                "id": "telc_b1_01_b1_l_t3_item_a",
+                "label": "a",
+                "text": "Deutschkurs für Anfänger - Montag bis Freitag, 9-12 Uhr, 8 Wochen, 280 Euro"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_b",
+                "label": "b",
+                "text": "Intensivkurs Deutsch B1 - Samstag und Sonntag, 10-15 Uhr, 4 Wochen, 350 Euro"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_c",
+                "label": "c",
+                "text": "Englisch für den Beruf - Abendkurs, Dienstag und Donnerstag, 18-20 Uhr"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_d",
+                "label": "d",
+                "text": "Spanisch Konversation - jeden Mittwoch, 17-19 Uhr, für Fortgeschrittene"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_e",
+                "label": "e",
+                "text": "Französisch Anfänger - Wochenendworkshop, 1x pro Monat, Samstag 9-16 Uhr"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_f",
+                "label": "f",
+                "text": "Deutsch Konversation - Online-Kurs, flexibel, jederzeit beginnen"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_g",
+                "label": "g",
+                "text": "Italienisch für die Reise - Kompaktkurs, 1 Woche Vollzeit, 450 Euro"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_h",
+                "label": "h",
+                "text": "Prüfungsvorbereitung telc B2 - Freitag 16-19 Uhr, 6 Wochen"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_i",
+                "label": "i",
+                "text": "Business Deutsch - Firmenkurs, individuelle Termine nach Absprache"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_j",
+                "label": "j",
+                "text": "Deutsch als Fremdsprache - Abendkurs, Montag und Mittwoch, 19-21 Uhr"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_k",
+                "label": "k",
+                "text": "Russisch für Anfänger - Wochenendkurs, Sonntag 14-18 Uhr, 10 Termine"
+              },
+              {
+                "id": "telc_b1_01_b1_l_t3_item_l",
+                "label": "l",
+                "text": "Chinesisch Grundkurs - Donnerstag 18:30-20:30 Uhr, 12 Wochen"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_l_t3_q11",
+              "number": "11",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie suchen einen Deutschkurs am Wochenende.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q12",
+              "number": "12",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie möchten einen Sprachkurs machen, können aber nur abends.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_c",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q13",
+              "number": "13",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie möchten Italienisch lernen, haben aber nur eine Woche Zeit.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_g",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q14",
+              "number": "14",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Ihre Firma möchte einen Deutschkurs für die Mitarbeiter organisieren.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_i",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q15",
+              "number": "15",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie können Spanisch und möchten nur sprechen üben.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_d",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q16",
+              "number": "16",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie möchten Französisch lernen, haben aber nur einmal im Monat Zeit.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_e",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q17",
+              "number": "17",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie müssen die telc B2 Prüfung machen und möchten sich vorbereiten.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_h",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q18",
+              "number": "18",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie arbeiten in einer internationalen Firma und möchten Ihr Englisch verbessern.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q19",
+              "number": "19",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie möchten Russisch lernen, aber nur am Wochenende.",
+              "correct_answer": "telc_b1_01_b1_l_t3_item_k",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_l_t3_q20",
+              "number": "20",
+              "type": "READ_MATCH",
+              "points": 2.5,
+              "stem": "Sie möchten Deutsch lernen und brauchen einen flexiblen Online-Kurs.",
+              "correct_answer": "X",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "sprachbausteine",
+      "name": "Sprachbausteine",
+      "instruction": "",
+      "section_minutes": 30,
+      "section_points": 30.0,
+      "tasks": [
+        {
+          "id": "telc_b1_sb_t1",
+          "part_label": "Sprachbausteine, Teil 1",
+          "type": "LANG_GAP_MC",
+          "task_points": 15.0,
+          "instruction": "Lesen Sie den Text und schließen Sie die Lücken 21–30. Welche Lösung (a, b oder c) ist jeweils richtig? Markieren Sie Ihre Lösungen für die Aufgaben 21–30 auf dem Antwortbogen.",
+          "stimulus": {
+            "kind": "cloze_text",
+            "title": "Eine E-Mail an die Hausverwaltung",
+            "text": "Sehr geehrte Damen und Herren,\n\nvor zwei Wochen bin ich {{21}} eine Wohnung in der Beethovenstraße 15 eingezogen. Leider gibt es einige Probleme, {{22}} ich Sie informieren möchte.\n\nZuerst {{23}} die Heizung nicht richtig. In allen Zimmern ist es sehr kalt, {{24}} ich die Heizung aufdrehe. Außerdem tropft der Wasserhahn in der Küche ständig.\n\nIch {{25}} mich freuen, wenn Sie {{26}} einen Handwerker schicken könnten, der sich {{27}} die Probleme ansieht. Am besten wäre es nächste Woche, {{28}} ich da noch Urlaub habe.\n\nFalls Sie mich kontaktieren {{29}}, erreichen Sie mich unter der Telefonnummer 0176-12345678.\n\nIch hoffe {{30}} eine schnelle Lösung.\n\nMit freundlichen Grüßen\nAnna Müller"
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_sb_t1_q21",
+              "number": "21",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q21_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q21_opt_a",
+                  "label": "a",
+                  "text": "in"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q21_opt_b",
+                  "label": "b",
+                  "text": "nach"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q21_opt_c",
+                  "label": "c",
+                  "text": "zu"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q22",
+              "number": "22",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q22_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q22_opt_a",
+                  "label": "a",
+                  "text": "worüber"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q22_opt_b",
+                  "label": "b",
+                  "text": "über die"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q22_opt_c",
+                  "label": "c",
+                  "text": "darüber"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q23",
+              "number": "23",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q23_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q23_opt_a",
+                  "label": "a",
+                  "text": "funktioniert"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q23_opt_b",
+                  "label": "b",
+                  "text": "funktionieren"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q23_opt_c",
+                  "label": "c",
+                  "text": "funktionierte"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q24",
+              "number": "24",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q24_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q24_opt_a",
+                  "label": "a",
+                  "text": "obwohl"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q24_opt_b",
+                  "label": "b",
+                  "text": "weil"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q24_opt_c",
+                  "label": "c",
+                  "text": "damit"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q25",
+              "number": "25",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q25_opt_c",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q25_opt_a",
+                  "label": "a",
+                  "text": "will"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q25_opt_b",
+                  "label": "b",
+                  "text": "werde"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q25_opt_c",
+                  "label": "c",
+                  "text": "würde"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q26",
+              "number": "26",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q26_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q26_opt_a",
+                  "label": "a",
+                  "text": "mir"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q26_opt_b",
+                  "label": "b",
+                  "text": "mich"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q26_opt_c",
+                  "label": "c",
+                  "text": "meinen"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q27",
+              "number": "27",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q27_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q27_opt_a",
+                  "label": "a",
+                  "text": "über"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q27_opt_b",
+                  "label": "b",
+                  "text": "um"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q27_opt_c",
+                  "label": "c",
+                  "text": "für"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q28",
+              "number": "28",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q28_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q28_opt_a",
+                  "label": "a",
+                  "text": "denn"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q28_opt_b",
+                  "label": "b",
+                  "text": "aber"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q28_opt_c",
+                  "label": "c",
+                  "text": "oder"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q29",
+              "number": "29",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q29_opt_a",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q29_opt_a",
+                  "label": "a",
+                  "text": "möchten"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q29_opt_b",
+                  "label": "b",
+                  "text": "möchtest"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q29_opt_c",
+                  "label": "c",
+                  "text": "möchtet"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t1_q30",
+              "number": "30",
+              "type": "LANG_GAP_MC",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t1_q30_opt_b",
+              "options": [
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q30_opt_a",
+                  "label": "a",
+                  "text": "an"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q30_opt_b",
+                  "label": "b",
+                  "text": "auf"
+                },
+                {
+                  "id": "telc_b1_01_b1_sb_t1_q30_opt_c",
+                  "label": "c",
+                  "text": "für"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 15
+        },
+        {
+          "id": "telc_b1_sb_t2",
+          "part_label": "Sprachbausteine, Teil 2",
+          "type": "LANG_GAP_WORD",
+          "task_points": 15.0,
+          "instruction": "Lesen Sie den Text und schließen Sie die Lücken 31–40. Benutzen Sie die Wörter a–o. Jedes Wort passt nur einmal. Markieren Sie Ihre Lösungen für die Aufgaben 31–40 auf dem Antwortbogen.",
+          "stimulus": {
+            "kind": "cloze_text",
+            "title": "Gesunde Ernährung im Alltag",
+            "text": "Viele Menschen {{31}} sich gesund ernähren, haben aber im Alltag wenig Zeit zum Kochen. Dabei ist es gar nicht so {{32}}, auch mit wenig Aufwand gesunde Mahlzeiten zuzubereiten.\n\nEin wichtiger {{33}} ist die Planung. Am Wochenende kann man überlegen, was man in der kommenden Woche essen {{34}}. Dann kauft man gezielt ein und hat alle {{35}} zu Hause.\n\nFrisches Gemüse und Obst sollten jeden Tag auf dem {{36}} stehen. Vollkornprodukte sind {{37}} als Weißmehlprodukte, weil sie länger satt machen.\n\nWer abends nach der Arbeit keine {{38}} zum Kochen hat, kann am Wochenende vorkochen und die Mahlzeiten {{39}}. So hat man immer etwas Gesundes im Kühlschrank.\n\nMit ein bisschen Organisation ist gesunde Ernährung {{40}} möglich.",
+            "items": [
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_a",
+                "text": "möchten"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_b",
+                "text": "schwierig"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_c",
+                "text": "Tipp"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_d",
+                "text": "möchte"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_e",
+                "text": "Zutaten"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_f",
+                "text": "Speiseplan"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_g",
+                "text": "gesünder"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_h",
+                "text": "Lust"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_i",
+                "text": "einfrieren"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_j",
+                "text": "durchaus"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_k",
+                "text": "leicht"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_l",
+                "text": "Problem"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_m",
+                "text": "kaufen"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_n",
+                "text": "Rezepte"
+              },
+              {
+                "id": "telc_b1_01_b1_sb_t2_item_o",
+                "text": "besser"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_sb_t2_q31",
+              "number": "31",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_a",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q32",
+              "number": "32",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_b",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q33",
+              "number": "33",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_c",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q34",
+              "number": "34",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_d",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q35",
+              "number": "35",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_e",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q36",
+              "number": "36",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_f",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q37",
+              "number": "37",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_g",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q38",
+              "number": "38",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_h",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q39",
+              "number": "39",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_i",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_sb_t2_q40",
+              "number": "40",
+              "type": "LANG_GAP_WORD",
+              "points": 1.5,
+              "stem": "",
+              "correct_answer": "telc_b1_01_b1_sb_t2_item_j",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 15
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "instruction": "",
+      "section_minutes": 30,
+      "section_points": 75.0,
+      "audio": "audios/telc_deutsch_a1.mp3",
+      "tasks": [
+        {
+          "id": "telc_b1_h_t1",
+          "part_label": "Hören, Teil 1",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "instruction": "Sie hören nun fünf kurze Texte. Dazu sollen Sie fünf Aufgaben lösen. Sie hören diese Texte nur einmal. Entscheiden Sie beim Hören, ob die Aussagen 41-45 richtig oder falsch sind. Markieren Sie Ihre Lösungen auf dem Antwortbogen bei den Aufgaben 41-45. Markieren Sie PLUS (+) gleich richtig und MINUS (–) gleich falsch auf dem Antwortbogen. Lesen Sie jetzt die Aufgaben 41-45. Sie haben dazu 30 Sekunden Zeit.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_h_t1_q41",
+              "number": "41",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Die Besprechung findet heute um 14 Uhr statt.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t1_q42",
+              "number": "42",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Der Kurs fällt diese Woche aus.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t1_q43",
+              "number": "43",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Das Restaurant hat am Montag geschlossen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t1_q44",
+              "number": "44",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Man muss sich für die Führung anmelden.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t1_q45",
+              "number": "45",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Der Zug hat 20 Minuten Verspätung.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_b1_h_t2",
+          "part_label": "Hören, Teil 2",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "instruction": "Sie hören nun ein Gespräch. Dazu sollen Sie zehn Aufgaben lösen. Sie hören das Gespräch zweimal. Entscheiden Sie beim Hören, ob die Aussagen 46-55 richtig oder falsch sind. Markieren Sie Ihre Lösungen auf dem Antwortbogen bei den Aufgaben 46-55. Markieren Sie PLUS (+) gleich richtig und MINUS (–) gleich falsch auf dem Antwortbogen. Lesen Sie jetzt die Aufgaben 46-55. Sie haben dazu eine Minute Zeit.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_h_t2_q46",
+              "number": "46",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Das Firmenfest soll im Juli stattfinden.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q47",
+              "number": "47",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Etwa 80 Personen werden erwartet.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q48",
+              "number": "48",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Das Fest findet im Stadtpark statt.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q49",
+              "number": "49",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Es wird ein Catering-Service bestellt.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q50",
+              "number": "50",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Die Kollegen sollen selbst Essen mitbringen.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q51",
+              "number": "51",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Es wird Live-Musik geben.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q52",
+              "number": "52",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Sportaktivitäten sind nicht geplant.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q53",
+              "number": "53",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Die Einladungen wurden schon verschickt.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q54",
+              "number": "54",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Das Budget wurde vom Chef genehmigt.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t2_q55",
+              "number": "55",
+              "type": "LISTEN_TF",
+              "points": 2.5,
+              "stem": "Das Fest beginnt um 15 Uhr.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "telc_b1_h_t3",
+          "part_label": "Hören, Teil 3",
+          "type": "LISTEN_TF",
+          "task_points": 25.0,
+          "instruction": "Sie hören nun fünf kurze Texte. Dazu sollen Sie fünf Aufgaben lösen. Sie hören jeden Text zweimal. Entscheiden Sie beim Hören, ob die Aussagen 56-60 richtig oder falsch sind. Markieren Sie Ihre Lösungen für die Aufgaben 56-60 auf dem Antwortbogen. Markieren Sie PLUS (+) gleich richtig und MINUS (–) gleich falsch.",
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "telc_b1_01_b1_h_t3_q56",
+              "number": "56",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Die Frau möchte einen Tisch für vier Personen reservieren.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t3_q57",
+              "number": "57",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Der Mann kauft die Schuhe in Größe 42.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t3_q58",
+              "number": "58",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Die Arztpraxis ist am Freitagnachmittag geschlossen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t3_q59",
+              "number": "59",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Der Zug nach München fährt von Gleis 7 ab.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "telc_b1_01_b1_h_t3_q60",
+              "number": "60",
+              "type": "LISTEN_TF",
+              "points": 5,
+              "stem": "Die Bibliothek öffnet um 9 Uhr.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_minutes": 30,
+      "section_points": 45.0,
+      "instruction": "",
+      "tasks": [
+        {
+          "id": "telc_b1_s_t1",
+          "part_label": "Schreiben",
+          "type": "WRITE_FREE",
+          "instruction": "",
+          "task_points": 45,
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie haben von einer Freundin folgende E-Mail erhalten. Antworten Sie auf die E-Mail. Schreiben Sie etwas zu allen vier Punkten. Überlegen Sie sich vor dem Schreiben eine passende Reihenfolge der Punkte, einen passenden Betreff, eine passende Anrede, Einleitung und einen passenden Schluss.",
+            "bullet_points": [
+              "welche Ausflüge Sie mit Marianne machen wollen",
+              "was die beste Jahreszeit für die Reise ist",
+              "welche Kleidung sie mitnehmen soll",
+              "wie sie sich am besten auf die Reise vorbereiten kann"
+            ],
+            "text": "Liebe/r …,\n\ndanke für deine nette Einladung! Ich komme dich sehr gerne besuchen, um dein Land kennenzulernen – wie du weißt, war ich ja noch nie da. Wann wäre die beste Zeit, dich zu besuchen? Ich weiß noch nicht einmal, ob es bei euch im Sommer sehr heiß wird – allzu große Hitze mag ich nämlich nicht so sehr. Und gibt es sonst noch irgendwelche Dinge, die ich wissen sollte, bevor ich diese Reise mache?\n\nBitte schreib mir möglichst bald, damit ich mich gut auf die Reise vorbereiten kann.\n\nHerzliche Grüße\nMarianne"
+          }
+        }
+      ]
+    }
+  ]
+}

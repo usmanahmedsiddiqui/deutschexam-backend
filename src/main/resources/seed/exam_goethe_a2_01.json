@@ -1,0 +1,1360 @@
+{
+  "id": "goethe_a2_01",
+  "name": "Goethe-Zertifikat A2",
+  "is_free": false,
+  "provider": {
+    "id": "goethe",
+    "name": "Goethe-Institut",
+    "full_name": "Goethe-Institut e.V.",
+    "description": "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+    "logo": "assets/logos/goethe.png",
+    "website": "https://www.goethe.de",
+    "levels": [
+      {
+        "id": "a1",
+        "name": "A1",
+        "description": "Basic German language certificate covering elementary language use.",
+        "short_description": "Elementary language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "A2",
+        "description": "Elementary German language certificate for everyday communication.",
+        "short_description": "Everyday communication",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      },
+      {
+        "id": "b1",
+        "name": "B1",
+        "description": "Intermediate German language certificate required for German citizenship and residence permit.",
+        "short_description": "Independent language use",
+        "catalog": [
+          {
+            "type": "vocabulary",
+            "is_free": true
+          },
+          {
+            "type": "grammar",
+            "is_free": false
+          },
+          {
+            "type": "sentence_bank",
+            "is_free": true
+          },
+          {
+            "type": "dialogue",
+            "is_free": true
+          },
+          {
+            "type": "writing_practice",
+            "is_free": true
+          },
+          {
+            "type": "speaking_practice",
+            "is_free": true
+          }
+        ]
+      }
+    ]
+  },
+  "level": {
+    "id": "a2",
+    "name": "A2",
+    "description": "Elementary German language certificate for everyday communication.",
+    "short_description": "Everyday communication",
+    "catalog": [
+      {
+        "type": "vocabulary",
+        "is_free": true
+      },
+      {
+        "type": "grammar",
+        "is_free": false
+      },
+      {
+        "type": "sentence_bank",
+        "is_free": true
+      },
+      {
+        "type": "dialogue",
+        "is_free": true
+      },
+      {
+        "type": "writing_practice",
+        "is_free": true
+      },
+      {
+        "type": "speaking_practice",
+        "is_free": true
+      }
+    ]
+  },
+  "total_points": 75.0,
+  "total_minutes": 90,
+  "passing_criteria": {
+    "type": "partial_results",
+    "partial_results": [
+      {
+        "id": "schriftliche_pruefung",
+        "name": "Schriftliche Prüfung",
+        "total_points": 75.0,
+        "passing_points": 45.0,
+        "passing_percentage": 60,
+        "sections": [
+          "lesen",
+          "hoeren",
+          "schreiben"
+        ]
+      }
+    ]
+  },
+  "grading": [
+    {
+      "min": 67.5,
+      "max": 75,
+      "grade": "sehr gut"
+    },
+    {
+      "min": 60,
+      "max": 66.75,
+      "grade": "gut"
+    },
+    {
+      "min": 52.5,
+      "max": 59.25,
+      "grade": "befriedigend"
+    },
+    {
+      "min": 45,
+      "max": 51.75,
+      "grade": "ausreichend"
+    },
+    {
+      "min": 0,
+      "max": 44.25,
+      "grade": "nicht bestanden"
+    }
+  ],
+  "sections": [
+    {
+      "id": "lesen",
+      "name": "Lesen",
+      "instruction": "Dieser Prüfungsteil hat vier Teile: Sie lesen eine E-Mail, Informationen und Artikel aus der Zeitung und dem Internet. Für jede Aufgabe gibt es nur eine richtige Lösung. Schreiben Sie Ihre Lösungen zum Schluss auf den Antwortbogen. Wörterbücher und Mobiltelefone sind nicht erlaubt.",
+      "section_minutes": 30,
+      "section_points": 25.0,
+      "tasks": [
+        {
+          "id": "goethe_a2_l_t1",
+          "part_label": "Lesen, Teil 1",
+          "instruction": "Sie lesen in einer Zeitung diesen Text. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "text",
+            "title": "Essen im Job",
+            "text": "Essen im Job –\nMittagessen von zu Hause oder mit den Kollegen ins Restaurant? –\nWarum gutes Essen wichtig ist und was eine Firma für die Gesundheit ihrer Mitarbeiter tut\n\nViele Leute essen oft fettes und süßes Essen, weil es schnell geht, schmeckt und man es überall bekommt. Aber wenn man Probleme mit der Gesundheit bekommt, wird das auch für die Firmen schnell teuer: Die Mitarbeiter sind oft krank und fehlen.\n\nTheo kennt das: „Früher war ich mit den Kollegen mittags im Restaurant. Aber im Moment habe ich dafür keine Zeit. Ich kaufe mir schnell am Kiosk eine Bratwurst. Auch wenn ich mich danach schlecht fühle. Aber gesunde Salate gibt es dort nicht.\"\n\nDie Firma Gutbrecht hat jetzt für ihre Mitarbeiter eigene Küchen gebaut. Da kann jeder in der Pause für sich kochen. Das ist gesund und außerdem kostet es nicht so viel wie im Restaurant.\n\n„Jetzt koche ich nicht nur zu Hause mit frischem Gemüse und habe so schon zwei Kilo verloren\", lacht Lena. „Aber man muss nach dem Kochen die Küche putzen, das machen die Kollegen und ich nicht so gern.\"\n\nDer Chef von Gutbrecht freut sich. „Klar, die Küchen waren nicht billig. Aber jetzt gibt es mehr Kontakte. Die Arbeit in den Teams ist besser. Schwierig ist, dass die Mittagspause jetzt ziemlich lange dauert. Das muss sich wieder ändern.\""
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_l_t1_q1",
+              "number": "1",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Ungesundes Essen …",
+              "correct_answer": "goethe_a2_01_g_l_t1_q1_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t1_q1_opt_a",
+                  "label": "a",
+                  "text": "ist besonders teuer."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q1_opt_b",
+                  "label": "b",
+                  "text": "kauft man oft unterwegs."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q1_opt_c",
+                  "label": "c",
+                  "text": "mögen viele nicht."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t1_q2",
+              "number": "2",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "In der Pause …",
+              "correct_answer": "goethe_a2_01_g_l_t1_q2_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t1_q2_opt_a",
+                  "label": "a",
+                  "text": "geht Theo ins Restaurant."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q2_opt_b",
+                  "label": "b",
+                  "text": "hat Theo nur wenig Zeit zum Essen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q2_opt_c",
+                  "label": "c",
+                  "text": "isst Theo einen Salat."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t1_q3",
+              "number": "3",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "In der Firma Gutbrecht …",
+              "correct_answer": "goethe_a2_01_g_l_t1_q3_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t1_q3_opt_a",
+                  "label": "a",
+                  "text": "bauen die Mitarbeiter Küchen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q3_opt_b",
+                  "label": "b",
+                  "text": "ist das Essen kostenlos."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q3_opt_c",
+                  "label": "c",
+                  "text": "kann jeder selbst sein Mittagessen machen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t1_q4",
+              "number": "4",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Lena findet die Idee gut, weil …",
+              "correct_answer": "goethe_a2_01_g_l_t1_q4_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t1_q4_opt_a",
+                  "label": "a",
+                  "text": "die anderen die Küche putzen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q4_opt_b",
+                  "label": "b",
+                  "text": "sie mehr gesundes Essen isst."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q4_opt_c",
+                  "label": "c",
+                  "text": "sie nicht mehr zu Hause kochen muss."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t1_q5",
+              "number": "5",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Der Chef der Firma ist zufrieden, weil …",
+              "correct_answer": "goethe_a2_01_g_l_t1_q5_opt_a",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t1_q5_opt_a",
+                  "label": "a",
+                  "text": "die Mitarbeiter gut zusammenarbeiten."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q5_opt_b",
+                  "label": "b",
+                  "text": "die Mitarbeiter lange Pausen machen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t1_q5_opt_c",
+                  "label": "c",
+                  "text": "die Küchen nicht viel gekostet haben."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_l_t2",
+          "part_label": "Lesen, Teil 2",
+          "instruction": "Sie sind auf einer Reisemesse. Lesen Sie die Aufgaben 6 bis 10 und den Text. Wohin gehen Sie? Wählen Sie die richtige Lösung a, b oder c.",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "text",
+            "title": "Informationen zur Messe Reisen international",
+            "text": "Halle A: 10 – 12 Uhr: Informationsveranstaltung: Urlaub und Gesundheit – mit dem Arzt in die Ferien / 13 – 14 Uhr Gespräch: So ist Ihr Geld im Urlaub sicher – Tipps zum Geldholen und Bezahlen im Ausland / 15 – 16 Uhr: Buchvorstellung mit Autor Klaus Hinke: Mit Großvater unterwegs – Reisen mit dem Zug wie früher\n\nHalle B: 10 – 12 Uhr: Gespräch: Das sagt der Arzt – Medikamente im Urlaub / 13 – 15 Uhr: Informationsveranstaltung: Ferienjobs für Schüler ab 16 / 15 – 17 Uhr: Informationsveranstaltung: Urlaub mit der Großfamilie – mit den Kindern, Opa und Oma und dem Hund / Geldautomat\n\nHalle C: 10 – 12 Uhr: Informationsveranstaltung: Gruppenreisen – Angebote für Schulklassen (12 – 18 Jahre) / Fotoausstellung: Mit der Bahn weltweit unterwegs – die schönsten Züge der letzten 100 Jahre / Restaurant „Heimat\" – neue deutsche Küche / Apotheke und Arzt\n\nHalle D: 10 – 12 Uhr: Informationsveranstaltung: Buchen übers Internet – online Geld sparen / 15 – 17 Uhr: Informationsveranstaltung: deutsche Sprachschulen stellen sich vor / Anders reisen für die Umwelt – Wir lassen das Auto zu Hause – Urlaubsangebote mit Bus, Bahn oder Fähre\n\nHalle E: 10 – 12 Uhr: Informationsveranstaltung: Endlich alt genug? Los geht´s! – Ferienreisen für Schüler – ganz ohne Eltern / aktuelle Angebote von Müller-Reisen: Busreisen in Europa für Menschen ab 50 / Fotoausstellung: Norddeutschland – Urlaub auf den Inseln / Toiletten"
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_l_t2_q6",
+              "number": "6",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Sie wollen in Urlaub fahren und nicht viel Geld ausgeben.",
+              "correct_answer": "goethe_a2_01_g_l_t2_q6_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t2_q6_opt_a",
+                  "label": "a",
+                  "text": "Halle A"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q6_opt_b",
+                  "label": "b",
+                  "text": "Halle D"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q6_opt_c",
+                  "label": "c",
+                  "text": "andere Halle"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t2_q7",
+              "number": "7",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Sie möchten für Ihren Großvater eine Reise buchen.",
+              "correct_answer": "goethe_a2_01_g_l_t2_q7_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t2_q7_opt_a",
+                  "label": "a",
+                  "text": "Halle A"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q7_opt_b",
+                  "label": "b",
+                  "text": "Halle E"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q7_opt_c",
+                  "label": "c",
+                  "text": "andere Halle"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t2_q8",
+              "number": "8",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Sie suchen nach einem Reiseangebot für Ihr 16-jähriges Kind.",
+              "correct_answer": "goethe_a2_01_g_l_t2_q8_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t2_q8_opt_a",
+                  "label": "a",
+                  "text": "Halle B"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q8_opt_b",
+                  "label": "b",
+                  "text": "Halle E"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q8_opt_c",
+                  "label": "c",
+                  "text": "andere Halle"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t2_q9",
+              "number": "9",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Sie haben sich wehgetan und suchen einen Arzt.",
+              "correct_answer": "goethe_a2_01_g_l_t2_q9_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t2_q9_opt_a",
+                  "label": "a",
+                  "text": "Halle A"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q9_opt_b",
+                  "label": "b",
+                  "text": "Halle B"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q9_opt_c",
+                  "label": "c",
+                  "text": "andere Halle"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t2_q10",
+              "number": "10",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Sie möchten mit dem Zug verreisen.",
+              "correct_answer": "goethe_a2_01_g_l_t2_q10_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t2_q10_opt_a",
+                  "label": "a",
+                  "text": "Halle C"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q10_opt_b",
+                  "label": "b",
+                  "text": "Halle D"
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t2_q10_opt_c",
+                  "label": "c",
+                  "text": "andere Halle"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_l_t3",
+          "part_label": "Lesen, Teil 3",
+          "instruction": "Sie lesen eine E-Mail. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+          "type": "READ_MC3",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "text",
+            "title": "E-Mail von Marta",
+            "text": "Liebe Rosa,\n\nich habe dir ja erzählt, dass ich umziehe. Letzte Woche war der Termin. Zuerst habe ich gedacht, dass ich das falsche Auto gemietet habe und es für meine Sachen zu klein ist. Mein Tisch ist doch so groß! Aber am Umzugstag hat alles gut geklappt, denn viele meiner Freunde haben mitgeholfen. Zum Glück!\n\nVon hier aus bin ich viel schneller bei der Arbeit. Früher musste ich ja immer mit zwei verschiedenen Straßenbahnen fahren oder den Bus nehmen, der immer so langsam war. Mein neues Büro ist viel näher und ich bin mit meinem Fahrrad in zehn Minuten dort. Wie praktisch! Vor allem das viele Umsteigen vermisse ich gar nicht.\n\nNebenan gibt es eine Katze. Das ist toll. Ich habe ihr ein bisschen Wurst gegeben und jetzt kommt sie oft zu mir. Zum Glück sind die neuen Nachbarn nett und haben kein Problem damit. Ich wollte ja auch immer eine eigene Katze, aber in der alten Wohnung hat der Vermieter das leider nicht erlaubt.\n\nIch mache bald ein Fest in der neuen Wohnung. Vielleicht hast du auch Zeit zu kommen? Ich habe jetzt ein Gästezimmer. Dann musst du nicht mehr wie sonst im Hotel übernachten. Auch meine Eltern und Geschwister würden dich gern wiedersehen!\n\nWie geht es dir denn in Paris? Mein Bruder war letztes Jahr dort zum Französischlernen. Eine tolle Stadt, sagt er. Und ich finde auch, Französisch ist eine so schöne Sprache. :-) Du kannst mir dann ja alles zeigen, wenn ich dich dort besuche. Ich freue mich schon so!\n\nLiebe Grüße aus München\nMarta"
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_l_t3_q11",
+              "number": "11",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Marta hatte beim Umzug ...",
+              "correct_answer": "goethe_a2_01_g_l_t3_q11_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t3_q11_opt_a",
+                  "label": "a",
+                  "text": "das falsche Auto."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q11_opt_b",
+                  "label": "b",
+                  "text": "keine Probleme."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q11_opt_c",
+                  "label": "c",
+                  "text": "nicht genug Leute zum Helfen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t3_q12",
+              "number": "12",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Auf dem Weg zur Arbeit kann Marta jetzt ...",
+              "correct_answer": "goethe_a2_01_g_l_t3_q12_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t3_q12_opt_a",
+                  "label": "a",
+                  "text": "den schnellen Bus nehmen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q12_opt_b",
+                  "label": "b",
+                  "text": "mit verschiedenen Straßenbahnen fahren."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q12_opt_c",
+                  "label": "c",
+                  "text": "mehr Zeit sparen als früher."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t3_q13",
+              "number": "13",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Marta hat in der neuen Wohnung ...",
+              "correct_answer": "goethe_a2_01_g_l_t3_q13_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t3_q13_opt_a",
+                  "label": "a",
+                  "text": "eine eigene Katze."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q13_opt_b",
+                  "label": "b",
+                  "text": "freundliche Nachbarn."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q13_opt_c",
+                  "label": "c",
+                  "text": "Probleme mit dem Vermieter."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t3_q14",
+              "number": "14",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Rosa kann während ihres Besuchs ...",
+              "correct_answer": "goethe_a2_01_g_l_t3_q14_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t3_q14_opt_a",
+                  "label": "a",
+                  "text": "bei Martas Familie wohnen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q14_opt_b",
+                  "label": "b",
+                  "text": "in einem Hotel übernachten."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q14_opt_c",
+                  "label": "c",
+                  "text": "in Martas Wohnung schlafen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t3_q15",
+              "number": "15",
+              "type": "READ_MC3",
+              "points": 1.25,
+              "stem": "Marta möchte bald ...",
+              "correct_answer": "goethe_a2_01_g_l_t3_q15_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_l_t3_q15_opt_a",
+                  "label": "a",
+                  "text": "ihren Bruder besuchen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q15_opt_b",
+                  "label": "b",
+                  "text": "Französisch lernen."
+                },
+                {
+                  "id": "goethe_a2_01_g_l_t3_q15_opt_c",
+                  "label": "c",
+                  "text": "Paris kennenlernen."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_l_t4",
+          "part_label": "Lesen, Teil 4",
+          "instruction": "Lesen Sie die Aufgaben 16 bis 20 und die Anzeigen a bis f. Welche Anzeige passt zu welcher Person? Für eine Aufgabe gibt es keine Lösung. Markieren Sie so X.",
+          "type": "READ_MATCH",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "multi_text",
+            "allows_no_match": true,
+            "no_match_label": "X",
+            "items": [
+              {
+                "id": "goethe_a2_01_g_l_t4_item_a",
+                "label": "a",
+                "title": "Gitarrenkurs",
+                "text": "Gitarrenkurs: Klassik, Pop und vieles mehr. Unterricht für Kinder ab 6 Jahre mit und ohne Erfahrung. Super Preise: Nur 25 € für 45 Minuten. Besondere Angebote für Gruppen. Information unter 089-45675621"
+              },
+              {
+                "id": "goethe_a2_01_g_l_t4_item_b",
+                "label": "b",
+                "title": "Konzerthaus Programm",
+                "text": "Programm: Samstag, 4. April, 19 Uhr: Peter Tschaikowskis „Klavierkonzert“, großer Saal. Freuen Sie sich auf die Musik des berühmten Künstlers im neuen Konzerthaus. Weitere Informationen über unsere Preise auf unserer Internetseite."
+              },
+              {
+                "id": "goethe_a2_01_g_l_t4_item_c",
+                "label": "c",
+                "title": "Gitarrenreparatur",
+                "text": "Du hast ein Problem mit deiner Gitarre? Du kannst nicht mehr spielen? Ich kümmere mich um deine alte Gitarre, dann ist sie bald wie neu. Rufinistraße 17, 45674 Halle. Öffnungszeiten Werkstatt: Dienstag - Freitag: 10 – 16 Uhr, Samstag: 10 – 12 Uhr"
+              },
+              {
+                "id": "goethe_a2_01_g_l_t4_item_d",
+                "label": "d",
+                "title": "Klaviere",
+                "text": "Klaviere zu allen Preisen. Wir haben ein großes Angebot. Gute Qualität für wenig Geld. Bei uns finden Sie, was Sie suchen. Wir reparieren auch. Lieferung nach Hause: Auch am Wochenende. Info unter heidmann@piano.de 040/3267893 0160/97311222"
+              },
+              {
+                "id": "goethe_a2_01_g_l_t4_item_e",
+                "label": "e",
+                "title": "Musikunterricht zu Hause",
+                "text": "Sie möchten ein Musikinstrument spielen und haben nicht viel Zeit? Ich komme zu Ihnen – abends oder am Wochenende. Fragen Sie Ihre Freunde – für Gruppen gibt es Ermäßigung. Nur für Erwachsene! Anmeldung: lana@musik_macht_spaß.de"
+              },
+              {
+                "id": "goethe_a2_01_g_l_t4_item_f",
+                "label": "f",
+                "title": "CDs und mehr",
+                "text": "Kaufe und verkaufe: CDs mit Gitarrenkonzerten, Klaviermusik, kaputte Instrumente und vieles mehr. Habe auch Bücher und Filme über bekannte Musiker und berühmte Konzerte. Alles supergünstig! Ruft an und fragt nach Tom. 0156-5741239 Ich freue mich auf euch!"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_l_t4_q16",
+              "number": "16",
+              "type": "READ_MATCH",
+              "points": 1.25,
+              "stem": "Thomas interessiert sich für einen berühmten Klavierspieler und sucht Informationen über ihn.",
+              "correct_answer": "goethe_a2_01_g_l_t4_item_f",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t4_q17",
+              "number": "17",
+              "type": "READ_MATCH",
+              "points": 1.25,
+              "stem": "Sarahs Gitarre ist kaputt. Jemand soll die Gitarre reparieren.",
+              "correct_answer": "goethe_a2_01_g_l_t4_item_c",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t4_q18",
+              "number": "18",
+              "type": "READ_MATCH",
+              "points": 1.25,
+              "stem": "Andreas hat ein Klavier gekauft und möchte zu Hause Unterricht haben.",
+              "correct_answer": "goethe_a2_01_g_l_t4_item_e",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t4_q19",
+              "number": "19",
+              "type": "READ_MATCH",
+              "points": 1.25,
+              "stem": "Christiane möchte eine neue Gitarre kaufen und wenig Geld ausgeben.",
+              "correct_answer": "X",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_l_t4_q20",
+              "number": "20",
+              "type": "READ_MATCH",
+              "points": 1.25,
+              "stem": "Susanne möchte mit ihrer Freundin am Wochenende ausgehen und Musik hören.",
+              "correct_answer": "goethe_a2_01_g_l_t4_item_b",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "hoeren",
+      "name": "Hören",
+      "instruction": "Dieser Prüfungsteil hat vier Teile: Sie hören Sendungen aus dem Radio, Gespräche, Nachrichten auf dem Anrufbeantworter und Durchsagen. Lesen Sie zuerst die Aufgaben. Hören Sie dann den Text dazu. Für jede Aufgabe gibt es nur eine richtige Lösung. Schreiben Sie Ihre Lösungen zum Schluss auf den Antwortbogen. Wörterbücher und Mobiltelefone sind nicht erlaubt.",
+      "section_minutes": 30,
+      "section_points": 25.0,
+      "audio": "audios/telc_deutsch_a1.mp3",
+      "tasks": [
+        {
+          "id": "goethe_a2_h_t1",
+          "part_label": "Hören, Teil 1",
+          "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Wählen Sie für die Aufgaben 1 bis 5 die richtige Lösung a, b oder c.",
+          "type": "LISTEN_MC3",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_h_t1_q1",
+              "number": "1",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Wo findet das Konzert statt?",
+              "correct_answer": "goethe_a2_01_g_h_t1_q1_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t1_q1_opt_a",
+                  "label": "a",
+                  "text": "Auf dem Marktplatz."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q1_opt_b",
+                  "label": "b",
+                  "text": "In einer Halle."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q1_opt_c",
+                  "label": "c",
+                  "text": "Im Festzelt."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t1_q2",
+              "number": "2",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Was soll Frauke machen?",
+              "correct_answer": "goethe_a2_01_g_h_t1_q2_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t1_q2_opt_a",
+                  "label": "a",
+                  "text": "Einen Kuchen backen."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q2_opt_b",
+                  "label": "b",
+                  "text": "Ein Geschenk kaufen."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q2_opt_c",
+                  "label": "c",
+                  "text": "Getränke organisieren."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t1_q3",
+              "number": "3",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Warum möchte der Mann das Treffen am Samstag verschieben? Weil …",
+              "correct_answer": "goethe_a2_01_g_h_t1_q3_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t1_q3_opt_a",
+                  "label": "a",
+                  "text": "er mit Freunden ausgehen möchte."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q3_opt_b",
+                  "label": "b",
+                  "text": "seine Frau verabredet ist."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q3_opt_c",
+                  "label": "c",
+                  "text": "seine Eltern zu Besuch kommen."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t1_q4",
+              "number": "4",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Wie wird das Wetter im Süden? Es wird ...",
+              "correct_answer": "goethe_a2_01_g_h_t1_q4_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t1_q4_opt_a",
+                  "label": "a",
+                  "text": "kühl und trocken."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q4_opt_b",
+                  "label": "b",
+                  "text": "warm und es gibt Gewitter."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q4_opt_c",
+                  "label": "c",
+                  "text": "warm und es regnet."
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t1_q5",
+              "number": "5",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Was sollen Fahrgäste tun, wenn sie nach Frankfurt wollen?",
+              "correct_answer": "goethe_a2_01_g_h_t1_q5_opt_a",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t1_q5_opt_a",
+                  "label": "a",
+                  "text": "Den ICE nehmen."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q5_opt_b",
+                  "label": "b",
+                  "text": "Im Zug warten."
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t1_q5_opt_c",
+                  "label": "c",
+                  "text": "Mit der S-Bahn fahren."
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_h_t2",
+          "part_label": "Hören, Teil 2",
+          "instruction": "Sie hören ein Gespräch. Sie hören den Text einmal. Wählen Sie für die Aufgaben 6 bis 10 ein passendes Bild aus a bis i. Wählen Sie jeden Buchstaben nur einmal. Sehen Sie sich jetzt die Bilder an.",
+          "type": "LISTEN_MATCH",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "audio",
+            "items": [
+              {
+                "id": "goethe_a2_01_g_h_t2_item_a",
+                "label": "a",
+                "title": "im Supermarkt"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_b",
+                "label": "b",
+                "title": "im Restaurant"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_c",
+                "label": "c",
+                "title": "in der Apotheke"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_d",
+                "label": "d",
+                "title": "im Büro"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_e",
+                "label": "e",
+                "title": "beim Arzt"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_f",
+                "label": "f",
+                "title": "im Hotel"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_g",
+                "label": "g",
+                "title": "zu Hause"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_h",
+                "label": "h",
+                "title": "im Erdgeschoss"
+              },
+              {
+                "id": "goethe_a2_01_g_h_t2_item_i",
+                "label": "i",
+                "title": "im ersten Stock"
+              }
+            ]
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_h_t2_q6",
+              "number": "6",
+              "type": "LISTEN_MATCH",
+              "points": 1.25,
+              "stem": "Samstag",
+              "correct_answer": "goethe_a2_01_g_h_t2_item_e",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t2_q7",
+              "number": "7",
+              "type": "LISTEN_MATCH",
+              "points": 1.25,
+              "stem": "Sonntag",
+              "correct_answer": "goethe_a2_01_g_h_t2_item_g",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t2_q8",
+              "number": "8",
+              "type": "LISTEN_MATCH",
+              "points": 1.25,
+              "stem": "Montag",
+              "correct_answer": "goethe_a2_01_g_h_t2_item_h",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t2_q9",
+              "number": "9",
+              "type": "LISTEN_MATCH",
+              "points": 1.25,
+              "stem": "Dienstag",
+              "correct_answer": "goethe_a2_01_g_h_t2_item_i",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t2_q10",
+              "number": "10",
+              "type": "LISTEN_MATCH",
+              "points": 1.25,
+              "stem": "Mittwoch",
+              "correct_answer": "goethe_a2_01_g_h_t2_item_a",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_h_t3",
+          "part_label": "Hören, Teil 3",
+          "instruction": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Wählen Sie für die Aufgaben 11 bis 15 die richtige Lösung a, b oder c.",
+          "type": "LISTEN_MC3",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_h_t3_q11",
+              "number": "11",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Was kauft der Mann?",
+              "correct_answer": "goethe_a2_01_g_h_t3_q11_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t3_q11_opt_a",
+                  "label": "a",
+                  "text": "Sofa"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q11_opt_b",
+                  "label": "b",
+                  "text": "Tisch"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q11_opt_c",
+                  "label": "c",
+                  "text": "Stühle"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t3_q12",
+              "number": "12",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Welcher Vorschlag für den Firmenausflug in diesem Jahr gefällt beiden?",
+              "correct_answer": "goethe_a2_01_g_h_t3_q12_opt_c",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t3_q12_opt_a",
+                  "label": "a",
+                  "text": "Stadtführung"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q12_opt_b",
+                  "label": "b",
+                  "text": "Museum"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q12_opt_c",
+                  "label": "c",
+                  "text": "Wanderung"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t3_q13",
+              "number": "13",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Wie fährt die Frau zur Arbeit?",
+              "correct_answer": "goethe_a2_01_g_h_t3_q13_opt_b",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t3_q13_opt_a",
+                  "label": "a",
+                  "text": "Zug"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q13_opt_b",
+                  "label": "b",
+                  "text": "Auto"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q13_opt_c",
+                  "label": "c",
+                  "text": "Bus"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t3_q14",
+              "number": "14",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Was ist kaputt?",
+              "correct_answer": "goethe_a2_01_g_h_t3_q14_opt_a",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t3_q14_opt_a",
+                  "label": "a",
+                  "text": "Toilette"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q14_opt_b",
+                  "label": "b",
+                  "text": "Waschmaschine"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q14_opt_c",
+                  "label": "c",
+                  "text": "Dusche"
+                }
+              ],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t3_q15",
+              "number": "15",
+              "type": "LISTEN_MC3",
+              "points": 1.25,
+              "stem": "Warum kann der Mann nicht zur Arbeit kommen?",
+              "correct_answer": "goethe_a2_01_g_h_t3_q15_opt_a",
+              "options": [
+                {
+                  "id": "goethe_a2_01_g_h_t3_q15_opt_a",
+                  "label": "a",
+                  "text": "Er ist krank"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q15_opt_b",
+                  "label": "b",
+                  "text": "Besuch"
+                },
+                {
+                  "id": "goethe_a2_01_g_h_t3_q15_opt_c",
+                  "label": "c",
+                  "text": "Auto"
+                }
+              ],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        },
+        {
+          "id": "goethe_a2_h_t4",
+          "part_label": "Hören, Teil 4",
+          "instruction": "Sie hören ein Interview. Sie hören den Text zweimal. Wählen Sie für die Aufgaben 16 bis 20 Ja oder Nein. Lesen Sie jetzt die Aufgaben.",
+          "type": "LISTEN_TF",
+          "task_points": 6.25,
+          "stimulus": {
+            "kind": "audio"
+          },
+          "questions": [
+            {
+              "id": "goethe_a2_01_g_h_t4_q16",
+              "number": "16",
+              "type": "LISTEN_TF",
+              "points": 1.25,
+              "stem": "Frau Plessing findet es schade, dass ihre Kinder nicht mehr zu Hause wohnen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t4_q17",
+              "number": "17",
+              "type": "LISTEN_TF",
+              "points": 1.25,
+              "stem": "Herr Plessing hat früher als Koch gearbeitet.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t4_q18",
+              "number": "18",
+              "type": "LISTEN_TF",
+              "points": 1.25,
+              "stem": "Herr und Frau Plessing wissen, was Familien im Urlaub brauchen.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t4_q19",
+              "number": "19",
+              "type": "LISTEN_TF",
+              "points": 1.25,
+              "stem": "Die Ferienwohnungen im Hotel sind besonders beliebt.",
+              "correct_answer": "richtig",
+              "options": [],
+              "accepted_variants": []
+            },
+            {
+              "id": "goethe_a2_01_g_h_t4_q20",
+              "number": "20",
+              "type": "LISTEN_TF",
+              "points": 1.25,
+              "stem": "Im Hotel gibt es immer viele Gäste.",
+              "correct_answer": "falsch",
+              "options": [],
+              "accepted_variants": []
+            }
+          ],
+          "question_count": 5
+        }
+      ]
+    },
+    {
+      "id": "schreiben",
+      "name": "Schreiben",
+      "section_minutes": 30,
+      "section_points": 25.0,
+      "instruction": "Dieser Prüfungsteil hat zwei Teile: Sie schreiben eine SMS und eine E-Mail. Schreiben Sie Ihre Texte auf den Antwortbogen. Schreiben Sie bitte deutlich und nicht mit Bleistift. Wörterbücher und Mobiltelefone sind nicht erlaubt.",
+      "tasks": [
+        {
+          "id": "goethe_a2_s_t1",
+          "part_label": "Schreiben, Teil 1",
+          "type": "WRITE_FREE",
+          "instruction": "",
+          "task_points": 12.5,
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie sind letzte Woche umgezogen und wohnen jetzt in einer neuen Wohnung. Schreiben Sie Ihrem Freund Leonhard eine SMS.",
+            "bullet_points": [
+              "Informieren Sie ihn, wo Sie jetzt wohnen.",
+              "Schreiben Sie, was Ihnen dort gefällt.",
+              "Laden Sie Ihren Freund in die neue Wohnung ein."
+            ],
+            "text": "Schreiben Sie 20–30 Wörter. Schreiben Sie zu allen drei Punkten."
+          },
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "goethe_a2_s_t2",
+          "part_label": "Schreiben, Teil 2",
+          "type": "WRITE_FREE",
+          "instruction": "",
+          "task_points": 12.5,
+          "questions": [],
+          "stimulus": {
+            "kind": "write_free",
+            "title": "Sie haben ein Hotelzimmer gebucht. Sie wollten eigentlich am Freitag kommen. Leider können Sie jetzt erst am Sonntag kommen. Schreiben Sie eine E-Mail an Frau Yilmaz vom Hotel.",
+            "bullet_points": [
+              "Erklären Sie, warum Sie schreiben.",
+              "Informieren Sie, wie lange Sie jetzt bleiben möchten.",
+              "Fragen Sie nach einem neuen Preisangebot."
+            ],
+            "text": "Schreiben Sie 30–40 Wörter. Schreiben Sie zu allen drei Punkten."
+          },
+          "rubric": {
+            "criteria": [
+              {
+                "name": "Aufgabenerfüllung",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              },
+              {
+                "name": "Sprache",
+                "grades": [
+                  {
+                    "label": "A",
+                    "points": 6.25
+                  },
+                  {
+                    "label": "B",
+                    "points": 4.375
+                  },
+                  {
+                    "label": "C",
+                    "points": 2.5
+                  },
+                  {
+                    "label": "D",
+                    "points": 0.625
+                  },
+                  {
+                    "label": "E",
+                    "points": 0
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

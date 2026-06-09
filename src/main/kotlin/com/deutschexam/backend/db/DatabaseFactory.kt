@@ -1,5 +1,7 @@
 package com.deutschexam.backend.db
 
+import com.deutschexam.backend.db.tables.ExamDetailsTable
+import com.deutschexam.backend.db.tables.ExamsTable
 import com.deutschexam.backend.db.tables.LevelCatalogTable
 import com.deutschexam.backend.db.tables.LevelsTable
 import com.deutschexam.backend.db.tables.ProviderLevelsTable
@@ -11,6 +13,11 @@ import com.deutschexam.backend.db.tables.UsersTable
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.double
+import kotlinx.serialization.json.int
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.insert
@@ -46,10 +53,14 @@ object DatabaseFactory {
                 ProviderLevelsTable,
                 ProductsTable,
                 RefreshTokensTable,
+                ExamDetailsTable,
+                ExamsTable,
             )
             seedLevels()
             seedProviders()
             seedProducts()
+            seedExamDetails()
+            seedExams()
         }
 
         return database
@@ -187,4 +198,66 @@ object DatabaseFactory {
             }
         }
     }
+
+    // ── Exam details seed ────────────────────────────────────────────────────
+
+    private val examDetailFiles = listOf(
+        "detail_telc_a1", "detail_telc_a2", "detail_telc_b1",
+        "detail_goethe_a1", "detail_goethe_a2", "detail_goethe_b1",
+    )
+
+    private fun seedExamDetails() {
+        val existing = ExamDetailsTable.selectAll().map { it[ExamDetailsTable.id] }.toSet()
+        if (existing.isNotEmpty()) return
+
+        for (filename in examDetailFiles) {
+            val text = loadSeedResource("seed/$filename.json") ?: continue
+            val json = Json.parseToJsonElement(text).jsonObject
+            ExamDetailsTable.insert {
+                it[id] = json["id"]!!.jsonPrimitive.content
+                it[name] = json["name"]!!.jsonPrimitive.content
+                it[providerId] = json["provider"]!!.jsonObject["id"]!!.jsonPrimitive.content
+                it[levelId] = json["level"]!!.jsonObject["id"]!!.jsonPrimitive.content
+                it[totalPoints] = json["total_points"]!!.jsonPrimitive.double
+                it[totalMinutes] = json["total_minutes"]!!.jsonPrimitive.int
+                it[data] = text
+            }
+        }
+    }
+
+    // ── Exams seed ────────────────────────────────────────────────────────────
+
+    private val examFiles = listOf(
+        "exam_telc_a1_01", "exam_telc_a2_01", "exam_telc_b1_01",
+        "exam_goethe_b1_01", "exam_goethe_a2_01",
+    )
+
+    private fun examDetailIdFromExamId(examId: String): String {
+        // telc_a1_01 -> telc_a1, goethe_b1_01 -> goethe_b1
+        val parts = examId.split("_")
+        return parts.dropLast(1).joinToString("_")
+    }
+
+    private fun seedExams() {
+        val existing = ExamsTable.selectAll().map { it[ExamsTable.id] }.toSet()
+        if (existing.isNotEmpty()) return
+
+        for (filename in examFiles) {
+            val text = loadSeedResource("seed/$filename.json") ?: continue
+            val json = Json.parseToJsonElement(text).jsonObject
+            val examId = json["id"]!!.jsonPrimitive.content
+            ExamsTable.insert {
+                it[id] = examId
+                it[examDetailId] = examDetailIdFromExamId(examId)
+                it[name] = json["name"]!!.jsonPrimitive.content
+                it[isFree] = json["is_free"]!!.jsonPrimitive.content.toBoolean()
+                it[totalPoints] = json["total_points"]!!.jsonPrimitive.double
+                it[totalMinutes] = json["total_minutes"]!!.jsonPrimitive.int
+                it[data] = text
+            }
+        }
+    }
+
+    private fun loadSeedResource(path: String): String? =
+        Thread.currentThread().contextClassLoader.getResourceAsStream(path)?.reader()?.readText()
 }
