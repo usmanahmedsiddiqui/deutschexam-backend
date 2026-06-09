@@ -249,6 +249,8 @@ object DatabaseFactory {
             ExamsTable.insert {
                 it[id] = examId
                 it[examDetailId] = examDetailIdFromExamId(examId)
+                it[levelId] = json["level"]!!.jsonObject["id"]!!.jsonPrimitive.content
+                it[providerId] = json["provider"]!!.jsonObject["id"]!!.jsonPrimitive.content
                 it[name] = json["name"]!!.jsonPrimitive.content
                 it[isFree] = json["is_free"]!!.jsonPrimitive.content.toBoolean()
                 it[totalPoints] = json["total_points"]!!.jsonPrimitive.double

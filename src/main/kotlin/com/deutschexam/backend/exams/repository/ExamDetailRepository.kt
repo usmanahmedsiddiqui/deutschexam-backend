@@ -5,6 +5,7 @@ import com.deutschexam.backend.exams.model.ExamDetailSummaryDto
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.andWhere
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
@@ -21,6 +22,14 @@ class ExamDetailRepository(private val db: Database) {
                 totalMinutes = row[ExamDetailsTable.totalMinutes],
             )
         }
+    }
+
+    fun findByProviderAndLevel(providerId: String, levelId: String): JsonElement? = transaction(db) {
+        ExamDetailsTable.selectAll()
+            .where { ExamDetailsTable.providerId eq providerId }
+            .andWhere { ExamDetailsTable.levelId eq levelId }
+            .firstOrNull()
+            ?.let { Json.parseToJsonElement(it[ExamDetailsTable.data]) }
     }
 
     fun findById(id: String): JsonElement? = transaction(db) {
