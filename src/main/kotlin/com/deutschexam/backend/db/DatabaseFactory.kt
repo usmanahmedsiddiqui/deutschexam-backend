@@ -1,5 +1,6 @@
 package com.deutschexam.backend.db
 
+import com.deutschexam.backend.db.tables.BugsTable
 import com.deutschexam.backend.db.tables.ExamDetailsTable
 import com.deutschexam.backend.db.tables.ExamsTable
 import com.deutschexam.backend.db.tables.LevelCatalogTable
@@ -55,6 +56,7 @@ object DatabaseFactory {
                 RefreshTokensTable,
                 ExamDetailsTable,
                 ExamsTable,
+                BugsTable,
             )
             seedLevels()
             seedProviders()

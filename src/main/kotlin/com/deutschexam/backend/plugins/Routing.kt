@@ -1,5 +1,7 @@
 package com.deutschexam.backend.plugins
 
+import com.deutschexam.backend.bugs.repository.BugRepository
+import com.deutschexam.backend.bugs.routes.bugRoutes
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.auth.routes.authRoutes
 import com.deutschexam.backend.auth.service.AuthService
@@ -25,6 +27,7 @@ fun Application.configureRouting(db: Database, googleClientId: String) {
     val productRepo = ProductRepository(db, userRepo)
     val examDetailRepo = ExamDetailRepository(db)
     val examRepo = ExamRepository(db)
+    val bugRepo = BugRepository(db)
 
     routing {
         staticResources("/static", "static")
@@ -33,5 +36,6 @@ fun Application.configureRouting(db: Database, googleClientId: String) {
         providerRoutes(providerRepo)
         productRoutes(productRepo)
         examRoutes(examDetailRepo, examRepo)
+        bugRoutes(bugRepo)
     }
 }
