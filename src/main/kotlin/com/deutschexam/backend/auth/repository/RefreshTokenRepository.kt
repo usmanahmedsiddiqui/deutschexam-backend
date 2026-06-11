@@ -10,6 +10,8 @@ import kotlin.time.Duration.Companion.days
 
 private const val REFRESH_TOKEN_EXPIRY_DAYS = 30
 
+data class TokenLookup(val userId: String, val isExpired: Boolean)
+
 /** Owns the lifecycle of refresh tokens: issue, resolve-to-user, and revoke. */
 class RefreshTokenRepository(private val db: Database) {
 
@@ -31,15 +33,20 @@ class RefreshTokenRepository(private val db: Database) {
         Pair(rawToken, expiresAt.epochSeconds)
     }
 
-    /** Returns the owning user id for a valid, unexpired [token], or null otherwise. */
-    fun findUserIdByToken(token: String): String? = transaction(db) {
-        val now = Clock.System.now()
-        RefreshTokensTable
-            .selectAll()
-            .where { (RefreshTokensTable.token eq sha256(token)) and (RefreshTokensTable.expiresAt greater now) }
-            .firstOrNull()
-            ?.get(RefreshTokensTable.userId)
-            ?.toString()
+    /**
+     * Looks up a refresh token by raw value.
+     * Returns [TokenLookup] if the token exists (regardless of expiry), or null if not found.
+     * Use [TokenLookup.isExpired] to distinguish `REFRESH_TOKEN_INVALID` from `REFRESH_TOKEN_EXPIRED`.
+     */
+    fun findToken(rawToken: String): TokenLookup? = transaction(db) {
+        val row = RefreshTokensTable.selectAll()
+            .where { RefreshTokensTable.token eq sha256(rawToken) }
+            .firstOrNull() ?: return@transaction null
+
+        TokenLookup(
+            userId = row[RefreshTokensTable.userId].toString(),
+            isExpired = row[RefreshTokensTable.expiresAt] <= Clock.System.now(),
+        )
     }
 
     fun delete(token: String) = transaction(db) {

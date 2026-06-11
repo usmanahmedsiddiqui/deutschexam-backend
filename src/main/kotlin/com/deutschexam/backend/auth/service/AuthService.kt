@@ -5,8 +5,10 @@ import com.deutschexam.backend.auth.model.LoginResponseDto
 import com.deutschexam.backend.auth.model.RefreshTokenRequest
 import com.deutschexam.backend.auth.repository.RefreshTokenRepository
 import com.deutschexam.backend.auth.repository.UserRepository
-import com.deutschexam.backend.util.AuthException
+import com.deutschexam.backend.util.GoogleTokenInvalidException
 import com.deutschexam.backend.util.JwtConfig
+import com.deutschexam.backend.util.RefreshTokenExpiredException
+import com.deutschexam.backend.util.RefreshTokenInvalidException
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.gson.GsonFactory
@@ -22,11 +24,11 @@ class AuthService(
 
     fun googleSignIn(req: GoogleAuthRequest): LoginResponseDto {
         val idToken = verifier.verify(req.idToken)
-            ?: throw AuthException("Invalid Google ID token.")
+            ?: throw GoogleTokenInvalidException()
 
         val payload = idToken.payload
         val googleId = payload.subject
-        val email = payload.email ?: throw AuthException("Google account has no email.")
+        val email = payload.email ?: throw GoogleTokenInvalidException()
         val name = payload["name"] as? String ?: email
         val profilePicture = payload["picture"] as? String
 
@@ -35,13 +37,15 @@ class AuthService(
     }
 
     fun refresh(req: RefreshTokenRequest): LoginResponseDto {
-        val userId = refreshTokenRepo.findUserIdByToken(req.refreshToken)
-            ?: throw AuthException("Refresh token is invalid or expired.")
+        val lookup = refreshTokenRepo.findToken(req.refreshToken)
+            ?: throw RefreshTokenInvalidException()
+
+        if (lookup.isExpired) throw RefreshTokenExpiredException()
 
         refreshTokenRepo.delete(req.refreshToken)
 
-        val user = userRepo.findById(userId)
-            ?: throw AuthException("Refresh token is invalid or expired.")
+        val user = userRepo.findById(lookup.userId)
+            ?: throw RefreshTokenInvalidException()
 
         return buildLoginResponse(user.id, user.email, user.name, user.profilePicture, user.ownedProductIds)
     }

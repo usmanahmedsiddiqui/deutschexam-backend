@@ -3,10 +3,12 @@ package com.deutschexam.backend.auth.service
 import com.deutschexam.backend.auth.model.RefreshTokenRequest
 import com.deutschexam.backend.auth.model.UserRecord
 import com.deutschexam.backend.auth.repository.RefreshTokenRepository
+import com.deutschexam.backend.auth.repository.TokenLookup
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.config.AppConfig
-import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.JwtConfig
+import com.deutschexam.backend.util.RefreshTokenExpiredException
+import com.deutschexam.backend.util.RefreshTokenInvalidException
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -50,29 +52,39 @@ class AuthServiceTest {
     }
 
     @Test
-    fun `refresh with invalid token throws AuthException`() {
-        every { refreshTokenRepo.findUserIdByToken("bad-token") } returns null
+    fun `refresh with unknown token throws RefreshTokenInvalidException`() {
+        every { refreshTokenRepo.findToken("bad-token") } returns null
 
-        val ex = assertFailsWith<AuthException> {
+        val ex = assertFailsWith<RefreshTokenInvalidException> {
             service.refresh(RefreshTokenRequest(refreshToken = "bad-token"))
         }
-        assertEquals("UNAUTHORIZED", ex.code)
+        assertEquals("REFRESH_TOKEN_INVALID", ex.code)
     }
 
     @Test
-    fun `refresh with valid token but missing user throws AuthException`() {
-        every { refreshTokenRepo.findUserIdByToken("valid-token") } returns "user-1"
+    fun `refresh with expired token throws RefreshTokenExpiredException`() {
+        every { refreshTokenRepo.findToken("expired-token") } returns TokenLookup(userId = "user-1", isExpired = true)
+
+        val ex = assertFailsWith<RefreshTokenExpiredException> {
+            service.refresh(RefreshTokenRequest(refreshToken = "expired-token"))
+        }
+        assertEquals("REFRESH_TOKEN_EXPIRED", ex.code)
+    }
+
+    @Test
+    fun `refresh with valid token but missing user throws RefreshTokenInvalidException`() {
+        every { refreshTokenRepo.findToken("valid-token") } returns TokenLookup(userId = "user-1", isExpired = false)
         every { refreshTokenRepo.delete("valid-token") } returns 1
         every { userRepo.findById("user-1") } returns null
 
-        assertFailsWith<AuthException> {
+        assertFailsWith<RefreshTokenInvalidException> {
             service.refresh(RefreshTokenRequest(refreshToken = "valid-token"))
         }
     }
 
     @Test
     fun `refresh with valid token and existing user returns LoginResponseDto`() {
-        every { refreshTokenRepo.findUserIdByToken("valid-token") } returns "user-1"
+        every { refreshTokenRepo.findToken("valid-token") } returns TokenLookup(userId = "user-1", isExpired = false)
         every { refreshTokenRepo.delete("valid-token") } returns 1
         every { userRepo.findById("user-1") } returns user
         every { refreshTokenRepo.create("user-1") } returns Pair("new-refresh-token", 9999999L)
@@ -88,7 +100,7 @@ class AuthServiceTest {
 
     @Test
     fun `refresh rotates the refresh token (old one is deleted)`() {
-        every { refreshTokenRepo.findUserIdByToken("old-token") } returns "user-1"
+        every { refreshTokenRepo.findToken("old-token") } returns TokenLookup(userId = "user-1", isExpired = false)
         every { refreshTokenRepo.delete("old-token") } returns 1
         every { userRepo.findById("user-1") } returns user
         every { refreshTokenRepo.create("user-1") } returns Pair("new-token", 9999999L)
