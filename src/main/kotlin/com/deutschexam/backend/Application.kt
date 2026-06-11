@@ -20,6 +20,7 @@ fun Application.module() {
     configureSerialization()
     configureCORS(config)
     configureCallLogging()
+    configureRateLimit()
     configureStatusPages()
     configureHealthCheck(db)
     configureRouting(db, config.googleClientId)

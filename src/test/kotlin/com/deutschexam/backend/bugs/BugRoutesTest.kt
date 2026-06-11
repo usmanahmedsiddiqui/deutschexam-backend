@@ -4,6 +4,7 @@ import com.deutschexam.backend.bugs.model.BugReportRequest
 import com.deutschexam.backend.bugs.model.BugReportResponse
 import com.deutschexam.backend.bugs.repository.BugRepository
 import com.deutschexam.backend.bugs.routes.bugRoutes
+import com.deutschexam.backend.plugins.configureRateLimit
 import com.deutschexam.backend.plugins.configureStatusPages
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation as ClientCN
@@ -25,7 +26,10 @@ class BugRoutesTest {
 
     private fun testApp(block: suspend (io.ktor.client.HttpClient) -> Unit) = testApplication {
         install(ServerCN) { json(Json { ignoreUnknownKeys = true }) }
-        application { configureStatusPages() }
+        application {
+            configureRateLimit()
+            configureStatusPages()
+        }
         routing { bugRoutes(bugRepo) }
 
         val client = createClient {

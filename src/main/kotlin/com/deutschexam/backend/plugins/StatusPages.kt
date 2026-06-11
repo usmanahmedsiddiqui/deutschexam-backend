@@ -15,6 +15,13 @@ data class ApiErrorResponse(
 
 fun Application.configureStatusPages() {
     install(StatusPages) {
+        status(HttpStatusCode.TooManyRequests) { call, _ ->
+            call.response.headers.append(HttpHeaders.RetryAfter, "60")
+            call.respond(
+                HttpStatusCode.TooManyRequests,
+                ApiErrorResponse(code = "RATE_LIMITED", message = "Too many requests. Please try again later.")
+            )
+        }
         exception<ApiException> { call, cause ->
             call.respond(
                 cause.statusCode,
