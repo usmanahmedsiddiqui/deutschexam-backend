@@ -39,6 +39,10 @@ dependencies {
     implementation("org.postgresql:postgresql:42.7.4")
     implementation("com.zaxxer:HikariCP:5.1.0")
 
+    // Migrations
+    implementation("org.flywaydb:flyway-core:10.15.0")
+    implementation("org.flywaydb:flyway-database-postgresql:10.15.0")
+
     // Auth
     implementation("com.auth0:java-jwt:4.4.0")
     implementation("com.google.api-client:google-api-client:2.2.0")
