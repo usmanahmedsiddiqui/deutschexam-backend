@@ -19,8 +19,8 @@ internal object ExamDetailSeeder {
             ExamDetailsTable.insert {
                 it[id] = detail.id
                 it[name] = detail.name
-                it[providerId] = detail.provider.id
-                it[levelId] = detail.level.id
+                it[providerId] = detail.providerId
+                it[levelId] = detail.levelId
                 it[totalPoints] = detail.totalPoints
                 it[totalMinutes] = detail.totalMinutes
                 it[data] = text

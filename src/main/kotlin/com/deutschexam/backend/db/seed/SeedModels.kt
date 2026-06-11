@@ -46,8 +46,8 @@ internal data class ProductSeed(
 internal data class ExamDetailSeed(
     val id: String,
     val name: String,
-    val provider: SeedRef,
-    val level: SeedRef,
+    @SerialName("provider_id") val providerId: String,
+    @SerialName("level_id") val levelId: String,
     @SerialName("total_points") val totalPoints: Double,
     @SerialName("total_minutes") val totalMinutes: Int,
 )
@@ -57,8 +57,8 @@ internal data class ExamSeed(
     val id: String,
     val name: String,
     @SerialName("is_free") val isFree: Boolean,
-    val provider: SeedRef,
-    val level: SeedRef,
+    @SerialName("provider_id") val providerId: String,
+    @SerialName("level_id") val levelId: String,
     @SerialName("total_points") val totalPoints: Double,
     @SerialName("total_minutes") val totalMinutes: Int,
 )

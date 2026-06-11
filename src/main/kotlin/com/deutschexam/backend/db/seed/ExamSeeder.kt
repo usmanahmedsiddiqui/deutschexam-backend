@@ -15,8 +15,8 @@ internal object ExamSeeder {
             ExamsTable.upsert(ExamsTable.id) {
                 it[id] = exam.id
                 it[examDetailId] = examDetailIdFromExamId(exam.id)
-                it[levelId] = exam.level.id
-                it[providerId] = exam.provider.id
+                it[levelId] = exam.levelId
+                it[providerId] = exam.providerId
                 it[name] = exam.name
                 it[isFree] = exam.isFree
                 it[totalPoints] = exam.totalPoints
