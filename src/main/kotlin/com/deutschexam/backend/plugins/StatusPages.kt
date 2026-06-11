@@ -19,6 +19,16 @@ data class ApiErrorResponse(
 
 fun Application.configureStatusPages() {
     install(StatusPages) {
+        status(HttpStatusCode.PayloadTooLarge) { call, _ ->
+            call.respond(
+                HttpStatusCode.PayloadTooLarge,
+                ApiErrorResponse(
+                    code = "PAYLOAD_TOO_LARGE",
+                    message = "Request body exceeds the maximum allowed size.",
+                    requestId = call.callId,
+                )
+            )
+        }
         status(HttpStatusCode.TooManyRequests) { call, _ ->
             call.response.headers.append(HttpHeaders.RetryAfter, "60")
             call.respond(

@@ -80,4 +80,22 @@ class BugRoutesTest {
         }
         assertEquals(HttpStatusCode.UnprocessableEntity, response.status)
     }
+
+    @Test
+    fun `title exceeding 255 characters returns 422`() = testApp { client ->
+        val response = client.post("/bugs") {
+            contentType(ContentType.Application.Json)
+            setBody(BugReportRequest(title = "a".repeat(256), description = "Some description"))
+        }
+        assertEquals(HttpStatusCode.UnprocessableEntity, response.status)
+    }
+
+    @Test
+    fun `description exceeding 5000 characters returns 422`() = testApp { client ->
+        val response = client.post("/bugs") {
+            contentType(ContentType.Application.Json)
+            setBody(BugReportRequest(title = "Some title", description = "a".repeat(5001)))
+        }
+        assertEquals(HttpStatusCode.UnprocessableEntity, response.status)
+    }
 }

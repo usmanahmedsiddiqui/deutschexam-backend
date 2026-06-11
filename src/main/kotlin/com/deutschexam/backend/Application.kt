@@ -17,6 +17,7 @@ fun Application.module() {
     val db = DatabaseFactory.init(config)
 
     configureCallId()
+    configureBodyLimit()
     configureAuth()
     configureSerialization()
     configureCORS(config)

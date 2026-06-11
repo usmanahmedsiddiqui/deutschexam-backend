@@ -32,6 +32,7 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging-jvm:$ktorVersion")
     implementation("io.ktor:ktor-server-rate-limit-jvm:$ktorVersion")
     implementation("io.ktor:ktor-server-call-id-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-server-body-limit-jvm:$ktorVersion")
 
     // Database
     implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
