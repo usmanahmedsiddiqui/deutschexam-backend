@@ -9,7 +9,7 @@ internal object LevelSeeder {
     fun seed() {
         if (!LevelsTable.selectAll().empty()) return
 
-        for (level in loadSeedList<LevelSeed>("seed/levels.json")) {
+        for (level in loadSeedList<LevelSeed>("seed/levels/levels.json")) {
             LevelsTable.insert {
                 it[id] = level.id
                 it[name] = level.name

@@ -9,7 +9,7 @@ internal object ProviderSeeder {
     fun seed() {
         if (!ProvidersTable.selectAll().empty()) return
 
-        for (provider in loadSeedList<ProviderSeed>("seed/providers.json")) {
+        for (provider in loadSeedList<ProviderSeed>("seed/providers/providers.json")) {
             ProvidersTable.insert {
                 it[id] = provider.id
                 it[name] = provider.name

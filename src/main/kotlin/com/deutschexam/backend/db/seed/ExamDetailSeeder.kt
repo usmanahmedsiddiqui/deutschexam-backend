@@ -14,7 +14,7 @@ internal object ExamDetailSeeder {
         if (!ExamDetailsTable.selectAll().empty()) return
 
         for (filename in files) {
-            val text = loadSeedResource("seed/$filename.json") ?: continue
+            val text = loadSeedResource("seed/exam_detail/$filename.json") ?: continue
             val detail = seedJson.decodeFromString<ExamDetailSeed>(text)
             ExamDetailsTable.insert {
                 it[id] = detail.id

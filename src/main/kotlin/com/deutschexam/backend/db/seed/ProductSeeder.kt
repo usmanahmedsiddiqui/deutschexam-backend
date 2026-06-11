@@ -8,7 +8,7 @@ internal object ProductSeeder {
     fun seed() {
         if (!ProductsTable.selectAll().empty()) return
 
-        for (product in loadSeedList<ProductSeed>("seed/products.json")) {
+        for (product in loadSeedList<ProductSeed>("seed/products/products.json")) {
             ProductsTable.insert {
                 it[id] = product.id
                 it[levelId] = product.levelId
