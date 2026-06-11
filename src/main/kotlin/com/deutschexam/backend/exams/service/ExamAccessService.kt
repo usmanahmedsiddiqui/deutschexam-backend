@@ -1,8 +1,8 @@
 package com.deutschexam.backend.exams.service
 
-import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.products.repository.ProductRepository
+import com.deutschexam.backend.products.repository.UserProductRepository
 import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.ForbiddenException
 import com.deutschexam.backend.util.NotFoundException
@@ -17,7 +17,7 @@ import kotlinx.serialization.json.JsonElement
 class ExamAccessService(
     private val examRepo: ExamRepository,
     private val productRepo: ProductRepository,
-    private val userRepo: UserRepository,
+    private val userProductRepo: UserProductRepository,
 ) {
 
     /**
@@ -38,7 +38,7 @@ class ExamAccessService(
             throw AuthException("A valid token is required to access paid exams.", code = "TOKEN_MISSING")
         }
 
-        val owned = userRepo.getOwnedProductIds(userId)
+        val owned = userProductRepo.getOwnedProductIds(userId)
         val productsForLevel = productRepo.findProductIdsByLevel(exam.levelId)
 
         if (owned.none { it in productsForLevel }) {

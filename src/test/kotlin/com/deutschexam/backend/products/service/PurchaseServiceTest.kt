@@ -1,9 +1,9 @@
 package com.deutschexam.backend.products.service
 
-import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.levels.model.LevelDto
 import com.deutschexam.backend.products.model.ProductDto
 import com.deutschexam.backend.products.repository.ProductRepository
+import com.deutschexam.backend.products.repository.UserProductRepository
 import com.deutschexam.backend.util.ConflictException
 import com.deutschexam.backend.util.NotFoundException
 import io.mockk.every
@@ -16,8 +16,8 @@ import kotlin.test.assertFailsWith
 class PurchaseServiceTest {
 
     private val productRepo = mockk<ProductRepository>()
-    private val userRepo = mockk<UserRepository>(relaxed = true)
-    private val service = PurchaseService(productRepo, userRepo)
+    private val userProductRepo = mockk<UserProductRepository>(relaxed = true)
+    private val service = PurchaseService(productRepo, userProductRepo)
 
     private val product = ProductDto(
         id = "p_a1",
@@ -37,21 +37,21 @@ class PurchaseServiceTest {
     @Test
     fun `buying an already-owned product throws PRODUCT_ALREADY_OWNED`() {
         every { productRepo.findById("p_a1") } returns product
-        every { userRepo.getOwnedProductIds("u1") } returns listOf("p_a1")
+        every { userProductRepo.getOwnedProductIds("u1") } returns listOf("p_a1")
 
         val ex = assertFailsWith<ConflictException> { service.buyProduct("p_a1", "u1") }
         assertEquals("PRODUCT_ALREADY_OWNED", ex.code)
-        verify(exactly = 0) { userRepo.addOwnedProduct(any(), any()) }
+        verify(exactly = 0) { userProductRepo.addOwnedProduct(any(), any()) }
     }
 
     @Test
     fun `buying a new product grants ownership`() {
         every { productRepo.findById("p_a1") } returns product
-        every { userRepo.getOwnedProductIds("u1") } returns emptyList()
+        every { userProductRepo.getOwnedProductIds("u1") } returns emptyList()
 
         val result = service.buyProduct("p_a1", "u1")
 
         assertEquals(product, result.product)
-        verify(exactly = 1) { userRepo.addOwnedProduct("u1", "p_a1") }
+        verify(exactly = 1) { userProductRepo.addOwnedProduct("u1", "p_a1") }
     }
 }

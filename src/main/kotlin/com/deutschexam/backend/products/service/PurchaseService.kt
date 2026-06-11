@@ -1,8 +1,8 @@
 package com.deutschexam.backend.products.service
 
-import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.products.model.BuyProductResponseDto
 import com.deutschexam.backend.products.repository.ProductRepository
+import com.deutschexam.backend.products.repository.UserProductRepository
 import com.deutschexam.backend.util.ConflictException
 import com.deutschexam.backend.util.NotFoundException
 
@@ -12,14 +12,14 @@ import com.deutschexam.backend.util.NotFoundException
  */
 class PurchaseService(
     private val productRepo: ProductRepository,
-    private val userRepo: UserRepository,
+    private val userProductRepo: UserProductRepository,
 ) {
 
     fun buyProduct(productId: String, userId: String): BuyProductResponseDto {
         val product = productRepo.findById(productId)
             ?: throw NotFoundException("Product not found.", code = "PRODUCT_NOT_FOUND")
 
-        if (productId in userRepo.getOwnedProductIds(userId)) {
+        if (productId in userProductRepo.getOwnedProductIds(userId)) {
             throw ConflictException(
                 "You already own this product.",
                 code = "PRODUCT_ALREADY_OWNED",
@@ -29,7 +29,7 @@ class PurchaseService(
         // TODO(SEC-2): verify a real payment (Google Play Billing / Stripe) BEFORE granting
         // ownership. Until billing is integrated this endpoint must NOT be exposed to real
         // users — it currently grants ownership for free.
-        userRepo.addOwnedProduct(userId, productId)
+        userProductRepo.addOwnedProduct(userId, productId)
 
         return BuyProductResponseDto(product)
     }

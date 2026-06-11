@@ -3,6 +3,7 @@ package com.deutschexam.backend.auth.service
 import com.deutschexam.backend.auth.model.GoogleAuthRequest
 import com.deutschexam.backend.auth.model.LoginResponseDto
 import com.deutschexam.backend.auth.model.RefreshTokenRequest
+import com.deutschexam.backend.auth.repository.RefreshTokenRepository
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.JwtConfig
@@ -12,6 +13,7 @@ import com.google.api.client.json.gson.GsonFactory
 
 class AuthService(
     private val userRepo: UserRepository,
+    private val refreshTokenRepo: RefreshTokenRepository,
     googleClientId: String,
 ) {
     private val verifier = GoogleIdTokenVerifier.Builder(NetHttpTransport(), GsonFactory.getDefaultInstance())
@@ -33,10 +35,13 @@ class AuthService(
     }
 
     fun refresh(req: RefreshTokenRequest): LoginResponseDto {
-        val user = userRepo.findUserByRefreshToken(req.refreshToken)
+        val userId = refreshTokenRepo.findUserIdByToken(req.refreshToken)
             ?: throw AuthException("Refresh token is invalid or expired.")
 
-        userRepo.deleteRefreshToken(req.refreshToken)
+        refreshTokenRepo.delete(req.refreshToken)
+
+        val user = userRepo.findById(userId)
+            ?: throw AuthException("Refresh token is invalid or expired.")
 
         return buildLoginResponse(user.id, user.email, user.name, user.profilePicture, user.ownedProductIds)
     }
@@ -50,7 +55,7 @@ class AuthService(
     ): LoginResponseDto {
         val token = JwtConfig.generateToken(userId, email)
         val tokenExpiresAt = JwtConfig.tokenExpiresAt()
-        val (refreshToken, refreshTokenExpiresAt) = userRepo.createRefreshToken(userId)
+        val (refreshToken, refreshTokenExpiresAt) = refreshTokenRepo.create(userId)
 
         return LoginResponseDto(
             token = token,

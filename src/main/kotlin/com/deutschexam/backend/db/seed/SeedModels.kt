@@ -3,10 +3,6 @@ package com.deutschexam.backend.db.seed
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-/** Minimal reference to a nested object that only contributes its id (provider/level in exam files). */
-@Serializable
-internal data class SeedRef(val id: String)
-
 @Serializable
 internal data class CatalogEntrySeed(
     val type: String,

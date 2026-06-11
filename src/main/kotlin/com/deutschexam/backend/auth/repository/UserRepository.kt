@@ -1,18 +1,20 @@
 package com.deutschexam.backend.auth.repository
 
 import com.deutschexam.backend.auth.model.UserRecord
-import com.deutschexam.backend.db.tables.RefreshTokensTable
-import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
-import kotlinx.datetime.Clock
-import org.jetbrains.exposed.sql.*
+import com.deutschexam.backend.products.repository.UserProductRepository
+import org.jetbrains.exposed.sql.ResultRow
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.util.*
-import kotlin.time.Duration.Companion.days
+import org.jetbrains.exposed.sql.update
+import java.util.UUID
 
-private const val REFRESH_TOKEN_EXPIRY_DAYS = 30
-
-class UserRepository(private val db: Database) {
+class UserRepository(
+    private val db: Database,
+    private val userProductRepo: UserProductRepository,
+) {
 
     fun findById(id: String): UserRecord? = transaction(db) {
         UsersTable.selectAll()
@@ -47,68 +49,14 @@ class UserRepository(private val db: Database) {
             .toUserRecord()
     }
 
-    fun getOwnedProductIds(userId: String): List<String> = transaction(db) {
-        UserProductsTable
-            .selectAll()
-            .where { UserProductsTable.userId eq UUID.fromString(userId) }
-            .map { it[UserProductsTable.productId] }
-    }
-
-    fun addOwnedProduct(userId: String, productId: String) = transaction(db) {
-        UserProductsTable.insertIgnore {
-            it[UserProductsTable.userId] = UUID.fromString(userId)
-            it[UserProductsTable.productId] = productId
-        }
-    }
-
-    // ── Refresh tokens ───────────────────────────────────────────────────────
-
-    fun createRefreshToken(userId: String): Pair<String, Long> = transaction(db) {
-        val token = UUID.randomUUID().toString()
-        val expiresAt = Clock.System.now().plus(REFRESH_TOKEN_EXPIRY_DAYS.days)
-
-        RefreshTokensTable.insert {
-            it[RefreshTokensTable.userId] = UUID.fromString(userId)
-            it[RefreshTokensTable.token] = token
-            it[RefreshTokensTable.expiresAt] = expiresAt
-        }
-
-        Pair(token, expiresAt.epochSeconds)
-    }
-
-    fun findUserByRefreshToken(token: String): UserRecord? = transaction(db) {
-        val now = Clock.System.now()
-        val row = RefreshTokensTable
-            .selectAll()
-            .where { (RefreshTokensTable.token eq token) and (RefreshTokensTable.expiresAt greater now) }
-            .firstOrNull() ?: return@transaction null
-
-        UsersTable.selectAll()
-            .where { UsersTable.id eq row[RefreshTokensTable.userId] }
-            .firstOrNull()
-            ?.toUserRecord()
-    }
-
-    fun deleteRefreshToken(token: String) = transaction(db) {
-        val tokenValue = token
-        RefreshTokensTable.deleteWhere {
-            with(SqlExpressionBuilder) { RefreshTokensTable.token eq tokenValue }
-        }
-    }
-
     private fun ResultRow.toUserRecord(): UserRecord {
         val userId = this[UsersTable.id].toString()
-        val ownedIds = UserProductsTable
-            .selectAll()
-            .where { UserProductsTable.userId eq this@toUserRecord[UsersTable.id] }
-            .map { it[UserProductsTable.productId] }
-
         return UserRecord(
             id = userId,
             name = this[UsersTable.name],
             email = this[UsersTable.email],
             profilePicture = this[UsersTable.profilePicture],
-            ownedProductIds = ownedIds,
+            ownedProductIds = userProductRepo.getOwnedProductIds(userId),
         )
     }
 }
