@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: deutschexam
-      POSTGRES_USER: deutschexam
-      POSTGRES_PASSWORD: deutschexam
+      POSTGRES_DB: ${POSTGRES_DB:-deutschexam}
+      POSTGRES_USER: ${DATABASE_USER:-deutschexam}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-deutschexam}
     ports:
       - "5432:5432"
     volumes:
@@ -22,11 +22,13 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DATABASE_URL: jdbc:postgresql://postgres:5432/deutschexam
-      DATABASE_USER: deutschexam
-      DATABASE_PASSWORD: deutschexam
-      JWT_SECRET: dev-secret-change-in-production-min-32-chars
-      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      DATABASE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-deutschexam}
+      DATABASE_USER: ${DATABASE_USER:-deutschexam}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-deutschexam}
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-in-production-min-32-chars}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      APP_ENVIRONMENT: ${APP_ENVIRONMENT:-dev}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-}
     depends_on:
       postgres:
         condition: service_healthy

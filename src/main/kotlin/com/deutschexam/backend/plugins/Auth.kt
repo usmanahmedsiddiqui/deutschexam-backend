@@ -5,6 +5,7 @@ import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.auth.jwt.*
 import io.ktor.http.*
+import io.ktor.server.request.*
 import io.ktor.server.response.*
 
 data class UserPrincipal(val userId: String, val email: String) : Principal
@@ -19,7 +20,13 @@ fun Application.configureAuth() {
                 UserPrincipal(userId, email)
             }
             challenge { _, _ ->
-                call.respond(HttpStatusCode.Unauthorized, ApiErrorResponse(code = "UNAUTHORIZED", message = "Token invalid or expired."))
+                val hasAuthHeader = call.request.header(HttpHeaders.Authorization) != null
+                val (code, message) = if (hasAuthHeader) {
+                    "TOKEN_INVALID" to "Access token is invalid or expired."
+                } else {
+                    "TOKEN_MISSING" to "Authentication is required to access this resource."
+                }
+                call.respond(HttpStatusCode.Unauthorized, ApiErrorResponse(code = code, message = message))
             }
         }
     }

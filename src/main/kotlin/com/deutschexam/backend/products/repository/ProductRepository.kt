@@ -1,35 +1,33 @@
 package com.deutschexam.backend.products.repository
 
-import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.db.tables.LevelCatalogTable
 import com.deutschexam.backend.db.tables.LevelsTable
 import com.deutschexam.backend.db.tables.ProductsTable
 import com.deutschexam.backend.levels.model.CatalogItemDto
 import com.deutschexam.backend.levels.model.LevelDto
-import com.deutschexam.backend.products.model.BuyProductResponseDto
 import com.deutschexam.backend.products.model.ProductDto
 import com.deutschexam.backend.products.model.ProductsResponseDto
-import com.deutschexam.backend.util.NotFoundException
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.Join
 import org.jetbrains.exposed.sql.JoinType
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
-class ProductRepository(private val db: Database, private val userRepo: UserRepository) {
+class ProductRepository(private val db: Database) {
 
     fun getAllProducts(): ProductsResponseDto {
         val products = fetchProducts()
         return ProductsResponseDto(products)
     }
 
-    fun buyProduct(productId: String, userId: String): BuyProductResponseDto {
-        val product = fetchProducts().find { it.id == productId }
-            ?: throw NotFoundException("Product not found.")
+    fun findById(productId: String): ProductDto? = fetchProducts().find { it.id == productId }
 
-        userRepo.addOwnedProduct(userId, productId)
-
-        return BuyProductResponseDto(product)
+    fun findProductIdsByLevel(levelId: String): Set<String> = transaction(db) {
+        ProductsTable
+            .selectAll()
+            .where { ProductsTable.levelId eq levelId }
+            .map { it[ProductsTable.id] }
+            .toSet()
     }
 
     private fun fetchProducts(): List<ProductDto> = transaction(db) {

@@ -11,9 +11,9 @@ import com.deutschexam.backend.db.tables.ProductsTable
 import com.deutschexam.backend.db.tables.RefreshTokensTable
 import com.deutschexam.backend.db.tables.UserProductsTable
 import com.deutschexam.backend.db.tables.UsersTable
+import com.deutschexam.backend.config.AppConfig
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
-import io.ktor.server.config.*
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.double
 import kotlinx.serialization.json.int
@@ -26,17 +26,12 @@ import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object DatabaseFactory {
-    fun init(config: ApplicationConfig): Database {
-        val jdbcUrl = config.property("database.url").getString()
-        val user = config.property("database.user").getString()
-        val password = config.property("database.password").getString()
-        val poolSize = config.property("database.pool_size").getString().toInt()
-
+    fun init(config: AppConfig): Database {
         val hikariConfig = HikariConfig().apply {
-            this.jdbcUrl = jdbcUrl
-            this.username = user
-            this.password = password
-            this.maximumPoolSize = poolSize
+            this.jdbcUrl = config.databaseUrl
+            this.username = config.databaseUser
+            this.password = config.databasePassword
+            this.maximumPoolSize = config.databasePoolSize
             this.isAutoCommit = false
             this.transactionIsolation = "TRANSACTION_REPEATABLE_READ"
             validate()

@@ -9,7 +9,12 @@ import org.jetbrains.exposed.sql.andWhere
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
-data class ExamResult(val isFree: Boolean, val data: JsonElement)
+data class ExamResult(
+    val isFree: Boolean,
+    val levelId: String,
+    val providerId: String,
+    val data: JsonElement,
+)
 
 class ExamRepository(private val db: Database) {
 
@@ -37,6 +42,13 @@ class ExamRepository(private val db: Database) {
         ExamsTable.selectAll()
             .where { ExamsTable.id eq id }
             .firstOrNull()
-            ?.let { ExamResult(it[ExamsTable.isFree], Json.parseToJsonElement(it[ExamsTable.data])) }
+            ?.let {
+                ExamResult(
+                    isFree = it[ExamsTable.isFree],
+                    levelId = it[ExamsTable.levelId],
+                    providerId = it[ExamsTable.providerId],
+                    data = Json.parseToJsonElement(it[ExamsTable.data]),
+                )
+            }
     }
 }

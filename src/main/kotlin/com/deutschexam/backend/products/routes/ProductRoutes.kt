@@ -2,6 +2,7 @@ package com.deutschexam.backend.products.routes
 
 import com.deutschexam.backend.plugins.UserPrincipal
 import com.deutschexam.backend.products.repository.ProductRepository
+import com.deutschexam.backend.products.service.PurchaseService
 import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
@@ -9,7 +10,7 @@ import io.ktor.server.auth.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.productRoutes(productRepo: ProductRepository) {
+fun Route.productRoutes(productRepo: ProductRepository, purchaseService: PurchaseService) {
     route("/products") {
         get {
             call.respond(HttpStatusCode.OK, productRepo.getAllProducts())
@@ -18,10 +19,10 @@ fun Route.productRoutes(productRepo: ProductRepository) {
         authenticate("jwt-auth") {
             post("/{id}/buy") {
                 val principal = call.principal<UserPrincipal>()
-                    ?: throw AuthException()
+                    ?: throw AuthException(code = "TOKEN_MISSING")
                 val productId = call.parameters["id"]
                     ?: throw ValidationException("Product id is required.")
-                val result = productRepo.buyProduct(productId, principal.userId)
+                val result = purchaseService.buyProduct(productId, principal.userId)
                 call.respond(HttpStatusCode.OK, result)
             }
         }

@@ -2,15 +2,19 @@ package com.deutschexam.backend.exams.routes
 
 import com.deutschexam.backend.exams.repository.ExamDetailRepository
 import com.deutschexam.backend.exams.repository.ExamRepository
+import com.deutschexam.backend.exams.service.ExamAccessService
 import com.deutschexam.backend.plugins.UserPrincipal
-import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
 import io.ktor.server.auth.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.examRoutes(examDetailRepo: ExamDetailRepository, examRepo: ExamRepository) {
+fun Route.examRoutes(
+    examDetailRepo: ExamDetailRepository,
+    examRepo: ExamRepository,
+    examAccessService: ExamAccessService,
+) {
 
     // GET /exam-details?provider_id=telc&level_id=a1
     // Returns the exam detail template (sections, tasks, passing criteria — no questions).
@@ -50,17 +54,13 @@ fun Route.examRoutes(examDetailRepo: ExamDetailRepository, examRepo: ExamReposit
 
     // GET /exams/telc_a1_01
     // Returns full exam with all questions.
-    // Free exams: accessible by anyone. Paid exams: requires a valid JWT token.
+    // Free exams: accessible by anyone. Paid exams: require a valid token AND product ownership.
     authenticate("jwt-auth", optional = true) {
         get("/exams/{id}") {
             val id = call.parameters["id"] ?: throw ValidationException("Exam id is required.")
-            val exam = examRepo.findById(id) ?: throw ValidationException("Exam not found.")
-
-            if (!exam.isFree && call.principal<UserPrincipal>() == null) {
-                throw AuthException("A valid token is required to access paid exams.")
-            }
-
-            call.respond(HttpStatusCode.OK, exam.data)
+            val userId = call.principal<UserPrincipal>()?.userId
+            val data = examAccessService.getExamContent(id, userId)
+            call.respond(HttpStatusCode.OK, data)
         }
     }
 }
