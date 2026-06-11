@@ -1,7 +1,7 @@
 package com.deutschexam.backend.db.seed
 
+import com.deutschexam.backend.db.model.ExamSeed
 import com.deutschexam.backend.db.tables.ExamsTable
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.upsert
 
 internal object ExamSeeder {

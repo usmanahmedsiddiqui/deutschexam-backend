@@ -1,5 +1,6 @@
 package com.deutschexam.backend.db.seed
 
+import com.deutschexam.backend.db.model.ExamDetailSeed
 import com.deutschexam.backend.db.tables.ExamDetailsTable
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.selectAll

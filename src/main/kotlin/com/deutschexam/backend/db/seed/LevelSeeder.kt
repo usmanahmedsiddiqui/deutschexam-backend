@@ -1,5 +1,6 @@
 package com.deutschexam.backend.db.seed
 
+import com.deutschexam.backend.db.model.LevelSeed
 import com.deutschexam.backend.db.tables.LevelCatalogTable
 import com.deutschexam.backend.db.tables.LevelsTable
 import org.jetbrains.exposed.sql.insert
