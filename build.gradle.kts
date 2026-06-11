@@ -52,6 +52,7 @@ dependencies {
 
     // Testing
     testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")
+    testImplementation("io.ktor:ktor-client-content-negotiation-jvm:$ktorVersion")
     testImplementation(kotlin("test-junit5"))
     testImplementation("io.mockk:mockk:1.13.13")
 }
