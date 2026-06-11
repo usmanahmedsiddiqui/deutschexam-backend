@@ -16,9 +16,11 @@ fun Route.examRoutes(
     examAccessService: ExamAccessService,
 ) {
 
-    // GET /exam-details?provider_id=telc&level_id=a1
-    // Returns the exam detail template (sections, tasks, passing criteria — no questions).
-    // Falls back to full list if no filters provided.
+    /**
+     * GET /exam-details?provider_id=telc&level_id=a1
+     * Returns the exam detail template (sections, tasks, passing criteria — no questions).
+     *  Falls back to full list if no filters provided.
+     */
     get("/exam-details") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
@@ -32,15 +34,19 @@ fun Route.examRoutes(
         }
     }
 
-    // GET /exam-details/telc_a1
+    /**
+     *  GET /exam-details/telc_a1
+     */
     get("/exam-details/{id}") {
         val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
         val detail = examDetailRepo.findById(id) ?: throw ValidationException("Exam detail not found.")
         call.respond(HttpStatusCode.OK, detail)
     }
 
-    // GET /exams?provider_id=telc&level_id=a1
-    // Returns list of exams for a provider+level. Guest accessible.
+    /**
+     *  GET /exams?provider_id=telc&level_id=a1
+     *  Returns list of exams for a provider+level. Guest accessible.
+     */
     get("/exams") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
@@ -52,9 +58,11 @@ fun Route.examRoutes(
         }
     }
 
-    // GET /exams/telc_a1_01
-    // Returns full exam with all questions.
-    // Free exams: accessible by anyone. Paid exams: require a valid token AND product ownership.
+    /**
+     *  GET /exams/telc_a1_01
+     *  GET /exams/telc_a1_01
+     *  Free exams: accessible by anyone. Paid exams: require a valid token AND product ownership.
+     */
     authenticate("jwt-auth", optional = true) {
         get("/exams/{id}") {
             val id = call.parameters["id"] ?: throw ValidationException("Exam id is required.")
