@@ -1,22 +1,18 @@
 package com.deutschexam.backend.db.seed
 
 import com.deutschexam.backend.db.tables.ExamsTable
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.selectAll
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
+import org.jetbrains.exposed.sql.upsert
 
 internal object ExamSeeder {
-    private val files = listOf(
-        "exam_telc_a1_01", "exam_telc_a2_01", "exam_telc_b1_01",
-        "exam_goethe_b1_01", "exam_goethe_a2_01",
-    )
+    private const val INDEX = "seed/exams/index.txt"  // paths inside are relative to seed/exams/
 
     fun seed() {
-        if (!ExamsTable.selectAll().empty()) return
-
-        for (filename in files) {
-            val text = loadSeedResource("seed/$filename.json") ?: continue
+        val paths = examPaths()
+        for (path in paths) {
+            val text = loadSeedResource("seed/exams/$path") ?: continue
             val exam = seedJson.decodeFromString<ExamSeed>(text)
-            ExamsTable.insert {
+            ExamsTable.upsert(ExamsTable.id) {
                 it[id] = exam.id
                 it[examDetailId] = examDetailIdFromExamId(exam.id)
                 it[levelId] = exam.level.id
@@ -29,6 +25,13 @@ internal object ExamSeeder {
             }
         }
     }
+
+    private fun examPaths(): List<String> =
+        loadSeedResource(INDEX)
+            ?.lines()
+            .orEmpty()
+            .map { it.trim() }
+            .filter { it.isNotEmpty() && !it.startsWith("#") }
 
     /** telc_a1_01 -> telc_a1, goethe_b1_01 -> goethe_b1 */
     private fun examDetailIdFromExamId(examId: String): String =

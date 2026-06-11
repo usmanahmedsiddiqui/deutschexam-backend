@@ -1,0 +1,7 @@
+# Paths are relative to seed/exams/.
+# Add one line per exam when you add a new JSON file.
+telc/a1/exam_telc_a1_01.json
+telc/a2/exam_telc_a2_01.json
+telc/b1/exam_telc_b1_01.json
+goethe/a2/exam_goethe_a2_01.json
+goethe/b1/exam_goethe_b1_01.json
