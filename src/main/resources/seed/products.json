@@ -1,0 +1,5 @@
+[
+  { "id": "p_a1", "level_id": "a1", "price_cents": 1999, "discounted_price_cents": null, "currency": "EUR" },
+  { "id": "p_a2", "level_id": "a2", "price_cents": 1999, "discounted_price_cents": 1499, "currency": "EUR" },
+  { "id": "p_b1", "level_id": "b1", "price_cents": 1999, "discounted_price_cents": null, "currency": "EUR" }
+]

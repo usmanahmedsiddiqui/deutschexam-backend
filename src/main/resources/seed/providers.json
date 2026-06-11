@@ -1,0 +1,20 @@
+[
+  {
+    "id": "telc",
+    "name": "Telc",
+    "full_name": "Telc GmbH (The European Language Certificates)",
+    "description": "Telc language tests are recognized internationally and test German language skills at various CEFR levels.",
+    "logo": "assets/logos/telc.png",
+    "website": "https://www.telc.net",
+    "level_ids": ["a1", "a2", "b1"]
+  },
+  {
+    "id": "goethe",
+    "name": "Goethe-Institut",
+    "full_name": "Goethe-Institut e.V.",
+    "description": "The Goethe-Institut is the Federal Republic of Germany's cultural institution, offering standardized German language exams worldwide.",
+    "logo": "assets/logos/goethe.png",
+    "website": "https://www.goethe.de",
+    "level_ids": ["a1", "a2", "b1"]
+  }
+]
