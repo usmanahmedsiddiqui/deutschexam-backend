@@ -13,12 +13,6 @@ sealed class ApiException(
 class TokenMissingException :
     ApiException("TOKEN_MISSING", "Authentication is required to access this resource.", HttpStatusCode.Unauthorized)
 
-class TokenInvalidException :
-    ApiException("TOKEN_INVALID", "Access token is invalid.", HttpStatusCode.Unauthorized)
-
-class TokenExpiredException :
-    ApiException("TOKEN_EXPIRED", "Access token has expired.", HttpStatusCode.Unauthorized)
-
 class RefreshTokenInvalidException :
     ApiException("REFRESH_TOKEN_INVALID", "Refresh token is invalid or has been revoked.", HttpStatusCode.Unauthorized)
 
