@@ -3,6 +3,7 @@ package com.deutschexam.backend.products.service
 import com.deutschexam.backend.products.model.BuyProductResponseDto
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.ConflictException
 import com.deutschexam.backend.util.NotFoundException
 
@@ -17,12 +18,12 @@ class PurchaseService(
 
     fun buyProduct(productId: String, userId: String): BuyProductResponseDto {
         val product = productRepo.findById(productId)
-            ?: throw NotFoundException("Product not found.", code = "PRODUCT_NOT_FOUND")
+            ?: throw NotFoundException(code = ApiErrorCode.PRODUCT_NOT_FOUND, message = "Product not found.")
 
         if (productId in userProductRepo.getOwnedProductIds(userId)) {
             throw ConflictException(
-                "You already own this product.",
-                code = "PRODUCT_ALREADY_OWNED",
+                code = ApiErrorCode.PRODUCT_ALREADY_OWNED,
+                message = "You already own this product.",
             )
         }
 

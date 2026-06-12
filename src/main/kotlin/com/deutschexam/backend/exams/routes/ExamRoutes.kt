@@ -4,6 +4,7 @@ import com.deutschexam.backend.exams.repository.ExamDetailRepository
 import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.exams.service.ExamAccessService
 import com.deutschexam.backend.plugins.UserPrincipal
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.NotFoundException
 import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
@@ -24,8 +25,8 @@ fun Route.examRoutes(
         if (providerId != null && levelId != null) {
             val detail = examDetailRepo.findByProviderAndLevel(providerId, levelId)
                 ?: throw NotFoundException(
-                    "No exam detail found for provider '$providerId' and level '$levelId'.",
-                    code = "EXAM_DETAIL_NOT_FOUND",
+                    code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND,
+                    message = "No exam detail found for provider '$providerId' and level '$levelId'.",
                 )
             call.respond(HttpStatusCode.OK, detail)
         } else {
@@ -36,7 +37,7 @@ fun Route.examRoutes(
     get("/exam-details/{id}") {
         val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
         val detail = examDetailRepo.findById(id)
-            ?: throw NotFoundException("Exam detail not found.", code = "EXAM_DETAIL_NOT_FOUND")
+            ?: throw NotFoundException(code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND, message = "Exam detail not found.")
         call.respond(HttpStatusCode.OK, detail)
     }
 

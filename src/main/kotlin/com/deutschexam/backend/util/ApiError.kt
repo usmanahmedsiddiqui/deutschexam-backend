@@ -8,46 +8,39 @@ sealed class ApiException(
     val statusCode: HttpStatusCode,
 ) : Exception(message)
 
-/**
- * Auth / 401
- */
-
 class TokenMissingException :
-    ApiException("TOKEN_MISSING", "Authentication is required to access this resource.", HttpStatusCode.Unauthorized)
+    ApiException(ApiErrorCode.TOKEN_MISSING.name, "Authentication is required to access this resource.", HttpStatusCode.Unauthorized)
 
 class RefreshTokenInvalidException :
-    ApiException("REFRESH_TOKEN_INVALID", "Refresh token is invalid or has been revoked.", HttpStatusCode.Unauthorized)
+    ApiException(ApiErrorCode.REFRESH_TOKEN_INVALID.name, "Refresh token is invalid or has been revoked.", HttpStatusCode.Unauthorized)
 
 class RefreshTokenExpiredException :
-    ApiException("REFRESH_TOKEN_EXPIRED", "Refresh token has expired. Please sign in again.", HttpStatusCode.Unauthorized)
+    ApiException(ApiErrorCode.REFRESH_TOKEN_EXPIRED.name, "Refresh token has expired. Please sign in again.", HttpStatusCode.Unauthorized)
 
 class GoogleTokenInvalidException :
-    ApiException("GOOGLE_TOKEN_INVALID", "Google sign-in failed. Please try again.", HttpStatusCode.Unauthorized)
+    ApiException(ApiErrorCode.GOOGLE_TOKEN_INVALID.name, "Google sign-in failed. Please try again.", HttpStatusCode.BadRequest)
 
-/**
- * Forbidden / 403
- */
+class ForbiddenException(code: ApiErrorCode, message: String) :
+    ApiException(code.name, message, HttpStatusCode.Forbidden)
 
-class ForbiddenException(message: String = "Forbidden", code: String = "FORBIDDEN") :
-    ApiException(code, message, HttpStatusCode.Forbidden)
+class NotFoundException(code: ApiErrorCode, message: String) :
+    ApiException(code.name, message, HttpStatusCode.NotFound)
 
-/**
- *  Resource / 404
- */
-
-class NotFoundException(message: String = "Not found", code: String = "NOT_FOUND") :
-    ApiException(code, message, HttpStatusCode.NotFound)
-
-/**
- * ─ Conflict / 409
- */
-
-class ConflictException(message: String, code: String = "CONFLICT") :
-    ApiException(code, message, HttpStatusCode.Conflict)
-
-/**
- *  Validation / 422
- */
+class ConflictException(code: ApiErrorCode, message: String) :
+    ApiException(code.name, message, HttpStatusCode.Conflict)
 
 class ValidationException(message: String) :
-    ApiException("VALIDATION_ERROR", message, HttpStatusCode.UnprocessableEntity)
+    ApiException(ApiErrorCode.VALIDATION_ERROR.name, message, HttpStatusCode.UnprocessableEntity)
+
+enum class ApiErrorCode {
+    TOKEN_MISSING,
+    REFRESH_TOKEN_INVALID,
+    REFRESH_TOKEN_EXPIRED,
+    GOOGLE_TOKEN_INVALID,
+    EXAM_NOT_OWNED,
+    EXAM_DETAIL_NOT_FOUND,
+    EXAM_NOT_FOUND,
+    PRODUCT_NOT_FOUND,
+    PRODUCT_ALREADY_OWNED,
+    VALIDATION_ERROR
+}

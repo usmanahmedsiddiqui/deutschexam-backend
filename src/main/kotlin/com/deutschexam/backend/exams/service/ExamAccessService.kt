@@ -3,6 +3,7 @@ package com.deutschexam.backend.exams.service
 import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.ForbiddenException
 import com.deutschexam.backend.util.NotFoundException
 import com.deutschexam.backend.util.TokenMissingException
@@ -25,12 +26,11 @@ class ExamAccessService(
      * @param userId the authenticated user id, or null for a guest
      * @return the full exam content if the caller is allowed to see it
      * @throws NotFoundException if the exam does not exist
-     * @throws AuthException (TOKEN_MISSING) if a paid exam is requested by a guest
      * @throws ForbiddenException (EXAM_NOT_OWNED) if a paid exam is requested by a non-owner
      */
     fun getExamContent(examId: String, userId: String?): JsonElement {
         val exam = examRepo.findById(examId)
-            ?: throw NotFoundException("Exam not found.", code = "EXAM_NOT_FOUND")
+            ?: throw NotFoundException(code = ApiErrorCode.EXAM_NOT_FOUND, message = "Exam not found.")
 
         if (exam.isFree) return exam.data
 
@@ -41,8 +41,8 @@ class ExamAccessService(
 
         if (owned.none { it in productsForLevel }) {
             throw ForbiddenException(
-                "You do not own the product required to access this exam.",
-                code = "EXAM_NOT_OWNED",
+                code = ApiErrorCode.EXAM_NOT_OWNED,
+                message = "You do not own the product required to access this exam.",
             )
         }
 
