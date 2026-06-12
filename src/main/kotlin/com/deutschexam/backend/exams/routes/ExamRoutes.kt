@@ -70,7 +70,9 @@ fun Route.examRoutes(
                 )
             call.respond(HttpStatusCode.OK, detail.enrich(providerRepo, levelRepo))
         } else {
-            call.respond(HttpStatusCode.OK, examDetailRepo.findAll())
+            val providers = providerRepo.getAllProviders().associateBy { it.id }
+            val levels = levelRepo.getAllLevels().associateBy { it.id }
+            call.respond(HttpStatusCode.OK, examDetailRepo.findAll(providers, levels))
         }
     }
 
@@ -93,7 +95,9 @@ fun Route.examRoutes(
                 .map { it.withProviderAndLevel(provider, level) }
             call.respond(HttpStatusCode.OK, exams)
         } else {
-            call.respond(HttpStatusCode.OK, examRepo.findAll())
+            val providers = providerRepo.getAllProviders().associateBy { it.id }
+            val levels = levelRepo.getAllLevels().associateBy { it.id }
+            call.respond(HttpStatusCode.OK, examRepo.findAll(providers, levels))
         }
     }
 

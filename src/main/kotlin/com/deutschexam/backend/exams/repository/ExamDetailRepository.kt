@@ -2,6 +2,8 @@ package com.deutschexam.backend.exams.repository
 
 import com.deutschexam.backend.db.tables.ExamDetailsTable
 import com.deutschexam.backend.exams.model.ExamDetailSummaryDto
+import com.deutschexam.backend.levels.model.LevelDto
+import com.deutschexam.backend.providers.model.ProviderDto
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import org.jetbrains.exposed.sql.Database
@@ -11,13 +13,18 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 class ExamDetailRepository(private val db: Database) {
 
-    fun findAll(): List<ExamDetailSummaryDto> = transaction(db) {
-        ExamDetailsTable.selectAll().map { row ->
+    fun findAll(
+        providers: Map<String, ProviderDto>,
+        levels: Map<String, LevelDto>,
+    ): List<ExamDetailSummaryDto> = transaction(db) {
+        ExamDetailsTable.selectAll().mapNotNull { row ->
+            val provider = providers[row[ExamDetailsTable.providerId]] ?: return@mapNotNull null
+            val level = levels[row[ExamDetailsTable.levelId]] ?: return@mapNotNull null
             ExamDetailSummaryDto(
                 id = row[ExamDetailsTable.id],
                 name = row[ExamDetailsTable.name],
-                providerId = row[ExamDetailsTable.providerId],
-                levelId = row[ExamDetailsTable.levelId],
+                provider = provider,
+                level = level,
                 totalPoints = row[ExamDetailsTable.totalPoints],
                 totalMinutes = row[ExamDetailsTable.totalMinutes],
             )
