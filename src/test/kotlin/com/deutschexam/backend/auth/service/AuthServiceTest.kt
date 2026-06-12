@@ -40,6 +40,7 @@ class AuthServiceTest {
                 jwtSecret = "test-secret-that-is-long-enough-32chars",
                 jwtIssuer = "test-issuer",
                 jwtExpiryHours = 1,
+                jwtRefreshTokenExpiryDays = 30,
                 databaseUrl = "",
                 databaseUser = "",
                 databasePassword = "",

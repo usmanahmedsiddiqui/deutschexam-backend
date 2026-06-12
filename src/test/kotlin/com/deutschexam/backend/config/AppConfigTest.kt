@@ -14,6 +14,7 @@ class AppConfigTest {
             "jwt.secret" to "dev-secret-change-in-production-min-32-chars",
             "jwt.issuer" to "deutschexam",
             "jwt.expiry_hours" to "24",
+            "jwt.refresh_token_expiry_days" to "30",
             "database.url" to "jdbc:postgresql://localhost/test",
             "database.user" to "user",
             "database.password" to "pass",

@@ -8,12 +8,10 @@ import java.security.MessageDigest
 import java.util.UUID
 import kotlin.time.Duration.Companion.days
 
-private const val REFRESH_TOKEN_EXPIRY_DAYS = 30
-
 data class TokenLookup(val userId: String, val isExpired: Boolean)
 
 /** Owns the lifecycle of refresh tokens: issue, resolve-to-user, and revoke. */
-class RefreshTokenRepository(private val db: Database) {
+class RefreshTokenRepository(private val db: Database, private val expiryDays: Long) {
 
     /**
      * Issues a new refresh token for [userId].
@@ -22,7 +20,7 @@ class RefreshTokenRepository(private val db: Database) {
      */
     fun create(userId: String): Pair<String, Long> = transaction(db) {
         val rawToken = UUID.randomUUID().toString()
-        val expiresAt = Clock.System.now().plus(REFRESH_TOKEN_EXPIRY_DAYS.days)
+        val expiresAt = Clock.System.now().plus(expiryDays.days)
 
         RefreshTokensTable.insert {
             it[RefreshTokensTable.userId] = UUID.fromString(userId)

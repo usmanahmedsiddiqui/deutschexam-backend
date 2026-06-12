@@ -18,16 +18,17 @@ import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
 import com.deutschexam.backend.products.routes.productRoutes
 import com.deutschexam.backend.products.service.PurchaseService
+import com.deutschexam.backend.config.AppConfig
 import io.ktor.server.application.*
 import io.ktor.server.http.content.*
 import io.ktor.server.routing.*
 import org.jetbrains.exposed.sql.Database
 
-fun Application.configureRouting(db: Database, googleClientId: String) {
+fun Application.configureRouting(db: Database, config: AppConfig) {
     val userProductRepo = UserProductRepository(db)
     val userRepo = UserRepository(db, userProductRepo)
-    val refreshTokenRepo = RefreshTokenRepository(db)
-    val authService = AuthService(userRepo, refreshTokenRepo, googleClientId)
+    val refreshTokenRepo = RefreshTokenRepository(db, config.jwtRefreshTokenExpiryDays)
+    val authService = AuthService(userRepo, refreshTokenRepo, config.googleClientId)
     val levelRepo = LevelRepository(db)
     val providerRepo = ProviderRepository(db)
     val productRepo = ProductRepository(db)

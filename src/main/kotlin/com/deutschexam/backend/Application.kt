@@ -24,5 +24,5 @@ fun Application.module() {
     configureRateLimit()
     configureStatusPages()
     configureHealthCheck(db)
-    configureRouting(db, config.googleClientId)
+    configureRouting(db, config)
 }
