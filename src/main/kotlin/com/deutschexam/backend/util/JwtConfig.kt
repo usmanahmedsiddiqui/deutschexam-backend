@@ -12,7 +12,6 @@ object JwtConfig {
     lateinit var issuer: String
     private var expiryMs: Long = 24 * 60 * 60 * 1000L
 
-    const val CLAIM_USER_ID = "sub"
     const val CLAIM_EMAIL = "email"
 
     fun init(config: AppConfig) {

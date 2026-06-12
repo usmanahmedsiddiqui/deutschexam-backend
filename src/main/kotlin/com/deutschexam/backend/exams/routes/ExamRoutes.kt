@@ -17,7 +17,6 @@ fun Route.examRoutes(
     examAccessService: ExamAccessService,
 ) {
 
-    // GET /exam-details?provider_id=telc&level_id=a1
     get("/exam-details") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
@@ -34,7 +33,6 @@ fun Route.examRoutes(
         }
     }
 
-    // GET /exam-details/{id}
     get("/exam-details/{id}") {
         val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
         val detail = examDetailRepo.findById(id)
@@ -42,7 +40,6 @@ fun Route.examRoutes(
         call.respond(HttpStatusCode.OK, detail)
     }
 
-    // GET /exams?provider_id=telc&level_id=a1
     get("/exams") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
@@ -54,7 +51,6 @@ fun Route.examRoutes(
         }
     }
 
-    // GET /exams/{id} — free exams open to all; paid exams require a token + product ownership
     authenticate("jwt-auth", optional = true) {
         get("/exams/{id}") {
             val id = call.parameters["id"] ?: throw ValidationException("Exam id is required.")

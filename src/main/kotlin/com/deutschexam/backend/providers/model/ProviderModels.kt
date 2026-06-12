@@ -1,6 +1,5 @@
 package com.deutschexam.backend.providers.model
 
-import com.deutschexam.backend.levels.model.CatalogItemDto
 import com.deutschexam.backend.levels.model.LevelDto
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
