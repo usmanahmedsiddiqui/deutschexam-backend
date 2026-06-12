@@ -4,9 +4,9 @@ import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.exams.repository.ExamResult
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
-import com.deutschexam.backend.util.AuthException
 import com.deutschexam.backend.util.ForbiddenException
 import com.deutschexam.backend.util.NotFoundException
+import com.deutschexam.backend.util.TokenMissingException
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.serialization.json.JsonPrimitive
@@ -42,7 +42,7 @@ class ExamAccessServiceTest {
     @Test
     fun `paid exam without a token throws TOKEN_MISSING (SEC-1)`() {
         every { examRepo.findById("e1") } returns exam(isFree = false)
-        val ex = assertFailsWith<AuthException> { service.getExamContent("e1", userId = null) }
+        val ex = assertFailsWith<TokenMissingException> { service.getExamContent("e1", userId = null) }
         assertEquals("TOKEN_MISSING", ex.code)
     }
 

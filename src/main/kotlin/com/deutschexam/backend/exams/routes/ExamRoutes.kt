@@ -4,6 +4,7 @@ import com.deutschexam.backend.exams.repository.ExamDetailRepository
 import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.exams.service.ExamAccessService
 import com.deutschexam.backend.plugins.UserPrincipal
+import com.deutschexam.backend.util.NotFoundException
 import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
 import io.ktor.server.auth.*
@@ -16,37 +17,32 @@ fun Route.examRoutes(
     examAccessService: ExamAccessService,
 ) {
 
-    /**
-     * GET /exam-details?provider_id=telc&level_id=a1
-     * Returns the exam detail template (sections, tasks, passing criteria — no questions).
-     *  Falls back to full list if no filters provided.
-     */
+    // GET /exam-details?provider_id=telc&level_id=a1
     get("/exam-details") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
 
         if (providerId != null && levelId != null) {
             val detail = examDetailRepo.findByProviderAndLevel(providerId, levelId)
-                ?: throw ValidationException("No exam detail found for provider '$providerId' and level '$levelId'.")
+                ?: throw NotFoundException(
+                    "No exam detail found for provider '$providerId' and level '$levelId'.",
+                    code = "EXAM_DETAIL_NOT_FOUND",
+                )
             call.respond(HttpStatusCode.OK, detail)
         } else {
             call.respond(HttpStatusCode.OK, examDetailRepo.findAll())
         }
     }
 
-    /**
-     *  GET /exam-details/telc_a1
-     */
+    // GET /exam-details/{id}
     get("/exam-details/{id}") {
         val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
-        val detail = examDetailRepo.findById(id) ?: throw ValidationException("Exam detail not found.")
+        val detail = examDetailRepo.findById(id)
+            ?: throw NotFoundException("Exam detail not found.", code = "EXAM_DETAIL_NOT_FOUND")
         call.respond(HttpStatusCode.OK, detail)
     }
 
-    /**
-     *  GET /exams?provider_id=telc&level_id=a1
-     *  Returns list of exams for a provider+level. Guest accessible.
-     */
+    // GET /exams?provider_id=telc&level_id=a1
     get("/exams") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
@@ -58,11 +54,7 @@ fun Route.examRoutes(
         }
     }
 
-    /**
-     *  GET /exams/telc_a1_01
-     *  GET /exams/telc_a1_01
-     *  Free exams: accessible by anyone. Paid exams: require a valid token AND product ownership.
-     */
+    // GET /exams/{id} — free exams open to all; paid exams require a token + product ownership
     authenticate("jwt-auth", optional = true) {
         get("/exams/{id}") {
             val id = call.parameters["id"] ?: throw ValidationException("Exam id is required.")

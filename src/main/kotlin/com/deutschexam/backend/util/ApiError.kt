@@ -10,9 +10,6 @@ sealed class ApiException(
 
 // ── Auth / 401 ────────────────────────────────────────────────────────────────
 
-class AuthException(message: String = "Unauthorized", code: String = "UNAUTHORIZED") :
-    ApiException(code, message, HttpStatusCode.Unauthorized)
-
 class TokenMissingException :
     ApiException("TOKEN_MISSING", "Authentication is required to access this resource.", HttpStatusCode.Unauthorized)
 

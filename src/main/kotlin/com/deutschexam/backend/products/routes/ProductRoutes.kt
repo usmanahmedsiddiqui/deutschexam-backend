@@ -3,7 +3,7 @@ package com.deutschexam.backend.products.routes
 import com.deutschexam.backend.plugins.UserPrincipal
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.service.PurchaseService
-import com.deutschexam.backend.util.AuthException
+import com.deutschexam.backend.util.TokenMissingException
 import com.deutschexam.backend.util.ValidationException
 import io.ktor.http.*
 import io.ktor.server.auth.*
@@ -19,7 +19,7 @@ fun Route.productRoutes(productRepo: ProductRepository, purchaseService: Purchas
         authenticate("jwt-auth") {
             post("/{id}/buy") {
                 val principal = call.principal<UserPrincipal>()
-                    ?: throw AuthException(code = "TOKEN_MISSING")
+                    ?: throw TokenMissingException()
                 val productId = call.parameters["id"]
                     ?: throw ValidationException("Product id is required.")
                 val result = purchaseService.buyProduct(productId, principal.userId)
