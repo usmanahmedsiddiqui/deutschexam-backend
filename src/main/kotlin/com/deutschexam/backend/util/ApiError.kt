@@ -18,7 +18,7 @@ class RefreshTokenExpiredException :
     ApiException(ApiErrorCode.REFRESH_TOKEN_EXPIRED.name, "Refresh token has expired. Please sign in again.", HttpStatusCode.Unauthorized)
 
 class GoogleTokenInvalidException :
-    ApiException(ApiErrorCode.GOOGLE_TOKEN_INVALID.name, "Google sign-in failed. Please try again.", HttpStatusCode.BadRequest)
+    ApiException(ApiErrorCode.GOOGLE_TOKEN_INVALID.name, "Google sign-in failed. Please try again.", HttpStatusCode.Unauthorized)
 
 class ForbiddenException(code: ApiErrorCode, message: String) :
     ApiException(code.name, message, HttpStatusCode.Forbidden)
@@ -33,14 +33,29 @@ class ValidationException(message: String) :
     ApiException(ApiErrorCode.VALIDATION_ERROR.name, message, HttpStatusCode.UnprocessableEntity)
 
 enum class ApiErrorCode {
+    // Auth / 401
     TOKEN_MISSING,
+    TOKEN_INVALID,
+    TOKEN_EXPIRED,
     REFRESH_TOKEN_INVALID,
     REFRESH_TOKEN_EXPIRED,
     GOOGLE_TOKEN_INVALID,
+    // Access / 403
     EXAM_NOT_OWNED,
+    // Not found / 404
     EXAM_DETAIL_NOT_FOUND,
     EXAM_NOT_FOUND,
     PRODUCT_NOT_FOUND,
+    // Conflict / 409
     PRODUCT_ALREADY_OWNED,
-    VALIDATION_ERROR
+    // Validation / 422
+    VALIDATION_ERROR,
+    // Rate limit / 429
+    RATE_LIMITED,
+    // Size limit / 413
+    PAYLOAD_TOO_LARGE,
+    // Client / 400
+    BAD_REQUEST,
+    // Server / 500
+    INTERNAL_ERROR,
 }

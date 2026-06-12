@@ -23,7 +23,7 @@ fun Application.configureStatusPages() {
             call.respond(
                 HttpStatusCode.PayloadTooLarge,
                 ApiErrorResponse(
-                    code = "PAYLOAD_TOO_LARGE",
+                    code = ApiErrorCode.PAYLOAD_TOO_LARGE.name,
                     message = "Request body exceeds the maximum allowed size.",
                     requestId = call.callId,
                 )
@@ -34,7 +34,7 @@ fun Application.configureStatusPages() {
             call.respond(
                 HttpStatusCode.TooManyRequests,
                 ApiErrorResponse(
-                    code = "RATE_LIMITED",
+                    code = ApiErrorCode.RATE_LIMITED.name,
                     message = "Too many requests. Please try again later.",
                     requestId = call.callId,
                 )
@@ -54,7 +54,7 @@ fun Application.configureStatusPages() {
             call.respond(
                 HttpStatusCode.BadRequest,
                 ApiErrorResponse(
-                    code = "BAD_REQUEST",
+                    code = ApiErrorCode.BAD_REQUEST.name,
                     message = cause.message ?: "Bad request.",
                     requestId = call.callId,
                 )
@@ -65,7 +65,7 @@ fun Application.configureStatusPages() {
             call.respond(
                 HttpStatusCode.InternalServerError,
                 ApiErrorResponse(
-                    code = "INTERNAL_ERROR",
+                    code = ApiErrorCode.INTERNAL_ERROR.name,
                     message = "An unexpected error occurred.",
                     requestId = call.callId,
                 )

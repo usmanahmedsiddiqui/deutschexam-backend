@@ -1,6 +1,7 @@
 package com.deutschexam.backend.plugins
 
 import com.auth0.jwt.JWT
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.JwtConfig
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -26,7 +27,7 @@ fun Application.configureAuth() {
                 val authHeader = call.request.header(HttpHeaders.Authorization)
                 val (code, message) = when {
                     authHeader == null ->
-                        "TOKEN_MISSING" to "Authentication is required to access this resource."
+                        ApiErrorCode.TOKEN_MISSING.name to "Authentication is required to access this resource."
                     else -> {
                         val expired = try {
                             val token = authHeader.removePrefix("Bearer ").trim()
@@ -36,9 +37,9 @@ fun Application.configureAuth() {
                             false
                         }
                         if (expired) {
-                            "TOKEN_EXPIRED" to "Access token has expired."
+                            ApiErrorCode.TOKEN_EXPIRED.name to "Access token has expired."
                         } else {
-                            "TOKEN_INVALID" to "Access token is invalid."
+                            ApiErrorCode.TOKEN_INVALID.name to "Access token is invalid."
                         }
                     }
                 }
