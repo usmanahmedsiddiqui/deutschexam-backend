@@ -19,7 +19,6 @@ data class AppConfig(
     val databaseDriver: String,
     val databasePoolSize: Int,
     val googleClientId: String,
-    val corsAllowedOrigins: List<String>,
 ) {
     val isProd: Boolean get() = environment.equals("prod", ignoreCase = true)
 
@@ -42,11 +41,6 @@ data class AppConfig(
                 databaseDriver = config.property("database.driver").getString(),
                 databasePoolSize = config.property("database.pool_size").getString().toInt(),
                 googleClientId = config.propertyOrNull("google.client_id")?.getString().orEmpty(),
-                corsAllowedOrigins = config.propertyOrNull("cors.allowed_origins")?.getString()
-                    ?.split(",")
-                    ?.map { it.trim() }
-                    ?.filter { it.isNotEmpty() }
-                    ?: emptyList(),
             )
 
             appConfig.validate()
@@ -69,7 +63,6 @@ data class AppConfig(
             if (databaseUser.isBlank()) errors += "DATABASE_USER is required."
             if (databasePassword.isBlank()) errors += "DATABASE_PASSWORD is required."
             if (googleClientId.isBlank()) errors += "GOOGLE_CLIENT_ID is required."
-            if (corsAllowedOrigins.isEmpty()) errors += "CORS_ALLOWED_ORIGINS is required."
         }
 
         if (errors.isNotEmpty()) {

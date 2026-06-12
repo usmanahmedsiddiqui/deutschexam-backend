@@ -46,7 +46,6 @@ class AuthServiceTest {
                 databaseDriver = "",
                 databasePoolSize = 1,
                 googleClientId = "",
-                corsAllowedOrigins = emptyList(),
             )
         )
     }

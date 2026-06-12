@@ -20,7 +20,6 @@ fun Application.module() {
     configureBodyLimit()
     configureAuth()
     configureSerialization()
-    configureCORS(config)
     configureCallLogging()
     configureRateLimit()
     configureStatusPages()

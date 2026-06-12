@@ -8,11 +8,6 @@ import kotlin.test.assertTrue
 
 class AppConfigTest {
 
-    private fun config(vararg pairs: Pair<String, String>): ApplicationConfig {
-        val map = mapOf(*pairs)
-        return MapApplicationConfig(*map.entries.map { it.key to it.value }.toTypedArray())
-    }
-
     private fun validDevConfig(overrides: Map<String, String> = emptyMap()): ApplicationConfig {
         val base = mapOf(
             "app.environment" to "dev",
@@ -48,7 +43,6 @@ class AppConfigTest {
             AppConfig.from(validDevConfig(mapOf(
                 "app.environment" to "prod",
                 "jwt.secret" to "dev-secret-change-in-production-min-32-chars",
-                "cors.allowed_origins" to "https://app.example.com",
                 "google.client_id" to "google-client-id",
             )))
         }
@@ -61,22 +55,9 @@ class AppConfigTest {
             AppConfig.from(validDevConfig(mapOf(
                 "app.environment" to "prod",
                 "jwt.secret" to "a-very-secure-production-secret-abc123",
-                "cors.allowed_origins" to "https://app.example.com",
             )))
         }
         assertTrue(ex.message!!.contains("GOOGLE_CLIENT_ID"))
-    }
-
-    @Test
-    fun `prod env with missing CORS origins fails`() {
-        val ex = assertFailsWith<IllegalStateException> {
-            AppConfig.from(validDevConfig(mapOf(
-                "app.environment" to "prod",
-                "jwt.secret" to "a-very-secure-production-secret-abc123",
-                "google.client_id" to "google-client-id",
-            )))
-        }
-        assertTrue(ex.message!!.contains("CORS_ALLOWED_ORIGINS"))
     }
 
     @Test
@@ -85,22 +66,12 @@ class AppConfigTest {
             "app.environment" to "prod",
             "jwt.secret" to "a-very-secure-production-secret-abc123",
             "google.client_id" to "google-client-id",
-            "cors.allowed_origins" to "https://app.example.com",
         )))
         assertTrue(appConfig.isProd)
     }
 
     @Test
-    fun `CORS origins are split and trimmed correctly`() {
-        val appConfig = AppConfig.from(validDevConfig(mapOf(
-            "cors.allowed_origins" to "https://app.example.com , https://admin.example.com",
-        )))
-        assertEquals(listOf("https://app.example.com", "https://admin.example.com"), appConfig.corsAllowedOrigins)
-    }
-
-    @Test
     fun `dev env is lenient about missing prod-only fields`() {
-        // Dev does not require google client id or cors origins
         val appConfig = AppConfig.from(validDevConfig())
         assertEquals("dev", appConfig.environment)
     }
