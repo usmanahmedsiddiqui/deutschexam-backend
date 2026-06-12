@@ -4,6 +4,7 @@ import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.exams.repository.ExamResult
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.ForbiddenException
 import com.deutschexam.backend.util.NotFoundException
 import com.deutschexam.backend.util.TokenMissingException
@@ -36,14 +37,14 @@ class ExamAccessServiceTest {
     fun `unknown exam throws EXAM_NOT_FOUND`() {
         every { examRepo.findById("missing") } returns null
         val ex = assertFailsWith<NotFoundException> { service.getExamContent("missing", userId = null) }
-        assertEquals("EXAM_NOT_FOUND", ex.code)
+        assertEquals(ApiErrorCode.EXAM_NOT_FOUND.name, ex.code)
     }
 
     @Test
     fun `paid exam without a token throws TOKEN_MISSING (SEC-1)`() {
         every { examRepo.findById("e1") } returns exam(isFree = false)
         val ex = assertFailsWith<TokenMissingException> { service.getExamContent("e1", userId = null) }
-        assertEquals("TOKEN_MISSING", ex.code)
+        assertEquals(ApiErrorCode.TOKEN_MISSING.name, ex.code)
     }
 
     @Test
@@ -53,7 +54,7 @@ class ExamAccessServiceTest {
         every { productRepo.findProductIdsByLevel("a1") } returns setOf("p_a1")
 
         val ex = assertFailsWith<ForbiddenException> { service.getExamContent("e1", userId = "u1") }
-        assertEquals("EXAM_NOT_OWNED", ex.code)
+        assertEquals(ApiErrorCode.EXAM_NOT_OWNED.name, ex.code)
     }
 
     @Test

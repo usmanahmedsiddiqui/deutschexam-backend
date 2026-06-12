@@ -4,6 +4,7 @@ import com.deutschexam.backend.levels.model.LevelDto
 import com.deutschexam.backend.products.model.ProductDto
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.ConflictException
 import com.deutschexam.backend.util.NotFoundException
 import io.mockk.every
@@ -31,7 +32,7 @@ class PurchaseServiceTest {
     fun `unknown product throws PRODUCT_NOT_FOUND`() {
         every { productRepo.findById("nope") } returns null
         val ex = assertFailsWith<NotFoundException> { service.buyProduct("nope", "u1") }
-        assertEquals("PRODUCT_NOT_FOUND", ex.code)
+        assertEquals(ApiErrorCode.PRODUCT_NOT_FOUND.name, ex.code)
     }
 
     @Test
@@ -40,7 +41,7 @@ class PurchaseServiceTest {
         every { userProductRepo.getOwnedProductIds("u1") } returns listOf("p_a1")
 
         val ex = assertFailsWith<ConflictException> { service.buyProduct("p_a1", "u1") }
-        assertEquals("PRODUCT_ALREADY_OWNED", ex.code)
+        assertEquals(ApiErrorCode.PRODUCT_ALREADY_OWNED.name, ex.code)
         verify(exactly = 0) { userProductRepo.addOwnedProduct(any(), any()) }
     }
 

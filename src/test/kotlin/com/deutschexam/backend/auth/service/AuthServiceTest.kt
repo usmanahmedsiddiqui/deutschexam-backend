@@ -6,6 +6,7 @@ import com.deutschexam.backend.auth.repository.RefreshTokenRepository
 import com.deutschexam.backend.auth.repository.TokenLookup
 import com.deutschexam.backend.auth.repository.UserRepository
 import com.deutschexam.backend.config.AppConfig
+import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.JwtConfig
 import com.deutschexam.backend.util.RefreshTokenExpiredException
 import com.deutschexam.backend.util.RefreshTokenInvalidException
@@ -58,7 +59,7 @@ class AuthServiceTest {
         val ex = assertFailsWith<RefreshTokenInvalidException> {
             service.refresh(RefreshTokenRequest(refreshToken = "bad-token"))
         }
-        assertEquals("REFRESH_TOKEN_INVALID", ex.code)
+        assertEquals(ApiErrorCode.REFRESH_TOKEN_INVALID.name, ex.code)
     }
 
     @Test
@@ -68,7 +69,7 @@ class AuthServiceTest {
         val ex = assertFailsWith<RefreshTokenExpiredException> {
             service.refresh(RefreshTokenRequest(refreshToken = "expired-token"))
         }
-        assertEquals("REFRESH_TOKEN_EXPIRED", ex.code)
+        assertEquals(ApiErrorCode.REFRESH_TOKEN_EXPIRED.name, ex.code)
     }
 
     @Test
