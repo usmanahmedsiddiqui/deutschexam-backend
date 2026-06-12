@@ -23,6 +23,9 @@ object DatabaseFactory {
         Flyway.configure()
             .dataSource(dataSource)
             .locations("classpath:db/migration")
+            .classLoader(DatabaseFactory::class.java.classLoader)
+            .baselineOnMigrate(true)
+            .baselineVersion("1")
             .load()
             .migrate()
 
