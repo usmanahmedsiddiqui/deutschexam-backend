@@ -29,4 +29,6 @@ class LevelRepository(private val db: Database) {
             )
         }
     }
+
+    fun findById(id: String): LevelDto? = getAllLevels().firstOrNull { it.id == id }
 }

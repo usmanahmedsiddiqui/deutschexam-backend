@@ -57,4 +57,6 @@ class ProviderRepository(private val db: Database) {
             )
         }
     }
+
+    fun findById(id: String): ProviderDto? = getAllProviders().firstOrNull { it.id == id }
 }

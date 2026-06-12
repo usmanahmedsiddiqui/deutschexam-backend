@@ -44,7 +44,7 @@ fun Application.configureRouting(db: Database, config: AppConfig) {
         levelRoutes(levelRepo)
         providerRoutes(providerRepo)
         productRoutes(productRepo, purchaseService)
-        examRoutes(examDetailRepo, examRepo, examAccessService)
+        examRoutes(examDetailRepo, examRepo, examAccessService, providerRepo, levelRepo)
         bugRoutes(bugRepo)
     }
 }
