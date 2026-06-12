@@ -74,13 +74,6 @@ fun Route.examRoutes(
         }
     }
 
-    get("/exam-details/{id}") {
-        val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
-        val detail = examDetailRepo.findById(id)
-            ?: throw NotFoundException(code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND, message = "Exam detail not found.")
-        call.respond(HttpStatusCode.OK, detail.enrich(providerRepo, levelRepo))
-    }
-
     get("/exams") {
         val providerId = call.request.queryParameters["provider_id"]
         val levelId = call.request.queryParameters["level_id"]
