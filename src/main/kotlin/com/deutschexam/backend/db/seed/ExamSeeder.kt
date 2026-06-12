@@ -7,6 +7,7 @@ import org.jetbrains.exposed.sql.upsert
 internal object ExamSeeder {
     private const val INDEX = "seed/exams/index.txt"  // paths inside are relative to seed/exams/
 
+    @Suppress("DuplicatedCode")
     fun seed() {
         val paths = examPaths()
         for (path in paths) {
