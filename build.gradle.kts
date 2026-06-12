@@ -67,6 +67,15 @@ tasks.test {
     useJUnitPlatform()
 }
 
+// Flyway 10 registers its plugins (database types, migration resolvers, resource-type
+// providers) via META-INF/services files. flyway-core and flyway-database-postgresql each
+// ship a file at the same path, so the fat jar must MERGE them — otherwise one overwrites
+// the other, CoreResourceTypeProvider is lost, and Flyway rejects every V__ migration with
+// "detected but not run because they did not follow the filename convention".
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    mergeServiceFiles()
+}
+
 kotlin {
     jvmToolchain(21)
 }
