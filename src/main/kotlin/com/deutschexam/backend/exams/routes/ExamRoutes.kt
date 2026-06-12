@@ -25,12 +25,14 @@ private val enrichJson = Json { encodeDefaults = true }
 
 /**
  * The exam content stored in the DB only carries `provider_id` / `level_id`. The mobile client's
- * ExamDto expects the full `provider` and `level` objects embedded in each exam, so we attach them
- * here using the same shapes returned by GET /providers and GET /levels.
+ * ExamDto expects the full `provider` and `level` objects instead, so we drop the raw id keys and
+ * attach the resolved objects using the same shapes returned by GET /providers and GET /levels.
  */
 private fun JsonElement.withProviderAndLevel(provider: ProviderDto?, level: LevelDto?): JsonElement =
     buildJsonObject {
-        jsonObject.forEach { (key, value) -> put(key, value) }
+        jsonObject
+            .filterKeys { it != "provider_id" && it != "level_id" }
+            .forEach { (key, value) -> put(key, value) }
         if (provider != null) put("provider", enrichJson.encodeToJsonElement(provider))
         if (level != null) put("level", enrichJson.encodeToJsonElement(level))
     }
