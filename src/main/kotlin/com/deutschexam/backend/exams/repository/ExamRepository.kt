@@ -6,6 +6,7 @@ import com.deutschexam.backend.exams.model.ExamSectionSummaryDto
 import com.deutschexam.backend.exams.model.ExamSummaryDto
 import com.deutschexam.backend.levels.model.LevelDto
 import com.deutschexam.backend.levels.repository.LevelRepository
+import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.providers.model.ProviderDto
 import com.deutschexam.backend.providers.repository.ProviderRepository
 import kotlinx.serialization.json.Json
@@ -22,14 +23,28 @@ class ExamRepository(
     private val db: Database,
     private val providerRepo: ProviderRepository,
     private val levelRepo: LevelRepository,
+    private val productRepo: ProductRepository,
 ) {
+
+    fun findAll(): List<ExamSummaryDto> = transaction(db) {
+        val providers = providerRepo.getAllProviders().associateBy { it.id }
+        val levels = levelRepo.getAllLevels().associateBy { it.id }
+        ExamsTable.selectAll().mapNotNull { row ->
+            val provider = providers[row[ExamsTable.providerId]] ?: return@mapNotNull null
+            val level = levels[row[ExamsTable.levelId]] ?: return@mapNotNull null
+            val productId = productRepo.findProductIdsByLevel(row[ExamsTable.levelId]).firstOrNull()
+            toSummaryDto(row, provider, level, productId)
+        }
+    }
+
     fun findByProviderAndLevel(providerId: String, levelId: String): List<ExamSummaryDto> = transaction(db) {
         val provider = providerRepo.findById(providerId) ?: return@transaction emptyList()
         val level = levelRepo.findById(levelId) ?: return@transaction emptyList()
+        val productId = productRepo.findProductIdsByLevel(levelId).firstOrNull()
         ExamsTable.selectAll()
             .where { ExamsTable.providerId eq providerId }
             .andWhere { ExamsTable.levelId eq levelId }
-            .map { toSummaryDto(it, provider, level) }
+            .map { toSummaryDto(it, provider, level, productId) }
     }
 
     fun findById(id: String): ExamDto? = transaction(db) {
@@ -39,7 +54,7 @@ class ExamRepository(
             ?.let { toFullDto(it) }
     }
 
-    private fun toSummaryDto(row: ResultRow, provider: ProviderDto, level: LevelDto): ExamSummaryDto {
+    private fun toSummaryDto(row: ResultRow, provider: ProviderDto, level: LevelDto, productId: String?): ExamSummaryDto {
         val blob = Json.parseToJsonElement(row[ExamsTable.data]).jsonObject
         val sections = blob["sections"]?.jsonArray?.map { el ->
             val s = el.jsonObject
@@ -54,6 +69,7 @@ class ExamRepository(
             id = row[ExamsTable.id],
             name = row[ExamsTable.name],
             isFree = row[ExamsTable.isFree],
+            productId = productId,
             provider = provider,
             level = level,
             totalPoints = row[ExamsTable.totalPoints],
@@ -65,12 +81,14 @@ class ExamRepository(
     private fun toFullDto(row: ResultRow): ExamDto? {
         val provider = providerRepo.findById(row[ExamsTable.providerId]) ?: return null
         val level = levelRepo.findById(row[ExamsTable.levelId]) ?: return null
+        val productId = productRepo.findProductIdsByLevel(row[ExamsTable.levelId]).firstOrNull()
         val blob = Json.parseToJsonElement(row[ExamsTable.data]).jsonObject
         return ExamDto(
             id = row[ExamsTable.id],
             name = row[ExamsTable.name],
             examDetailId = row[ExamsTable.examDetailId],
             isFree = row[ExamsTable.isFree],
+            productId = productId,
             provider = provider,
             level = level,
             totalPoints = row[ExamsTable.totalPoints],

@@ -34,7 +34,7 @@ fun Application.configureRouting(db: Database, config: AppConfig) {
     val productRepo = ProductRepository(db)
     val purchaseService = PurchaseService(productRepo, userProductRepo)
     val examDetailRepo = ExamDetailRepository(db, providerRepo, levelRepo)
-    val examRepo = ExamRepository(db, providerRepo, levelRepo)
+    val examRepo = ExamRepository(db, providerRepo, levelRepo, productRepo)
     val examAccessService = ExamAccessService(examRepo, productRepo, userProductRepo)
     val bugRepo = BugRepository(db)
 
