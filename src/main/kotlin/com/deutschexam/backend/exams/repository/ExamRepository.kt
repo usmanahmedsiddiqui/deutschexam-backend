@@ -25,18 +25,6 @@ class ExamRepository(
     private val levelRepo: LevelRepository,
     private val productRepo: ProductRepository,
 ) {
-
-    fun findAll(): List<ExamSummaryDto> = transaction(db) {
-        val providers = providerRepo.getAllProviders().associateBy { it.id }
-        val levels = levelRepo.getAllLevels().associateBy { it.id }
-        ExamsTable.selectAll().mapNotNull { row ->
-            val provider = providers[row[ExamsTable.providerId]] ?: return@mapNotNull null
-            val level = levels[row[ExamsTable.levelId]] ?: return@mapNotNull null
-            val productId = productRepo.findProductIdsByLevel(row[ExamsTable.levelId]).firstOrNull()
-            toSummaryDto(row, provider, level, productId)
-        }
-    }
-
     fun findByProviderAndLevel(providerId: String, levelId: String): List<ExamSummaryDto> = transaction(db) {
         val provider = providerRepo.findById(providerId) ?: return@transaction emptyList()
         val level = levelRepo.findById(levelId) ?: return@transaction emptyList()
