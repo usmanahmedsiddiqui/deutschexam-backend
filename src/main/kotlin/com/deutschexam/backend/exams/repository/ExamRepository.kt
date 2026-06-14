@@ -28,7 +28,7 @@ class ExamRepository(
     fun findByProviderAndLevel(providerId: String, levelId: String): List<ExamSummaryDto> = transaction(db) {
         val provider = providerRepo.findById(providerId) ?: return@transaction emptyList()
         val level = levelRepo.findById(levelId) ?: return@transaction emptyList()
-        val productId = productRepo.findProductIdsByLevel(levelId).firstOrNull()
+        val productId = productRepo.findProductIdsByLevel(levelId).firstOrNull() ?: return@transaction emptyList()
         ExamsTable.selectAll()
             .where { ExamsTable.providerId eq providerId }
             .andWhere { ExamsTable.levelId eq levelId }
@@ -42,7 +42,7 @@ class ExamRepository(
             ?.let { toFullDto(it) }
     }
 
-    private fun toSummaryDto(row: ResultRow, provider: ProviderDto, level: LevelDto, productId: String?): ExamSummaryDto {
+    private fun toSummaryDto(row: ResultRow, provider: ProviderDto, level: LevelDto, productId: String): ExamSummaryDto {
         val blob = Json.parseToJsonElement(row[ExamsTable.data]).jsonObject
         val sections = blob["sections"]?.jsonArray?.map { el ->
             val s = el.jsonObject
@@ -69,7 +69,7 @@ class ExamRepository(
     private fun toFullDto(row: ResultRow): ExamDto? {
         val provider = providerRepo.findById(row[ExamsTable.providerId]) ?: return null
         val level = levelRepo.findById(row[ExamsTable.levelId]) ?: return null
-        val productId = productRepo.findProductIdsByLevel(row[ExamsTable.levelId]).firstOrNull()
+        val productId = productRepo.findProductIdsByLevel(row[ExamsTable.levelId]).firstOrNull() ?: return null
         val blob = Json.parseToJsonElement(row[ExamsTable.data]).jsonObject
         return ExamDto(
             id = row[ExamsTable.id],
