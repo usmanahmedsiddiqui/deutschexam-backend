@@ -2,7 +2,6 @@ package com.deutschexam.backend.exams.repository
 
 import com.deutschexam.backend.db.tables.ExamDetailsTable
 import com.deutschexam.backend.exams.model.ExamDetailDto
-import com.deutschexam.backend.exams.model.ExamDetailSummaryDto
 import com.deutschexam.backend.levels.repository.LevelRepository
 import com.deutschexam.backend.providers.repository.ProviderRepository
 import kotlinx.serialization.json.Json
@@ -19,23 +18,6 @@ class ExamDetailRepository(
     private val levelRepo: LevelRepository,
 ) {
 
-    fun findAll(): List<ExamDetailSummaryDto> = transaction(db) {
-        val providers = providerRepo.getAllProviders().associateBy { it.id }
-        val levels = levelRepo.getAllLevels().associateBy { it.id }
-        ExamDetailsTable.selectAll().mapNotNull { row ->
-            val provider = providers[row[ExamDetailsTable.providerId]] ?: return@mapNotNull null
-            val level = levels[row[ExamDetailsTable.levelId]] ?: return@mapNotNull null
-            ExamDetailSummaryDto(
-                id = row[ExamDetailsTable.id],
-                name = row[ExamDetailsTable.name],
-                provider = provider,
-                level = level,
-                totalPoints = row[ExamDetailsTable.totalPoints],
-                totalMinutes = row[ExamDetailsTable.totalMinutes],
-            )
-        }
-    }
-
     fun findByProviderAndLevel(providerId: String, levelId: String): ExamDetailDto? = transaction(db) {
         ExamDetailsTable.selectAll()
             .where { ExamDetailsTable.providerId eq providerId }
@@ -44,12 +26,6 @@ class ExamDetailRepository(
             ?.let { toDto(it) }
     }
 
-    fun findById(id: String): ExamDetailDto? = transaction(db) {
-        ExamDetailsTable.selectAll()
-            .where { ExamDetailsTable.id eq id }
-            .firstOrNull()
-            ?.let { toDto(it) }
-    }
 
     private fun toDto(row: ResultRow): ExamDetailDto? {
         val provider = providerRepo.findById(row[ExamDetailsTable.providerId]) ?: return null

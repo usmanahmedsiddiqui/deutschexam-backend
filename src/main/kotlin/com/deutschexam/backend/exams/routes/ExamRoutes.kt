@@ -17,39 +17,28 @@ fun Route.examRoutes(
     examRepo: ExamRepository,
     examAccessService: ExamAccessService,
 ) {
-
     get("/exam-details") {
         val providerId = call.request.queryParameters["provider_id"]
+            ?: throw ValidationException("provider_id is required.")
         val levelId = call.request.queryParameters["level_id"]
+            ?: throw ValidationException("level_id is required.")
 
-        if (providerId != null && levelId != null) {
-            val detail = examDetailRepo.findByProviderAndLevel(providerId, levelId)
-                ?: throw NotFoundException(
-                    code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND,
-                    message = "No exam detail found for provider '$providerId' and level '$levelId'.",
-                )
-            call.respond(HttpStatusCode.OK, detail)
-        } else {
-            call.respond(HttpStatusCode.OK, examDetailRepo.findAll())
-        }
-    }
-
-    get("/exam-details/{id}") {
-        val id = call.parameters["id"] ?: throw ValidationException("Exam detail id is required.")
-        val detail = examDetailRepo.findById(id)
-            ?: throw NotFoundException(code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND, message = "Exam detail not found.")
+        val detail = examDetailRepo.findByProviderAndLevel(providerId, levelId)
+            ?: throw NotFoundException(
+                code = ApiErrorCode.EXAM_DETAIL_NOT_FOUND,
+                message = "No exam detail found for provider '$providerId' and level '$levelId'.",
+            )
         call.respond(HttpStatusCode.OK, detail)
     }
 
     get("/exams") {
         val providerId = call.request.queryParameters["provider_id"]
+            ?: throw ValidationException("provider_id is required.")
         val levelId = call.request.queryParameters["level_id"]
+            ?: throw ValidationException("level_id is required.")
 
-        if (providerId != null && levelId != null) {
-            call.respond(HttpStatusCode.OK, examRepo.findByProviderAndLevel(providerId, levelId))
-        } else {
-            call.respond(HttpStatusCode.OK, examRepo.findAll())
-        }
+        call.respond(HttpStatusCode.OK, examRepo.findByProviderAndLevel(providerId, levelId))
+
     }
 
     authenticate("jwt-auth", optional = true) {

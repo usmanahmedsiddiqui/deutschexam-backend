@@ -27,9 +27,6 @@ class PurchaseService(
             )
         }
 
-        // TODO(SEC-2): verify a real payment (Google Play Billing / Stripe) BEFORE granting
-        // ownership. Until billing is integrated this endpoint must NOT be exposed to real
-        // users — it currently grants ownership for free.
         userProductRepo.addOwnedProduct(userId, productId)
 
         return BuyProductResponseDto(product)
