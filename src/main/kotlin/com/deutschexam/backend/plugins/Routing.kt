@@ -33,8 +33,8 @@ fun Application.configureRouting(db: Database, config: AppConfig) {
     val providerRepo = ProviderRepository(db)
     val productRepo = ProductRepository(db)
     val purchaseService = PurchaseService(productRepo, userProductRepo)
-    val examDetailRepo = ExamDetailRepository(db)
-    val examRepo = ExamRepository(db)
+    val examDetailRepo = ExamDetailRepository(db, providerRepo, levelRepo)
+    val examRepo = ExamRepository(db, providerRepo, levelRepo)
     val examAccessService = ExamAccessService(examRepo, productRepo, userProductRepo)
     val bugRepo = BugRepository(db)
 
@@ -44,7 +44,7 @@ fun Application.configureRouting(db: Database, config: AppConfig) {
         levelRoutes(levelRepo)
         providerRoutes(providerRepo)
         productRoutes(productRepo, purchaseService)
-        examRoutes(examDetailRepo, examRepo, examAccessService, providerRepo, levelRepo)
+        examRoutes(examDetailRepo, examRepo, examAccessService)
         bugRoutes(bugRepo)
     }
 }

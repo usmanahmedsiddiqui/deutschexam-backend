@@ -1,5 +1,6 @@
 package com.deutschexam.backend.exams.service
 
+import com.deutschexam.backend.exams.model.ExamDto
 import com.deutschexam.backend.exams.repository.ExamRepository
 import com.deutschexam.backend.products.repository.ProductRepository
 import com.deutschexam.backend.products.repository.UserProductRepository
@@ -7,7 +8,6 @@ import com.deutschexam.backend.util.ApiErrorCode
 import com.deutschexam.backend.util.ForbiddenException
 import com.deutschexam.backend.util.NotFoundException
 import com.deutschexam.backend.util.TokenMissingException
-import kotlinx.serialization.json.JsonElement
 
 /**
  * Enforces access control for full exam content.
@@ -21,23 +21,16 @@ class ExamAccessService(
     private val userProductRepo: UserProductRepository,
 ) {
 
-    /**
-     * @param examId the requested exam id
-     * @param userId the authenticated user id, or null for a guest
-     * @return the full exam content if the caller is allowed to see it
-     * @throws NotFoundException if the exam does not exist
-     * @throws ForbiddenException (EXAM_NOT_OWNED) if a paid exam is requested by a non-owner
-     */
-    fun getExamContent(examId: String, userId: String?): JsonElement {
+    fun getExamContent(examId: String, userId: String?): ExamDto {
         val exam = examRepo.findById(examId)
             ?: throw NotFoundException(code = ApiErrorCode.EXAM_NOT_FOUND, message = "Exam not found.")
 
-        if (exam.isFree) return exam.data
+        if (exam.isFree) return exam
 
         if (userId == null) throw TokenMissingException()
 
         val owned = userProductRepo.getOwnedProductIds(userId)
-        val productsForLevel = productRepo.findProductIdsByLevel(exam.levelId)
+        val productsForLevel = productRepo.findProductIdsByLevel(exam.level.id)
 
         if (owned.none { it in productsForLevel }) {
             throw ForbiddenException(
@@ -46,6 +39,6 @@ class ExamAccessService(
             )
         }
 
-        return exam.data
+        return exam
     }
 }
