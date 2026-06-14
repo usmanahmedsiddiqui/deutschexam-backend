@@ -20,6 +20,26 @@ data class ExamDetailDto(
 )
 
 @Serializable
+data class ExamSectionSummaryDto(
+    val id: String,
+    val name: String,
+    @SerialName("section_minutes") val sectionMinutes: Int,
+    @SerialName("section_points") val sectionPoints: Double,
+)
+
+@Serializable
+data class ExamSummaryDto(
+    val id: String,
+    val name: String,
+    @SerialName("is_free") val isFree: Boolean,
+    val provider: ProviderDto,
+    val level: LevelDto,
+    @SerialName("total_points") val totalPoints: Double,
+    @SerialName("total_minutes") val totalMinutes: Int,
+    val sections: List<ExamSectionSummaryDto>,
+)
+
+@Serializable
 data class ExamDto(
     val id: String,
     val name: String,
